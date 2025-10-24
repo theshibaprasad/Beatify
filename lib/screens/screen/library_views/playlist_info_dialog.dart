@@ -12,7 +12,7 @@ class InfoTile extends StatelessWidget {
     required this.subtitle,
     required this.icon,
     this.onTap,
-    this.fg = Default_Theme.primaryColor1,
+    this.fg = DefaultTheme.primaryColor1,
   }) : super(key: key);
 
   @override
@@ -22,7 +22,7 @@ class InfoTile extends StatelessWidget {
       dense: true,
       title: Text(
         title,
-        style: Default_Theme.secondoryTextStyle.merge(
+        style: DefaultTheme.secondoryTextStyle.merge(
           TextStyle(
               color: fg.withOpacity(0.5), fontSize: 13, fontFamily: 'Unageo'),
         ),
@@ -34,7 +34,7 @@ class InfoTile extends StatelessWidget {
       ),
       subtitle: SelectableText(
         subtitle,
-        style: Default_Theme.secondoryTextStyle.merge(
+        style: DefaultTheme.secondoryTextStyle.merge(
           TextStyle(color: fg, fontSize: 15, fontFamily: 'NotoSans'),
         ),
       ),
@@ -68,11 +68,11 @@ Future<dynamic> showPlaylistInfo(
   BuildContext context,
   CurrentPlaylistState state, {
   Color bgColor = const Color.fromARGB(255, 15, 0, 19),
-  Color fgColor = Default_Theme.primaryColor1,
+  Color fgColor = DefaultTheme.primaryColor1,
 }) {
   bgColor =
       bgColor == Colors.black ? const Color.fromARGB(255, 15, 0, 19) : bgColor;
-  fgColor = fgColor == Colors.white ? Default_Theme.primaryColor1 : fgColor;
+  fgColor = fgColor == Colors.white ? DefaultTheme.primaryColor1 : fgColor;
   return showDialog(
     context: context,
     useSafeArea: true,
@@ -92,7 +92,7 @@ Future<dynamic> showPlaylistInfo(
                     ListTile(
                       title: Text(
                         state.mediaPlaylist.playlistName,
-                        style: Default_Theme.secondoryTextStyle.merge(
+                        style: DefaultTheme.secondoryTextStyle.merge(
                           TextStyle(
                               color: fgColor,
                               fontSize: 16,

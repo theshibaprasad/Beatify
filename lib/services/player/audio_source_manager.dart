@@ -1,10 +1,10 @@
 import 'dart:developer';
-import 'package:Bloomee/model/songModel.dart';
-import 'package:Bloomee/model/saavnModel.dart';
-import 'package:Bloomee/routes_and_consts/global_str_consts.dart';
-import 'package:Bloomee/screens/widgets/snackbar.dart';
-import 'package:Bloomee/services/db/bloomee_db_service.dart';
-import 'package:Bloomee/utils/ytstream_source.dart';
+import 'package:bloomee/model/songModel.dart';
+import 'package:bloomee/model/saavnModel.dart';
+import 'package:bloomee/routes_and_consts/global_str_consts.dart';
+import 'package:bloomee/screens/widgets/snackbar.dart';
+import 'package:bloomee/services/db/bloomee_db_service.dart';
+import 'package:bloomee/utils/ytstream_source.dart';
 import 'package:audio_service/audio_service.dart';
 import 'package:just_audio/just_audio.dart';
 

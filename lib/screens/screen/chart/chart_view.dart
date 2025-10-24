@@ -1,12 +1,12 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:Bloomee/model/chart_model.dart';
-import 'package:Bloomee/services/db/bloomee_db_service.dart';
-import 'package:Bloomee/utils/imgurl_formator.dart';
-import 'package:Bloomee/utils/load_Image.dart';
-import 'package:Bloomee/utils/url_launcher.dart';
+import 'package:bloomee/model/chart_model.dart';
+import 'package:bloomee/services/db/bloomee_db_service.dart';
+import 'package:bloomee/utils/imgurl_formator.dart';
+import 'package:bloomee/utils/load_image.dart';
+import 'package:bloomee/utils/url_launcher.dart';
 import 'package:flutter/material.dart';
-import 'package:Bloomee/screens/widgets/chart_list_tile.dart';
-import 'package:Bloomee/theme_data/default.dart';
+import 'package:bloomee/screens/widgets/chart_list_tile.dart';
+import 'package:bloomee/theme_data/default.dart';
 import 'package:icons_plus/icons_plus.dart';
 
 class ChartScreen extends StatefulWidget {
@@ -45,13 +45,13 @@ class _ChartScreenState extends State<ChartScreen> {
                     height: 50,
                     width: 50,
                     child: CircularProgressIndicator(
-                      color: Default_Theme.accentColor2,
+                      color: DefaultTheme.accentColor2,
                     )),
               );
             } else if (state.data!.chartItems!.isEmpty) {
               return Center(
                 child: Text("Error: No Item in Chart",
-                    style: Default_Theme.secondoryTextStyleMedium.merge(
+                    style: DefaultTheme.secondoryTextStyleMedium.merge(
                         const TextStyle(
                             fontSize: 24,
                             color: Color.fromARGB(255, 255, 235, 251)))),
@@ -84,7 +84,7 @@ class _ChartScreenState extends State<ChartScreen> {
             }
           },
         ),
-        backgroundColor: Default_Theme.themeColor,
+        backgroundColor: DefaultTheme.themeColor,
       ),
     );
   }
@@ -92,8 +92,8 @@ class _ChartScreenState extends State<ChartScreen> {
   SliverAppBar customDiscoverBar(BuildContext context, ChartModel state) {
     return SliverAppBar(
       floating: true,
-      surfaceTintColor: Default_Theme.themeColor,
-      backgroundColor: Default_Theme.themeColor,
+      surfaceTintColor: DefaultTheme.themeColor,
+      backgroundColor: DefaultTheme.themeColor,
       expandedHeight: 200,
       actions: [
         Padding(
@@ -115,7 +115,7 @@ class _ChartScreenState extends State<ChartScreen> {
         title: Text(state.chartName,
             textScaler: const TextScaler.linear(1.0),
             textAlign: TextAlign.start,
-            style: Default_Theme.secondoryTextStyleMedium.merge(const TextStyle(
+            style: DefaultTheme.secondoryTextStyleMedium.merge(const TextStyle(
                 fontSize: 24, color: Color.fromARGB(255, 255, 235, 251)))),
         background: Stack(
           children: [
@@ -137,10 +137,10 @@ class _ChartScreenState extends State<ChartScreen> {
                             begin: Alignment.bottomCenter,
                             end: Alignment.topCenter,
                             colors: [
-                  Default_Theme.themeColor.withOpacity(0.8),
-                  Default_Theme.themeColor.withOpacity(0.4),
-                  Default_Theme.themeColor.withOpacity(0.1),
-                  Default_Theme.themeColor.withOpacity(0),
+                  DefaultTheme.themeColor.withOpacity(0.8),
+                  DefaultTheme.themeColor.withOpacity(0.4),
+                  DefaultTheme.themeColor.withOpacity(0.1),
+                  DefaultTheme.themeColor.withOpacity(0),
                 ]))))
           ],
         ),

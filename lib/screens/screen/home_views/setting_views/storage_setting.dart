@@ -1,12 +1,12 @@
 import 'dart:developer';
 import 'dart:io';
-import 'package:Bloomee/blocs/settings_cubit/cubit/settings_cubit.dart';
-import 'package:Bloomee/screens/widgets/setting_tile.dart';
-import 'package:Bloomee/screens/widgets/snackbar.dart';
-import 'package:Bloomee/services/db/bloomee_db_service.dart';
+import 'package:bloomee/blocs/settings_cubit/cubit/settings_cubit.dart';
+import 'package:bloomee/screens/widgets/setting_tile.dart';
+import 'package:bloomee/screens/widgets/snackbar.dart';
+import 'package:bloomee/services/db/bloomee_db_service.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:Bloomee/theme_data/default.dart';
+import 'package:bloomee/theme_data/default.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:share_plus/share_plus.dart';
@@ -52,10 +52,10 @@ class BackupSettings extends StatelessWidget {
         title: Text(
           'Storage',
           style: const TextStyle(
-                  color: Default_Theme.primaryColor1,
+                  color: DefaultTheme.primaryColor1,
                   fontSize: 20,
                   fontWeight: FontWeight.bold)
-              .merge(Default_Theme.secondoryTextStyle),
+              .merge(DefaultTheme.secondoryTextStyle),
         ),
       ),
       body: BlocBuilder<SettingsCubit, SettingsState>(
@@ -68,10 +68,10 @@ class BackupSettings extends StatelessWidget {
                 trailing: DropdownButton(
                   value: state.historyClearTime,
                   style: const TextStyle(
-                    color: Default_Theme.primaryColor1,
+                    color: DefaultTheme.primaryColor1,
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
-                  ).merge(Default_Theme.secondoryTextStyle),
+                  ).merge(DefaultTheme.secondoryTextStyle),
                   underline: const SizedBox(),
                   onChanged: (String? newValue) {
                     if (newValue != null) {
@@ -112,7 +112,7 @@ class BackupSettings extends StatelessWidget {
                         surfaceTintColor: const Color.fromARGB(255, 24, 24, 24),
                         title: Text(
                           "Backup Location",
-                          style: Default_Theme.secondoryTextStyle.merge(
+                          style: DefaultTheme.secondoryTextStyle.merge(
                             const TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold),
@@ -122,7 +122,7 @@ class BackupSettings extends StatelessWidget {
                           Platform.isAndroid
                               ? "Currently, the backup will be stored in:\n\n1. Download directory\n2. Android/data/ls.bloomee.musicplayer/data directory\n\nYou can copy the file from these locations."
                               : "Currently, the backup will be stored in the Downloads directory. You can copy the file from there.",
-                          style: Default_Theme.secondoryTextStyle.merge(
+                          style: DefaultTheme.secondoryTextStyle.merge(
                             const TextStyle(color: Colors.white, fontSize: 14),
                           ),
                         ),
@@ -133,7 +133,7 @@ class BackupSettings extends StatelessWidget {
                             },
                             child: Text(
                               "OK",
-                              style: Default_Theme.secondoryTextStyle.merge(
+                              style: DefaultTheme.secondoryTextStyle.merge(
                                 const TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold),
@@ -201,7 +201,7 @@ class BackupSettings extends StatelessWidget {
                         surfaceTintColor: const Color.fromARGB(255, 24, 24, 24),
                         title: Text(
                           "Confirm Reset",
-                          style: Default_Theme.secondoryTextStyle.merge(
+                          style: DefaultTheme.secondoryTextStyle.merge(
                             const TextStyle(
                                 color: Colors.white,
                                 fontSize: 18,
@@ -210,7 +210,7 @@ class BackupSettings extends StatelessWidget {
                         ),
                         content: Text(
                           "Are you sure you want to reset the Bloomee app? This will delete all your data, including tunes you listened to, and reset the app to its default state. This action cannot be undone.",
-                          style: Default_Theme.secondoryTextStyle.merge(
+                          style: DefaultTheme.secondoryTextStyle.merge(
                             const TextStyle(color: Colors.white, fontSize: 14),
                           ),
                         ),
@@ -221,7 +221,7 @@ class BackupSettings extends StatelessWidget {
                             },
                             child: Text(
                               "No",
-                              style: Default_Theme.secondoryTextStyle.merge(
+                              style: DefaultTheme.secondoryTextStyle.merge(
                                 const TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold),
@@ -230,13 +230,13 @@ class BackupSettings extends StatelessWidget {
                           ),
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                                backgroundColor: Default_Theme.accentColor2),
+                                backgroundColor: DefaultTheme.accentColor2),
                             onPressed: () {
                               Navigator.of(ctx).pop(true);
                             },
                             child: Text(
                               "Yes",
-                              style: Default_Theme.secondoryTextStyle.merge(
+                              style: DefaultTheme.secondoryTextStyle.merge(
                                 const TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold),
@@ -257,20 +257,20 @@ class BackupSettings extends StatelessWidget {
                 },
                 trailing: const Icon(
                   Icons.delete,
-                  color: Default_Theme.primaryColor1,
+                  color: DefaultTheme.primaryColor1,
                 ),
               ),
               SwitchListTile(
                 title: Text("Auto Backup",
                     style: const TextStyle(
-                            color: Default_Theme.primaryColor1, fontSize: 16)
-                        .merge(Default_Theme.secondoryTextStyleMedium)),
+                            color: DefaultTheme.primaryColor1, fontSize: 16)
+                        .merge(DefaultTheme.secondoryTextStyleMedium)),
                 subtitle: Text(
                     "Automatically create a backup of your data on regular basis.",
                     style: TextStyle(
-                            color: Default_Theme.primaryColor1.withOpacity(0.5),
+                            color: DefaultTheme.primaryColor1.withOpacity(0.5),
                             fontSize: 12)
-                        .merge(Default_Theme.secondoryTextStyleMedium)),
+                        .merge(DefaultTheme.secondoryTextStyleMedium)),
                 value: state.autoBackup,
                 onChanged: (value) {
                   context.read<SettingsCubit>().setAutoBackup(value);
@@ -279,15 +279,15 @@ class BackupSettings extends StatelessWidget {
               SwitchListTile(
                   title: Text("Auto Save Lyrics",
                       style: const TextStyle(
-                              color: Default_Theme.primaryColor1, fontSize: 16)
-                          .merge(Default_Theme.secondoryTextStyleMedium)),
+                              color: DefaultTheme.primaryColor1, fontSize: 16)
+                          .merge(DefaultTheme.secondoryTextStyleMedium)),
                   subtitle: Text(
                       "Automatically save lyrics of the song when played.",
                       style: TextStyle(
                               color:
-                                  Default_Theme.primaryColor1.withOpacity(0.5),
+                                  DefaultTheme.primaryColor1.withOpacity(0.5),
                               fontSize: 12)
-                          .merge(Default_Theme.secondoryTextStyleMedium)),
+                          .merge(DefaultTheme.secondoryTextStyleMedium)),
                   value: state.autoSaveLyrics,
                   onChanged: (value) {
                     context.read<SettingsCubit>().setAutoSaveLyrics(value);
@@ -353,7 +353,7 @@ Future<void> _onRestoreTap(BuildContext context) async {
           return AlertDialog(
             backgroundColor: const Color.fromARGB(255, 24, 24, 24),
             title: Text("Restore Options",
-                style: Default_Theme.secondoryTextStyle
+                style: DefaultTheme.secondoryTextStyle
                     .merge(const TextStyle(color: Colors.white))),
             content: SingleChildScrollView(
               child: Column(
@@ -362,7 +362,7 @@ Future<void> _onRestoreTap(BuildContext context) async {
                   Text(
                     "Choose which data you want to restore from the selected backup file. "
                     "Unselect any items you do NOT want to be imported. By default all are selected.",
-                    style: Default_Theme.secondoryTextStyle.merge(
+                    style: DefaultTheme.secondoryTextStyle.merge(
                         const TextStyle(color: Colors.white70, fontSize: 13)),
                   ),
                   const SizedBox(height: 12),
@@ -370,10 +370,10 @@ Future<void> _onRestoreTap(BuildContext context) async {
                     value: selectAll,
                     onChanged: toggleSelectAll,
                     title: Text("Select All",
-                        style: Default_Theme.secondoryTextStyle
+                        style: DefaultTheme.secondoryTextStyle
                             .merge(const TextStyle(color: Colors.white))),
                     controlAffinity: ListTileControlAffinity.leading,
-                    activeColor: Default_Theme.accentColor2,
+                    activeColor: DefaultTheme.accentColor2,
                     checkColor: Colors.white,
                   ),
                   const Divider(color: Colors.white12),
@@ -384,10 +384,10 @@ Future<void> _onRestoreTap(BuildContext context) async {
                       updateSelectAllFromChildren();
                     },
                     title: Text("Media items (songs, tracks, library entries)",
-                        style: Default_Theme.secondoryTextStyle
+                        style: DefaultTheme.secondoryTextStyle
                             .merge(const TextStyle(color: Colors.white))),
                     controlAffinity: ListTileControlAffinity.leading,
-                    activeColor: Default_Theme.accentColor2,
+                    activeColor: DefaultTheme.accentColor2,
                     checkColor: Colors.white,
                   ),
                   CheckboxListTile(
@@ -397,10 +397,10 @@ Future<void> _onRestoreTap(BuildContext context) async {
                       updateSelectAllFromChildren();
                     },
                     title: Text("Search history",
-                        style: Default_Theme.secondoryTextStyle
+                        style: DefaultTheme.secondoryTextStyle
                             .merge(const TextStyle(color: Colors.white))),
                     controlAffinity: ListTileControlAffinity.leading,
-                    activeColor: Default_Theme.accentColor2,
+                    activeColor: DefaultTheme.accentColor2,
                     checkColor: Colors.white,
                   ),
                   // CheckboxListTile(
@@ -411,10 +411,10 @@ Future<void> _onRestoreTap(BuildContext context) async {
                   //   },
                   //   title: Text(
                   //       "Settings & preferences (theme, equalizer, tokens)",
-                  //       style: Default_Theme.secondoryTextStyle
+                  //       style: DefaultTheme.secondoryTextStyle
                   //           .merge(const TextStyle(color: Colors.white))),
                   //   controlAffinity: ListTileControlAffinity.leading,
-                  //   activeColor: Default_Theme.accentColor2,
+                  //   activeColor: DefaultTheme.accentColor2,
                   //   checkColor: Colors.white,
                   // ),
                 ],
@@ -424,12 +424,12 @@ Future<void> _onRestoreTap(BuildContext context) async {
               TextButton(
                 onPressed: () => Navigator.of(ctx2).pop(null),
                 child: Text("Cancel",
-                    style: Default_Theme.secondoryTextStyle
+                    style: DefaultTheme.secondoryTextStyle
                         .merge(const TextStyle(color: Colors.white))),
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: Default_Theme.accentColor2),
+                    backgroundColor: DefaultTheme.accentColor2),
                 onPressed: () {
                   Navigator.of(ctx2).pop(_RestoreOptions(
                     restoreMediaItems: mediaItems,
@@ -438,7 +438,7 @@ Future<void> _onRestoreTap(BuildContext context) async {
                   ));
                 },
                 child: Text("Continue",
-                    style: Default_Theme.secondoryTextStyle
+                    style: DefaultTheme.secondoryTextStyle
                         .merge(const TextStyle(color: Colors.white))),
               ),
             ],
@@ -457,7 +457,7 @@ Future<void> _onRestoreTap(BuildContext context) async {
         return AlertDialog(
           backgroundColor: const Color.fromARGB(255, 24, 24, 24),
           title: Text("Confirm Restore",
-              style: Default_Theme.secondoryTextStyle.merge(const TextStyle(
+              style: DefaultTheme.secondoryTextStyle.merge(const TextStyle(
                   color: Colors.white,
                   fontSize: 18,
                   fontWeight: FontWeight.bold))),
@@ -467,22 +467,22 @@ Future<void> _onRestoreTap(BuildContext context) async {
             "${options.restoreSearchHistory ? "• Search history\n" : ""}"
             // "${options.restoreSettings ? "• Settings & preferences\n" : ""}\n"
             "Your current data will be modified/merged. Are you sure you want to proceed?",
-            style: Default_Theme.secondoryTextStyle
+            style: DefaultTheme.secondoryTextStyle
                 .merge(const TextStyle(color: Colors.white70, fontSize: 14)),
           ),
           actions: [
             TextButton(
               onPressed: () => Navigator.of(ctx).pop(false),
               child: Text("No",
-                  style: Default_Theme.secondoryTextStyle
+                  style: DefaultTheme.secondoryTextStyle
                       .merge(const TextStyle(color: Colors.white))),
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                  backgroundColor: Default_Theme.accentColor2),
+                  backgroundColor: DefaultTheme.accentColor2),
               onPressed: () => Navigator.of(ctx).pop(true),
               child: Text("Yes, restore",
-                  style: Default_Theme.secondoryTextStyle
+                  style: DefaultTheme.secondoryTextStyle
                       .merge(const TextStyle(color: Colors.white))),
             ),
           ],
@@ -514,7 +514,7 @@ Future<void> _onRestoreTap(BuildContext context) async {
                 Text(
                   "Restoring selected data...\nPlease wait until the operation completes.",
                   textAlign: TextAlign.center,
-                  style: Default_Theme.secondoryTextStyle
+                  style: DefaultTheme.secondoryTextStyle
                       .merge(const TextStyle(color: Colors.white)),
                 ),
               ],
@@ -640,7 +640,7 @@ Future<void> _showResultDialog(
         backgroundColor: const Color.fromARGB(255, 24, 24, 24),
         title: Text(
           success ? "Restore Completed" : "Restore Failed",
-          style: Default_Theme.secondoryTextStyle.merge(const TextStyle(
+          style: DefaultTheme.secondoryTextStyle.merge(const TextStyle(
               color: Colors.white, fontWeight: FontWeight.bold)),
         ),
         content: SingleChildScrollView(
@@ -651,7 +651,7 @@ Future<void> _showResultDialog(
                 success
                     ? "The selected data was restored successfully. For best results, please restart the app now."
                     : "The restore process failed with the following errors:",
-                style: Default_Theme.secondoryTextStyle
+                style: DefaultTheme.secondoryTextStyle
                     .merge(const TextStyle(color: Colors.white)),
               ),
               const SizedBox(height: 12),
@@ -660,7 +660,7 @@ Future<void> _showResultDialog(
                       padding: const EdgeInsets.only(bottom: 8.0),
                       child: Text(
                         "- $e",
-                        style: Default_Theme.secondoryTextStyle.merge(
+                        style: DefaultTheme.secondoryTextStyle.merge(
                             const TextStyle(
                                 color: Colors.white70, fontSize: 13)),
                       ),
@@ -668,13 +668,13 @@ Future<void> _showResultDialog(
               if (!success && errors.isEmpty)
                 Text(
                   "Unknown error occurred during restore.",
-                  style: Default_Theme.secondoryTextStyle
+                  style: DefaultTheme.secondoryTextStyle
                       .merge(const TextStyle(color: Colors.white70)),
                 ),
               const SizedBox(height: 8),
               Text(
                 "Please restart the app for better consistency.",
-                style: Default_Theme.secondoryTextStyle.merge(
+                style: DefaultTheme.secondoryTextStyle.merge(
                     const TextStyle(color: Colors.white54, fontSize: 12)),
               ),
             ],
@@ -683,11 +683,11 @@ Future<void> _showResultDialog(
         actions: [
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-                backgroundColor: Default_Theme.accentColor2),
+                backgroundColor: DefaultTheme.accentColor2),
             onPressed: () => Navigator.of(ctx).pop(),
             child: Text(
               "OK",
-              style: Default_Theme.secondoryTextStyle.merge(const TextStyle(
+              style: DefaultTheme.secondoryTextStyle.merge(const TextStyle(
                   color: Colors.white, fontWeight: FontWeight.bold)),
             ),
           ),

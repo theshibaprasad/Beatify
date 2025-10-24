@@ -1,6 +1,6 @@
 import 'dart:async';
-import 'package:Bloomee/blocs/mediaPlayer/bloomee_player_cubit.dart';
-import 'package:Bloomee/theme_data/default.dart';
+import 'package:bloomee/blocs/mediaPlayer/bloomee_player_cubit.dart';
+import 'package:bloomee/theme_data/default.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -130,13 +130,13 @@ class _VolumeDragControllerState extends State<VolumeDragController> {
                               (_volume == 0)
                                   ? MingCute.volume_off_fill
                                   : MingCute.volume_fill,
-                              color: Default_Theme.primaryColor2,
+                              color: DefaultTheme.primaryColor2,
                             ),
                             RotatedBox(
                               quarterTurns: -1,
                               child: SliderTheme(
                                 data: SliderTheme.of(context).copyWith(
-                                  inactiveTrackColor: Default_Theme
+                                  inactiveTrackColor: DefaultTheme
                                       .primaryColor2
                                       .withOpacity(0.3),
                                   thumbShape: const RoundSliderThumbShape(

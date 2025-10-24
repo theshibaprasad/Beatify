@@ -1,6 +1,6 @@
-import 'package:Bloomee/blocs/lyrics/lyrics_cubit.dart';
-import 'package:Bloomee/screens/screen/player_views/lyrics_search.dart';
-import 'package:Bloomee/theme_data/default.dart';
+import 'package:bloomee/blocs/lyrics/lyrics_cubit.dart';
+import 'package:bloomee/screens/screen/player_views/lyrics_search.dart';
+import 'package:bloomee/theme_data/default.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icons_plus/icons_plus.dart';
@@ -132,7 +132,7 @@ class _LyricsMenuState extends State<LyricsMenu> {
               MingCute.settings_3_fill,
               size: 20,
             ),
-            color: Default_Theme.primaryColor1.withOpacity(0.9),
+            color: DefaultTheme.primaryColor1.withOpacity(0.9),
           ),
         );
       },

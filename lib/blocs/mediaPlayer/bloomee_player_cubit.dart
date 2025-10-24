@@ -1,8 +1,8 @@
-import 'package:Bloomee/services/audio_service_initializer.dart';
+import 'package:bloomee/services/audio_service_initializer.dart';
 import 'package:bloc/bloc.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:rxdart/rxdart.dart';
-import 'package:Bloomee/services/bloomeePlayer.dart';
+import 'package:bloomee/services/bloomeePlayer.dart';
 part 'bloomee_player_state.dart';
 
 enum PlayerInitState { initializing, initialized, intial }

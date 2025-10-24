@@ -1,17 +1,17 @@
 import 'dart:async';
 import 'dart:developer';
-import 'package:Bloomee/blocs/explore/cubit/explore_cubits.dart';
-import 'package:Bloomee/blocs/settings_cubit/cubit/settings_cubit.dart';
-import 'package:Bloomee/plugins/ext_charts/chart_defines.dart';
-import 'package:Bloomee/screens/screen/chart/chart_widget.dart';
-import 'package:Bloomee/screens/screen/chart/show_charts.dart';
-import 'package:Bloomee/services/db/bloomee_db_service.dart';
+import 'package:bloomee/blocs/explore/cubit/explore_cubits.dart';
+import 'package:bloomee/blocs/settings_cubit/cubit/settings_cubit.dart';
+import 'package:bloomee/plugins/ext_charts/chart_defines.dart';
+import 'package:bloomee/screens/screen/chart/chart_widget.dart';
+import 'package:bloomee/screens/screen/chart/show_charts.dart';
+import 'package:bloomee/services/db/bloomee_db_service.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:Bloomee/routes_and_consts/global_str_consts.dart';
+import 'package:bloomee/routes_and_consts/global_str_consts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class CaraouselWidget extends StatefulWidget {
@@ -106,15 +106,15 @@ class _CaraouselWidgetState extends State<CaraouselWidget> {
                               children: [
                                 // Text(
                                 //   "Featured",
-                                //   style: Default_Theme.secondoryTextStyle.merge(
+                                //   style: DefaultTheme.secondoryTextStyle.merge(
                                 //       const TextStyle(
-                                //           color: Default_Theme.primaryColor1,
+                                //           color: DefaultTheme.primaryColor1,
                                 //           fontWeight: FontWeight.bold,
                                 //           fontSize: 19)),
                                 // ),
                                 // const Icon(
                                 //   FontAwesome.bolt_lightning_solid,
-                                //   color: Default_Theme.primaryColor1,
+                                //   color: DefaultTheme.primaryColor1,
                                 // ),
                               ],
                             ),

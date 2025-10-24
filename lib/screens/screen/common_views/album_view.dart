@@ -1,13 +1,13 @@
-import 'package:Bloomee/blocs/album_view/album_cubit.dart';
-import 'package:Bloomee/blocs/mediaPlayer/bloomee_player_cubit.dart';
-import 'package:Bloomee/model/album_onl_model.dart';
-import 'package:Bloomee/model/source_engines.dart';
-import 'package:Bloomee/screens/widgets/more_bottom_sheet.dart';
-import 'package:Bloomee/screens/widgets/snackbar.dart';
-import 'package:Bloomee/screens/widgets/song_tile.dart';
-import 'package:Bloomee/theme_data/default.dart';
-import 'package:Bloomee/utils/imgurl_formator.dart';
-import 'package:Bloomee/utils/load_Image.dart';
+import 'package:bloomee/blocs/album_view/album_cubit.dart';
+import 'package:bloomee/blocs/mediaPlayer/bloomee_player_cubit.dart';
+import 'package:bloomee/model/album_onl_model.dart';
+import 'package:bloomee/model/source_engines.dart';
+import 'package:bloomee/screens/widgets/more_bottom_sheet.dart';
+import 'package:bloomee/screens/widgets/snackbar.dart';
+import 'package:bloomee/screens/widgets/song_tile.dart';
+import 'package:bloomee/theme_data/default.dart';
+import 'package:bloomee/utils/imgurl_formator.dart';
+import 'package:bloomee/utils/load_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icons_plus/icons_plus.dart';
@@ -104,13 +104,13 @@ class _AlbumViewState extends State<AlbumView> {
                                     children: [
                                       Text(
                                         "Album by",
-                                        style: Default_Theme
+                                        style: DefaultTheme
                                             .secondoryTextStyleMedium
                                             .merge(
                                           TextStyle(
                                             overflow: TextOverflow.ellipsis,
                                             fontSize: 14,
-                                            color: Default_Theme.primaryColor1
+                                            color: DefaultTheme.primaryColor1
                                                 .withOpacity(0.4),
                                           ),
                                         ),
@@ -118,25 +118,25 @@ class _AlbumViewState extends State<AlbumView> {
                                       Text(
                                         widget.album.artists,
                                         maxLines: 3,
-                                        style: Default_Theme
+                                        style: DefaultTheme
                                             .secondoryTextStyleMedium
                                             .merge(
                                           TextStyle(
                                             overflow: TextOverflow.ellipsis,
                                             fontSize: 14,
-                                            color: Default_Theme.primaryColor1
+                                            color: DefaultTheme.primaryColor1
                                                 .withOpacity(0.9),
                                           ),
                                         ),
                                       ),
                                       Text(
                                         subtitle,
-                                        style: Default_Theme.secondoryTextStyle
+                                        style: DefaultTheme.secondoryTextStyle
                                             .merge(
                                           TextStyle(
                                             overflow: TextOverflow.ellipsis,
                                             fontSize: 13,
-                                            color: Default_Theme.primaryColor1
+                                            color: DefaultTheme.primaryColor1
                                                 .withOpacity(0.5),
                                           ),
                                         ),
@@ -153,7 +153,7 @@ class _AlbumViewState extends State<AlbumView> {
                                                 style: OutlinedButton.styleFrom(
                                                   side: const BorderSide(
                                                     width: 2,
-                                                    color: Default_Theme
+                                                    color: DefaultTheme
                                                         .accentColor2,
                                                   ),
                                                 ),
@@ -189,7 +189,7 @@ class _AlbumViewState extends State<AlbumView> {
                                                 },
                                                 label: const Text(
                                                   "Play",
-                                                  style: Default_Theme
+                                                  style: DefaultTheme
                                                       .secondoryTextStyleMedium,
                                                 ),
                                                 icon: const Icon(
@@ -212,7 +212,7 @@ class _AlbumViewState extends State<AlbumView> {
                                                           .heart_solid)
                                                       : const Icon(
                                                           FontAwesome.heart),
-                                                  color: Default_Theme
+                                                  color: DefaultTheme
                                                       .accentColor2,
                                                 ),
                                               ),
@@ -260,10 +260,10 @@ class _AlbumViewState extends State<AlbumView> {
                       widget.album.name,
                       maxLines: 3,
                       textAlign: TextAlign.center,
-                      style: Default_Theme.secondoryTextStyleMedium.merge(
+                      style: DefaultTheme.secondoryTextStyleMedium.merge(
                         TextStyle(
                           fontSize: 20,
-                          color: Default_Theme.primaryColor1.withOpacity(0.8),
+                          color: DefaultTheme.primaryColor1.withOpacity(0.8),
                         ),
                       ),
                     ),

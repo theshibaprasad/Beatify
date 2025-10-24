@@ -1,8 +1,8 @@
-import 'package:Bloomee/blocs/lyrics/lyrics_cubit.dart';
-import 'package:Bloomee/model/lyrics_models.dart';
-import 'package:Bloomee/repository/Lyrics/lyrics.dart';
-import 'package:Bloomee/screens/widgets/sign_board_widget.dart';
-import 'package:Bloomee/theme_data/default.dart';
+import 'package:bloomee/blocs/lyrics/lyrics_cubit.dart';
+import 'package:bloomee/model/lyrics_models.dart';
+import 'package:bloomee/repository/Lyrics/lyrics.dart';
+import 'package:bloomee/screens/widgets/sign_board_widget.dart';
+import 'package:bloomee/theme_data/default.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icons_plus/icons_plus.dart';
@@ -29,17 +29,17 @@ class LyricsSearchDelegate extends SearchDelegate {
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(20))),
         backgroundColor: Color.fromARGB(255, 19, 19, 19),
-        iconTheme: IconThemeData(color: Default_Theme.primaryColor1),
+        iconTheme: IconThemeData(color: DefaultTheme.primaryColor1),
       ),
       textTheme: TextTheme(
         titleLarge: const TextStyle(
-          color: Default_Theme.primaryColor1,
-        ).merge(Default_Theme.secondoryTextStyleMedium),
+          color: DefaultTheme.primaryColor1,
+        ).merge(DefaultTheme.secondoryTextStyleMedium),
       ),
       inputDecorationTheme: InputDecorationTheme(
         hintStyle: TextStyle(
-          color: Default_Theme.primaryColor2.withOpacity(0.3),
-        ).merge(Default_Theme.secondoryTextStyle),
+          color: DefaultTheme.primaryColor2.withOpacity(0.3),
+        ).merge(DefaultTheme.secondoryTextStyle),
       ),
     );
   }
@@ -73,7 +73,7 @@ class LyricsSearchDelegate extends SearchDelegate {
         if (!snapshot.hasData || snapshot.data == null) {
           return const Center(
               child: CircularProgressIndicator(
-            color: Default_Theme.accentColor2,
+            color: DefaultTheme.accentColor2,
           ));
         } else if (snapshot.data!.isEmpty) {
           return const Center(
@@ -90,16 +90,16 @@ class LyricsSearchDelegate extends SearchDelegate {
                 title: Text(
                   lyrics[index].title,
                   style:
-                      const TextStyle(color: Default_Theme.primaryColor1).merge(
-                    Default_Theme.secondoryTextStyleMedium,
+                      const TextStyle(color: DefaultTheme.primaryColor1).merge(
+                    DefaultTheme.secondoryTextStyleMedium,
                   ),
                 ),
                 subtitle: Text(
                   lyrics[index].artist,
                   style: TextStyle(
-                          color: Default_Theme.primaryColor1.withOpacity(0.7))
+                          color: DefaultTheme.primaryColor1.withOpacity(0.7))
                       .merge(
-                    Default_Theme.secondoryTextStyle,
+                    DefaultTheme.secondoryTextStyle,
                   ),
                 ),
                 trailing: TextButton(
@@ -114,19 +114,19 @@ class LyricsSearchDelegate extends SearchDelegate {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(lyrics[index].title,
-                                    style: Default_Theme
+                                    style: DefaultTheme
                                         .secondoryTextStyleMedium
                                         .copyWith(
-                                      color: Default_Theme.primaryColor1
+                                      color: DefaultTheme.primaryColor1
                                           .withOpacity(0.8),
                                     )),
                                 Text(lyrics[index].artist,
                                     style: TextStyle(
-                                      color: Default_Theme.primaryColor1
+                                      color: DefaultTheme.primaryColor1
                                           .withOpacity(0.6),
                                       fontSize: 12,
                                     ).merge(
-                                      Default_Theme.secondoryTextStyle,
+                                      DefaultTheme.secondoryTextStyle,
                                     )),
                                 Text(
                                     "Synced: ${lyrics[index].lyricsSynced == null ? "No" : "Yes"}",
@@ -136,16 +136,16 @@ class LyricsSearchDelegate extends SearchDelegate {
                                           .withOpacity(0.7),
                                       fontSize: 12,
                                     ).merge(
-                                      Default_Theme.secondoryTextStyleMedium,
+                                      DefaultTheme.secondoryTextStyleMedium,
                                     )),
                               ],
                             ),
                             content: SingleChildScrollView(
                                 child: Text(
                               lyrics[index].lyricsPlain,
-                              style: Default_Theme.secondoryTextStyleMedium
+                              style: DefaultTheme.secondoryTextStyleMedium
                                   .copyWith(
-                                color: Default_Theme.primaryColor1
+                                color: DefaultTheme.primaryColor1
                                     .withOpacity(0.7),
                               ),
                             )),
@@ -184,7 +184,7 @@ class LyricsSearchDelegate extends SearchDelegate {
         if (!snapshot.hasData || snapshot.data == null) {
           return const Center(
               child: CircularProgressIndicator(
-            color: Default_Theme.accentColor2,
+            color: DefaultTheme.accentColor2,
           ));
         } else if (snapshot.data!.isEmpty) {
           return const Center(
@@ -201,16 +201,16 @@ class LyricsSearchDelegate extends SearchDelegate {
                 title: Text(
                   lyrics[index].title,
                   style:
-                      const TextStyle(color: Default_Theme.primaryColor1).merge(
-                    Default_Theme.secondoryTextStyleMedium,
+                      const TextStyle(color: DefaultTheme.primaryColor1).merge(
+                    DefaultTheme.secondoryTextStyleMedium,
                   ),
                 ),
                 subtitle: Text(
                   lyrics[index].artist,
                   style: TextStyle(
-                          color: Default_Theme.primaryColor1.withOpacity(0.7))
+                          color: DefaultTheme.primaryColor1.withOpacity(0.7))
                       .merge(
-                    Default_Theme.secondoryTextStyle,
+                    DefaultTheme.secondoryTextStyle,
                   ),
                 ),
                 trailing: TextButton(
@@ -225,19 +225,19 @@ class LyricsSearchDelegate extends SearchDelegate {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(lyrics[index].title,
-                                    style: Default_Theme
+                                    style: DefaultTheme
                                         .secondoryTextStyleMedium
                                         .copyWith(
-                                      color: Default_Theme.primaryColor1
+                                      color: DefaultTheme.primaryColor1
                                           .withOpacity(0.8),
                                     )),
                                 Text(lyrics[index].artist,
                                     style: TextStyle(
-                                      color: Default_Theme.primaryColor1
+                                      color: DefaultTheme.primaryColor1
                                           .withOpacity(0.6),
                                       fontSize: 12,
                                     ).merge(
-                                      Default_Theme.secondoryTextStyle,
+                                      DefaultTheme.secondoryTextStyle,
                                     )),
                                 Text(
                                     "Synced: ${lyrics[index].lyricsSynced == null ? "No" : "Yes"}",
@@ -247,16 +247,16 @@ class LyricsSearchDelegate extends SearchDelegate {
                                           .withOpacity(0.7),
                                       fontSize: 12,
                                     ).merge(
-                                      Default_Theme.secondoryTextStyleMedium,
+                                      DefaultTheme.secondoryTextStyleMedium,
                                     )),
                               ],
                             ),
                             content: SingleChildScrollView(
                                 child: Text(
                               lyrics[index].lyricsPlain,
-                              style: Default_Theme.secondoryTextStyleMedium
+                              style: DefaultTheme.secondoryTextStyleMedium
                                   .copyWith(
-                                color: Default_Theme.primaryColor1
+                                color: DefaultTheme.primaryColor1
                                     .withOpacity(0.7),
                               ),
                             )),

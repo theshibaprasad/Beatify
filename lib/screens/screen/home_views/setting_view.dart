@@ -1,14 +1,14 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:Bloomee/screens/screen/home_views/setting_views/about.dart';
-import 'package:Bloomee/screens/screen/home_views/setting_views/appui_setting.dart';
-import 'package:Bloomee/screens/screen/home_views/setting_views/storage_setting.dart';
-import 'package:Bloomee/screens/screen/home_views/setting_views/country_setting.dart';
-import 'package:Bloomee/screens/screen/home_views/setting_views/download_setting.dart';
-import 'package:Bloomee/screens/screen/home_views/setting_views/lastfm_setting.dart';
-import 'package:Bloomee/screens/screen/home_views/setting_views/player_setting.dart';
-import 'package:Bloomee/screens/screen/home_views/setting_views/updates_setting.dart';
+import 'package:bloomee/screens/screen/home_views/setting_views/about.dart';
+import 'package:bloomee/screens/screen/home_views/setting_views/appui_setting.dart';
+import 'package:bloomee/screens/screen/home_views/setting_views/storage_setting.dart';
+import 'package:bloomee/screens/screen/home_views/setting_views/country_setting.dart';
+import 'package:bloomee/screens/screen/home_views/setting_views/download_setting.dart';
+import 'package:bloomee/screens/screen/home_views/setting_views/lastfm_setting.dart';
+import 'package:bloomee/screens/screen/home_views/setting_views/player_setting.dart';
+import 'package:bloomee/screens/screen/home_views/setting_views/updates_setting.dart';
 import 'package:flutter/material.dart';
-import 'package:Bloomee/theme_data/default.dart';
+import 'package:bloomee/theme_data/default.dart';
 import 'package:icons_plus/icons_plus.dart';
 
 class SettingsView extends StatelessWidget {
@@ -22,10 +22,10 @@ class SettingsView extends StatelessWidget {
         title: Text(
           'Settings',
           style: const TextStyle(
-                  color: Default_Theme.primaryColor1,
+                  color: DefaultTheme.primaryColor1,
                   fontSize: 20,
                   fontWeight: FontWeight.bold)
-              .merge(Default_Theme.secondoryTextStyle),
+              .merge(DefaultTheme.secondoryTextStyle),
         ),
       ),
       body: ListView(
@@ -140,19 +140,19 @@ class SettingsView extends StatelessWidget {
       leading: Icon(
         icon,
         size: 27,
-        color: Default_Theme.primaryColor1,
+        color: DefaultTheme.primaryColor1,
       ),
       title: Text(
         title,
-        style: const TextStyle(color: Default_Theme.primaryColor1, fontSize: 16)
-            .merge(Default_Theme.secondoryTextStyleMedium),
+        style: const TextStyle(color: DefaultTheme.primaryColor1, fontSize: 16)
+            .merge(DefaultTheme.secondoryTextStyleMedium),
       ),
       subtitle: Text(
         subtitle,
         style: TextStyle(
-                color: Default_Theme.primaryColor1.withOpacity(0.5),
+                color: DefaultTheme.primaryColor1.withOpacity(0.5),
                 fontSize: 12)
-            .merge(Default_Theme.secondoryTextStyleMedium),
+            .merge(DefaultTheme.secondoryTextStyleMedium),
       ),
       onTap: () {
         if (onTap != null) {

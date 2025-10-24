@@ -1,13 +1,13 @@
-import 'package:Bloomee/blocs/mediaPlayer/bloomee_player_cubit.dart';
-import 'package:Bloomee/blocs/downloader/cubit/downloader_cubit.dart';
-import 'package:Bloomee/model/MediaPlaylistModel.dart';
-import 'package:Bloomee/model/songModel.dart';
-import 'package:Bloomee/screens/widgets/downloading_item.dart';
-import 'package:Bloomee/screens/widgets/more_bottom_sheet.dart';
-import 'package:Bloomee/screens/widgets/sign_board_widget.dart';
-import 'package:Bloomee/screens/widgets/song_tile.dart';
+import 'package:bloomee/blocs/mediaPlayer/bloomee_player_cubit.dart';
+import 'package:bloomee/blocs/downloader/cubit/downloader_cubit.dart';
+import 'package:bloomee/model/MediaPlaylistModel.dart';
+import 'package:bloomee/model/songModel.dart';
+import 'package:bloomee/screens/widgets/downloading_item.dart';
+import 'package:bloomee/screens/widgets/more_bottom_sheet.dart';
+import 'package:bloomee/screens/widgets/sign_board_widget.dart';
+import 'package:bloomee/screens/widgets/song_tile.dart';
 import 'package:flutter/material.dart';
-import 'package:Bloomee/theme_data/default.dart';
+import 'package:bloomee/theme_data/default.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icons_plus/icons_plus.dart';
 
@@ -66,7 +66,7 @@ class _OfflineScreenState extends State<OfflineScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Default_Theme.themeColor,
+        backgroundColor: DefaultTheme.themeColor,
         body: BlocBuilder<DownloaderCubit, DownloaderState>(
           builder: (context, state) {
             // This ensures the list is correctly populated on initial build
@@ -126,8 +126,8 @@ class _OfflineScreenState extends State<OfflineScreen> {
     return SliverAppBar(
       floating: true,
       pinned: true,
-      surfaceTintColor: Default_Theme.themeColor,
-      backgroundColor: Default_Theme.themeColor,
+      surfaceTintColor: DefaultTheme.themeColor,
+      backgroundColor: DefaultTheme.themeColor,
       title: AnimatedSwitcher(
         duration: const Duration(milliseconds: 350),
         transitionBuilder: (Widget child, Animation<double> animation) {
@@ -165,7 +165,7 @@ class _OfflineScreenState extends State<OfflineScreen> {
           child: IconButton(
             icon: Icon(
               _isSearch ? Icons.close : Icons.search,
-              color: Default_Theme.primaryColor1,
+              color: DefaultTheme.primaryColor1,
             ),
             onPressed: _toggleSearch,
           ),
@@ -182,8 +182,8 @@ class _OfflineScreenState extends State<OfflineScreen> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text("Offline",
-              style: Default_Theme.primaryTextStyle.merge(const TextStyle(
-                  fontSize: 34, color: Default_Theme.primaryColor1))),
+              style: DefaultTheme.primaryTextStyle.merge(const TextStyle(
+                  fontSize: 34, color: DefaultTheme.primaryColor1))),
           const Spacer(),
         ],
       ),
@@ -197,16 +197,16 @@ class _OfflineScreenState extends State<OfflineScreen> {
       child: TextField(
         controller: _searchController,
         autofocus: true,
-        cursorColor: Default_Theme.primaryColor1,
+        cursorColor: DefaultTheme.primaryColor1,
         decoration: InputDecoration(
           hintText: "Search your songs...",
           border: InputBorder.none,
           hintStyle:
-              TextStyle(color: Default_Theme.primaryColor1.withOpacity(0.7)),
+              TextStyle(color: DefaultTheme.primaryColor1.withOpacity(0.7)),
         ),
-        style: Default_Theme.secondoryTextStyle.merge(
+        style: DefaultTheme.secondoryTextStyle.merge(
           const TextStyle(
-            color: Default_Theme.primaryColor1,
+            color: DefaultTheme.primaryColor1,
             fontSize: 15.0,
           ),
         ),

@@ -1,6 +1,6 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:Bloomee/theme_data/default.dart';
+import 'package:bloomee/theme_data/default.dart';
 import 'package:icons_plus/icons_plus.dart';
 
 // ignore: must_be_immutable
@@ -41,7 +41,7 @@ class _LikeBtnWidgetState extends State<LikeBtnWidget> {
       },
       icon: widget.isPlaying
           ? heartIcon(
-              color: Default_Theme.accentColor1,
+              color: DefaultTheme.accentColor1,
               size: widget.iconSize,
               isliked: widget.isLiked)
           : heartIcon(isliked: widget.isLiked, size: widget.iconSize),
@@ -50,7 +50,7 @@ class _LikeBtnWidgetState extends State<LikeBtnWidget> {
 }
 
 Icon heartIcon(
-    {isliked = false, color = Default_Theme.accentColor2, size = 50}) {
+    {isliked = false, color = DefaultTheme.accentColor2, size = 50}) {
   return isliked
       ? Icon(
           AntDesign.heart_fill,

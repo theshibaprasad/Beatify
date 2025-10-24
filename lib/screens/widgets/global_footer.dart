@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:icons_plus/icons_plus.dart';
-import 'package:Bloomee/screens/widgets/mini_player_widget.dart';
+import 'package:bloomee/screens/widgets/mini_player_widget.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import '../../theme_data/default.dart';
 
@@ -33,8 +33,8 @@ class GlobalFooter extends StatelessWidget {
                   ),
                 ],
               ),
-        backgroundColor: Default_Theme.themeColor,
-        drawerScrimColor: Default_Theme.themeColor,
+        backgroundColor: DefaultTheme.themeColor,
+        drawerScrimColor: DefaultTheme.themeColor,
         bottomNavigationBar: SafeArea(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -145,7 +145,7 @@ class VerticalNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NavigationRail(
-      backgroundColor: Default_Theme.themeColor.withOpacity(0.3),
+      backgroundColor: DefaultTheme.themeColor.withOpacity(0.3),
       destinations: const [
         NavigationRailDestination(
             icon: Icon(MingCute.home_4_fill), label: Text('Home')),
@@ -165,8 +165,8 @@ class VerticalNavBar extends StatelessWidget {
       },
       groupAlignment: 0.0,
       unselectedIconTheme:
-          const IconThemeData(color: Default_Theme.primaryColor2),
-      indicatorColor: Default_Theme.accentColor2,
+          const IconThemeData(color: DefaultTheme.primaryColor2),
+      indicatorColor: DefaultTheme.accentColor2,
       indicatorShape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(15)),
       ),
@@ -186,14 +186,14 @@ class HorizontalNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return GNav(
       gap: 7.0,
-      tabBackgroundColor: Default_Theme.accentColor2.withOpacity(0.22),
-      color: Default_Theme.primaryColor2,
+      tabBackgroundColor: DefaultTheme.accentColor2.withOpacity(0.22),
+      color: DefaultTheme.primaryColor2,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      activeColor: Default_Theme.accentColor2,
-      textStyle: Default_Theme.secondoryTextStyleMedium.merge(
-          const TextStyle(color: Default_Theme.accentColor2, fontSize: 18)),
+      activeColor: DefaultTheme.accentColor2,
+      textStyle: DefaultTheme.secondoryTextStyleMedium.merge(
+          const TextStyle(color: DefaultTheme.accentColor2, fontSize: 18)),
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-      backgroundColor: Default_Theme.themeColor.withOpacity(0.3),
+      backgroundColor: DefaultTheme.themeColor.withOpacity(0.3),
       tabs: const [
         GButton(
           icon: MingCute.home_4_fill,

@@ -1,21 +1,21 @@
 import 'dart:developer';
-import 'package:Bloomee/blocs/explore/cubit/explore_cubits.dart';
-import 'package:Bloomee/blocs/internet_connectivity/cubit/connectivity_cubit.dart';
-import 'package:Bloomee/blocs/lastdotfm/lastdotfm_cubit.dart';
-import 'package:Bloomee/blocs/mediaPlayer/bloomee_player_cubit.dart';
-import 'package:Bloomee/blocs/notification/notification_cubit.dart';
-import 'package:Bloomee/blocs/settings_cubit/cubit/settings_cubit.dart';
-import 'package:Bloomee/model/MediaPlaylistModel.dart';
-import 'package:Bloomee/screens/screen/home_views/recents_view.dart';
-import 'package:Bloomee/screens/screen/home_views/setting_views/about.dart';
-import 'package:Bloomee/screens/widgets/more_bottom_sheet.dart';
-import 'package:Bloomee/screens/widgets/sign_board_widget.dart';
-import 'package:Bloomee/screens/widgets/song_tile.dart';
+import 'package:bloomee/blocs/explore/cubit/explore_cubits.dart';
+import 'package:bloomee/blocs/internet_connectivity/cubit/connectivity_cubit.dart';
+import 'package:bloomee/blocs/lastdotfm/lastdotfm_cubit.dart';
+import 'package:bloomee/blocs/mediaPlayer/bloomee_player_cubit.dart';
+import 'package:bloomee/blocs/notification/notification_cubit.dart';
+import 'package:bloomee/blocs/settings_cubit/cubit/settings_cubit.dart';
+import 'package:bloomee/model/MediaPlaylistModel.dart';
+import 'package:bloomee/screens/screen/home_views/recents_view.dart';
+import 'package:bloomee/screens/screen/home_views/setting_views/about.dart';
+import 'package:bloomee/screens/widgets/more_bottom_sheet.dart';
+import 'package:bloomee/screens/widgets/sign_board_widget.dart';
+import 'package:bloomee/screens/widgets/song_tile.dart';
 import 'package:flutter/material.dart';
-import 'package:Bloomee/screens/screen/home_views/notification_view.dart';
-import 'package:Bloomee/screens/screen/home_views/setting_view.dart';
-import 'package:Bloomee/screens/screen/home_views/timer_view.dart';
-import 'package:Bloomee/theme_data/default.dart';
+import 'package:bloomee/screens/screen/home_views/notification_view.dart';
+import 'package:bloomee/screens/screen/home_views/setting_view.dart';
+import 'package:bloomee/screens/screen/home_views/timer_view.dart';
+import 'package:bloomee/theme_data/default.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'chart/carousal_widget.dart';
@@ -102,7 +102,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                                       height: 60,
                                       width: 60,
                                       child: CircularProgressIndicator(
-                                        color: Default_Theme.accentColor2,
+                                        color: DefaultTheme.accentColor2,
                                       )),
                                 );
                               }
@@ -221,7 +221,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
               ],
             ),
           ),
-          backgroundColor: Default_Theme.themeColor,
+          backgroundColor: DefaultTheme.themeColor,
         ),
       ),
     );
@@ -237,14 +237,14 @@ class CustomDiscoverBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverAppBar(
       floating: true,
-      surfaceTintColor: Default_Theme.themeColor,
-      backgroundColor: Default_Theme.themeColor,
+      surfaceTintColor: DefaultTheme.themeColor,
+      backgroundColor: DefaultTheme.themeColor,
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text("Discover",
-              style: Default_Theme.primaryTextStyle.merge(const TextStyle(
-                  fontSize: 34, color: Default_Theme.primaryColor1))),
+              style: DefaultTheme.primaryTextStyle.merge(const TextStyle(
+                  fontSize: 34, color: DefaultTheme.primaryColor1))),
           const Spacer(),
           const NotificationIcon(),
           const SiteIcon(),
@@ -274,7 +274,7 @@ class NotificationIcon extends StatelessWidget {
                       builder: (context) => const NotificationView()));
             },
             icon: const Icon(MingCute.notification_line,
-                color: Default_Theme.primaryColor1, size: 30.0),
+                color: DefaultTheme.primaryColor1, size: 30.0),
           );
         }
         return badges.Badge(
@@ -282,14 +282,14 @@ class NotificationIcon extends StatelessWidget {
             padding: const EdgeInsets.all(1.5),
             child: Text(
               state.notifications.length.toString(),
-              style: Default_Theme.primaryTextStyle.merge(const TextStyle(
+              style: DefaultTheme.primaryTextStyle.merge(const TextStyle(
                   fontSize: 11,
                   fontWeight: FontWeight.bold,
-                  color: Default_Theme.primaryColor2)),
+                  color: DefaultTheme.primaryColor2)),
             ),
           ),
           badgeStyle: const badges.BadgeStyle(
-            badgeColor: Default_Theme.accentColor2,
+            badgeColor: DefaultTheme.accentColor2,
             shape: badges.BadgeShape.circle,
           ),
           position: badges.BadgePosition.topEnd(top: -10, end: -5),
@@ -303,7 +303,7 @@ class NotificationIcon extends StatelessWidget {
                       builder: (context) => const NotificationView()));
             },
             icon: const Icon(MingCute.notification_line,
-                color: Default_Theme.primaryColor1, size: 30.0),
+                color: DefaultTheme.primaryColor1, size: 30.0),
           ),
         );
       },
@@ -324,7 +324,7 @@ class TimerIcon extends StatelessWidget {
             MaterialPageRoute(builder: (context) => const TimerView()));
       },
       icon: const Icon(MingCute.stopwatch_line,
-          color: Default_Theme.primaryColor1, size: 30.0),
+          color: DefaultTheme.primaryColor1, size: 30.0),
     );
   }
 }
@@ -342,7 +342,7 @@ class SettingsIcon extends StatelessWidget {
             MaterialPageRoute(builder: (context) => const SettingsView()));
       },
       icon: const Icon(MingCute.settings_3_line,
-          color: Default_Theme.primaryColor1, size: 30.0),
+          color: DefaultTheme.primaryColor1, size: 30.0),
     );
   }
 }
@@ -360,7 +360,7 @@ class SiteIcon extends StatelessWidget {
             context, MaterialPageRoute(builder: (context) => const About()));
       },
       icon: const Icon(MingCute.flower_4_fill,
-          color: Default_Theme.primaryColor1, size: 28.0),
+          color: DefaultTheme.primaryColor1, size: 28.0),
     );
   }
 }

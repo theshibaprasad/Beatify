@@ -1,11 +1,11 @@
 import 'dart:async';
 import 'dart:io';
 import 'dart:ui';
-import 'package:Bloomee/blocs/mediaPlayer/bloomee_player_cubit.dart';
-import 'package:Bloomee/blocs/settings_cubit/cubit/settings_cubit.dart';
-import 'package:Bloomee/model/songModel.dart';
-import 'package:Bloomee/screens/widgets/toogle_btn.dart';
-import 'package:Bloomee/theme_data/default.dart';
+import 'package:bloomee/blocs/mediaPlayer/bloomee_player_cubit.dart';
+import 'package:bloomee/blocs/settings_cubit/cubit/settings_cubit.dart';
+import 'package:bloomee/model/songModel.dart';
+import 'package:bloomee/screens/widgets/toogle_btn.dart';
+import 'package:bloomee/theme_data/default.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
@@ -95,15 +95,15 @@ class _UpNextPanelState extends State<UpNextPanel> {
                         child: SizedBox(
                           width: 40,
                           child: Divider(
-                            color: Default_Theme.primaryColor2.withOpacity(0.8),
+                            color: DefaultTheme.primaryColor2.withOpacity(0.8),
                             thickness: 4,
                           ),
                         ),
                       ),
                       Text("Up Next",
-                          style: Default_Theme.secondoryTextStyleMedium.merge(
+                          style: DefaultTheme.secondoryTextStyleMedium.merge(
                               const TextStyle(
-                                  color: Default_Theme.primaryColor2,
+                                  color: DefaultTheme.primaryColor2,
                                   fontSize: 17,
                                   fontWeight: FontWeight.bold))),
                     ],
@@ -119,7 +119,7 @@ class _UpNextPanelState extends State<UpNextPanel> {
               child: Column(
                 children: [
                   Divider(
-                    color: Default_Theme.primaryColor2.withOpacity(0.5),
+                    color: DefaultTheme.primaryColor2.withOpacity(0.5),
                     thickness: 1.5,
                   ),
                   const SizedBox(height: 5),
@@ -137,9 +137,9 @@ class _UpNextPanelState extends State<UpNextPanel> {
                             builder: (context, snapshot) {
                               return Text(
                                   "${snapshot.data?.length ?? 0} Items in Queue",
-                                  style: Default_Theme.secondoryTextStyleMedium
+                                  style: DefaultTheme.secondoryTextStyleMedium
                                       .merge(TextStyle(
-                                          color: Default_Theme.primaryColor2
+                                          color: DefaultTheme.primaryColor2
                                               .withOpacity(0.5),
                                           fontSize: 14,
                                           fontWeight: FontWeight.bold)));

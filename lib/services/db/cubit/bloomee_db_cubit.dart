@@ -1,13 +1,13 @@
 import 'dart:developer';
-import 'package:Bloomee/screens/widgets/snackbar.dart';
-import 'package:Bloomee/theme_data/default.dart';
+import 'package:bloomee/screens/widgets/snackbar.dart';
+import 'package:bloomee/theme_data/default.dart';
 import 'package:audio_service/audio_service.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:Bloomee/model/MediaPlaylistModel.dart';
-import 'package:Bloomee/model/songModel.dart';
-import 'package:Bloomee/services/db/GlobalDB.dart';
-import 'package:Bloomee/services/db/bloomee_db_service.dart';
+import 'package:bloomee/model/MediaPlaylistModel.dart';
+import 'package:bloomee/model/songModel.dart';
+import 'package:bloomee/services/db/GlobalDB.dart';
+import 'package:bloomee/services/db/bloomee_db_service.dart';
 
 part 'bloomee_db_state.dart';
 
@@ -157,7 +157,7 @@ class BloomeeDBCubit extends Cubit<MediadbState> {
         duration: const Duration(seconds: 3),
         action: SnackBarAction(
           label: "Undo",
-          textColor: Default_Theme.accentColor2,
+          textColor: DefaultTheme.accentColor2,
           onPressed: () => addNewPlaylistToDB(mediaPlaylistDB, undo: true),
         ));
   }
@@ -172,7 +172,7 @@ class BloomeeDBCubit extends Cubit<MediadbState> {
           duration: const Duration(seconds: 3),
           action: SnackBarAction(
               label: "Undo",
-              textColor: Default_Theme.accentColor2,
+              textColor: DefaultTheme.accentColor2,
               onPressed: () => addMediaItemToPlaylist(
                   MediaItemDB2MediaItem(_mediaItemDB), mediaPlaylistDB,
                   undo: true)));

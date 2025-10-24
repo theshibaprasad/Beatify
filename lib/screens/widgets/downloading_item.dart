@@ -1,9 +1,9 @@
-import 'package:Bloomee/blocs/downloader/cubit/downloader_cubit.dart';
-import 'package:Bloomee/model/songModel.dart';
-import 'package:Bloomee/theme_data/default.dart';
-import 'package:Bloomee/utils/dload.dart';
-import 'package:Bloomee/utils/imgurl_formator.dart';
-import 'package:Bloomee/utils/load_Image.dart';
+import 'package:bloomee/blocs/downloader/cubit/downloader_cubit.dart';
+import 'package:bloomee/model/songModel.dart';
+import 'package:bloomee/theme_data/default.dart';
+import 'package:bloomee/utils/dload.dart';
+import 'package:bloomee/utils/imgurl_formator.dart';
+import 'package:bloomee/utils/load_image.dart';
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
 
@@ -71,9 +71,9 @@ class DownloadingCardWidget extends StatelessWidget {
           height: 40,
           child: CircularProgressIndicator(
             value: progress,
-            backgroundColor: Default_Theme.primaryColor2.withOpacity(0.2),
+            backgroundColor: DefaultTheme.primaryColor2.withOpacity(0.2),
             valueColor:
-                const AlwaysStoppedAnimation<Color>(Default_Theme.accentColor2),
+                const AlwaysStoppedAnimation<Color>(DefaultTheme.accentColor2),
             strokeWidth: 5,
           ),
         ),
@@ -103,10 +103,10 @@ class DownloadingCardWidget extends StatelessWidget {
             textAlign: TextAlign.start,
             overflow: TextOverflow.ellipsis,
             maxLines: 1,
-            style: Default_Theme.tertiaryTextStyle.merge(
+            style: DefaultTheme.tertiaryTextStyle.merge(
               const TextStyle(
                 fontWeight: FontWeight.w600,
-                color: Default_Theme.primaryColor1,
+                color: DefaultTheme.primaryColor1,
                 fontSize: 14,
               ),
             ),
@@ -117,9 +117,9 @@ class DownloadingCardWidget extends StatelessWidget {
             textAlign: TextAlign.start,
             overflow: TextOverflow.ellipsis,
             maxLines: 1,
-            style: Default_Theme.tertiaryTextStyle.merge(
+            style: DefaultTheme.tertiaryTextStyle.merge(
               TextStyle(
-                color: Default_Theme.primaryColor1.withOpacity(0.8),
+                color: DefaultTheme.primaryColor1.withOpacity(0.8),
                 fontSize: 13,
               ),
             ),
@@ -140,9 +140,9 @@ class DownloadingCardWidget extends StatelessWidget {
           const SizedBox(height: 4),
           Text(
             '${(status.progress * 100).toStringAsFixed(0)}%',
-            style: Default_Theme.secondoryTextStyle.copyWith(
+            style: DefaultTheme.secondoryTextStyle.copyWith(
               fontSize: 12,
-              color: Default_Theme.primaryColor1.withOpacity(0.8),
+              color: DefaultTheme.primaryColor1.withOpacity(0.8),
             ),
           ),
         ],

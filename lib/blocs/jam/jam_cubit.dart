@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:Bloomee/model/jam_models.dart';
-import 'package:Bloomee/model/songModel.dart';
-import 'package:Bloomee/services/jam_service.dart';
-import 'package:Bloomee/services/bloomeePlayer.dart';
+import 'package:bloomee/model/jam_models.dart';
+import 'package:bloomee/model/songModel.dart';
+import 'package:bloomee/services/jam_service.dart';
+import 'package:bloomee/services/bloomeePlayer.dart';
 
 // Events
 abstract class JamEvent extends Equatable {

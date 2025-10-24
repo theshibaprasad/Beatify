@@ -1,8 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:equatable/equatable.dart';
 
-import 'package:Bloomee/model/songModel.dart';
-import 'package:Bloomee/services/db/GlobalDB.dart';
+import 'package:bloomee/model/songModel.dart';
+import 'package:bloomee/services/db/GlobalDB.dart';
 
 class MediaPlaylist extends Equatable {
   final List<MediaItemModel> mediaItems;

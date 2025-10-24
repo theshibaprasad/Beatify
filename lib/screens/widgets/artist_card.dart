@@ -1,8 +1,8 @@
-import 'package:Bloomee/model/artist_onl_model.dart';
-import 'package:Bloomee/screens/screen/common_views/artist_view.dart';
-import 'package:Bloomee/theme_data/default.dart';
-import 'package:Bloomee/utils/imgurl_formator.dart';
-import 'package:Bloomee/utils/load_Image.dart';
+import 'package:bloomee/model/artist_onl_model.dart';
+import 'package:bloomee/screens/screen/common_views/artist_view.dart';
+import 'package:bloomee/theme_data/default.dart';
+import 'package:bloomee/utils/imgurl_formator.dart';
+import 'package:bloomee/utils/load_image.dart';
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
 
@@ -100,10 +100,10 @@ class ArtistCard extends StatelessWidget {
                       artist.name,
                       maxLines: 3,
                       textAlign: TextAlign.center,
-                      style: Default_Theme.secondoryTextStyleMedium
+                      style: DefaultTheme.secondoryTextStyleMedium
                           .merge(TextStyle(
                         fontSize: 14,
-                        color: Default_Theme.primaryColor1.withOpacity(0.9),
+                        color: DefaultTheme.primaryColor1.withOpacity(0.9),
                       )),
                     ),
                   ),

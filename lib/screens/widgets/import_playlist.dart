@@ -1,7 +1,7 @@
-import 'package:Bloomee/screens/widgets/sign_board_widget.dart';
-import 'package:Bloomee/screens/widgets/snackbar.dart';
-import 'package:Bloomee/theme_data/default.dart';
-import 'package:Bloomee/utils/external_list_importer.dart';
+import 'package:bloomee/screens/widgets/sign_board_widget.dart';
+import 'package:bloomee/screens/widgets/snackbar.dart';
+import 'package:bloomee/theme_data/default.dart';
+import 'package:bloomee/utils/external_list_importer.dart';
 import 'package:flutter/material.dart';
 
 class ImporterDialogWidget extends StatefulWidget {
@@ -94,8 +94,8 @@ class _ImporterDialogWidgetState extends State<ImporterDialogWidget> {
                               message,
                               style: const TextStyle(
                                       fontSize: 16,
-                                      color: Default_Theme.primaryColor1)
-                                  .merge(Default_Theme.secondoryTextStyle),
+                                      color: DefaultTheme.primaryColor1)
+                                  .merge(DefaultTheme.secondoryTextStyle),
                               maxLines: 2,
                               textAlign: TextAlign.center,
                               overflow: TextOverflow.ellipsis,

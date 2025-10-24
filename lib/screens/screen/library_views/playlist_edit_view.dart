@@ -1,11 +1,11 @@
 // Page for editing playlist title,description and reordering playlist items
 import 'dart:developer';
 import 'dart:ui';
-import 'package:Bloomee/model/songModel.dart';
-import 'package:Bloomee/screens/screen/library_views/cubit/current_playlist_cubit.dart';
-import 'package:Bloomee/screens/widgets/snackbar.dart';
-import 'package:Bloomee/screens/widgets/song_tile.dart';
-import 'package:Bloomee/theme_data/default.dart';
+import 'package:bloomee/model/songModel.dart';
+import 'package:bloomee/screens/screen/library_views/cubit/current_playlist_cubit.dart';
+import 'package:bloomee/screens/widgets/snackbar.dart';
+import 'package:bloomee/screens/widgets/song_tile.dart';
+import 'package:bloomee/theme_data/default.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icons_plus/icons_plus.dart';
@@ -62,14 +62,14 @@ class _PlaylistEditViewState extends State<PlaylistEditView> {
                 SliverAppBar(
                   floating: true,
                   centerTitle: true,
-                  surfaceTintColor: Default_Theme.themeColor,
-                  foregroundColor: Default_Theme.primaryColor1,
-                  backgroundColor: Default_Theme.themeColor,
+                  surfaceTintColor: DefaultTheme.themeColor,
+                  foregroundColor: DefaultTheme.primaryColor1,
+                  backgroundColor: DefaultTheme.themeColor,
                   title: Text("Edit Playlist",
-                      style: Default_Theme.secondoryTextStyleMedium.merge(
+                      style: DefaultTheme.secondoryTextStyleMedium.merge(
                           const TextStyle(
                               fontSize: 16,
-                              color: Default_Theme.primaryColor1))),
+                              color: DefaultTheme.primaryColor1))),
                   actions: [
                     Padding(
                       padding: const EdgeInsets.only(right: 8),
@@ -104,15 +104,15 @@ class _PlaylistEditViewState extends State<PlaylistEditView> {
                 //       controller: titleController,
                 //       cursorOpacityAnimates: true,
                 //       cursorRadius: const Radius.circular(10),
-                //       style: Default_Theme.secondoryTextStyleMedium.merge(
+                //       style: DefaultTheme.secondoryTextStyleMedium.merge(
                 //           const TextStyle(
                 //               fontSize: 22,
-                //               color: Default_Theme.primaryColor1)),
+                //               color: DefaultTheme.primaryColor1)),
                 //       decoration: const InputDecoration(
                 //         hintText: "Playlist Title",
-                //         hintStyle: Default_Theme.secondoryTextStyleMedium,
+                //         hintStyle: DefaultTheme.secondoryTextStyleMedium,
                 //         isDense: true,
-                //         labelStyle: Default_Theme.secondoryTextStyleMedium,
+                //         labelStyle: DefaultTheme.secondoryTextStyleMedium,
                 //       ),
                 //     ),
                 //   ),
@@ -126,7 +126,7 @@ class _PlaylistEditViewState extends State<PlaylistEditView> {
                 //           ? Text(
                 //               "Playlist already exist",
                 //               textAlign: TextAlign.center,
-                //               style: Default_Theme.secondoryTextStyleMedium
+                //               style: DefaultTheme.secondoryTextStyleMedium
                 //                   .merge(const TextStyle(
                 //                       fontSize: 14, color: Colors.redAccent)),
                 //             )
@@ -144,7 +144,7 @@ class _PlaylistEditViewState extends State<PlaylistEditView> {
                 //           ? Text(
                 //               "Title can't be empty",
                 //               textAlign: TextAlign.center,
-                //               style: Default_Theme.secondoryTextStyleMedium
+                //               style: DefaultTheme.secondoryTextStyleMedium
                 //                   .merge(const TextStyle(
                 //                       fontSize: 14, color: Colors.redAccent)),
                 //             )
@@ -159,10 +159,10 @@ class _PlaylistEditViewState extends State<PlaylistEditView> {
                     child: Text(
                       "Long press to reorder.",
                       textAlign: TextAlign.left,
-                      style: Default_Theme.secondoryTextStyleMedium.merge(
+                      style: DefaultTheme.secondoryTextStyleMedium.merge(
                           TextStyle(
                               fontSize: 14,
-                              color: Default_Theme.primaryColor1
+                              color: DefaultTheme.primaryColor1
                                   .withOpacity(0.6))),
                     ),
                   ),
@@ -266,7 +266,7 @@ Widget proxyDecorator(Widget child, int index, Animation<double> animation) {
         elevation: elevation,
         color: const Color.fromARGB(255, 0, 48, 66),
         borderRadius: BorderRadius.circular(12),
-        shadowColor: Default_Theme.themeColor,
+        shadowColor: DefaultTheme.themeColor,
         child: child,
       );
     },

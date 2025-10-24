@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:Bloomee/blocs/jam/jam_cubit.dart';
-import 'package:Bloomee/model/jam_models.dart';
-import 'package:Bloomee/screens/jam/create_jam_screen.dart';
-import 'package:Bloomee/screens/jam/join_jam_screen.dart';
-import 'package:Bloomee/screens/jam/jam_session_screen.dart';
-import 'package:Bloomee/theme_data/default.dart';
+import 'package:bloomee/blocs/jam/jam_cubit.dart';
+import 'package:bloomee/model/jam_models.dart';
+import 'package:bloomee/screens/jam/create_jam_screen.dart';
+import 'package:bloomee/screens/jam/join_jam_screen.dart';
+import 'package:bloomee/screens/jam/jam_session_screen.dart';
+import 'package:bloomee/theme_data/default.dart';
 
 class JamHomeScreen extends StatefulWidget {
   const JamHomeScreen({super.key});
@@ -24,7 +24,7 @@ class _JamHomeScreenState extends State<JamHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Default_Theme.primaryColor,
+      backgroundColor: DefaultTheme.primaryColor,
       appBar: AppBar(
         title: const Text(
           'Jam Sessions',
@@ -33,7 +33,7 @@ class _JamHomeScreenState extends State<JamHomeScreen> {
             fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: Default_Theme.accentColor2,
+        backgroundColor: DefaultTheme.accentColor2,
         elevation: 0,
         actions: [
           IconButton(
@@ -82,7 +82,7 @@ class _JamHomeScreenState extends State<JamHomeScreen> {
                         icon: const Icon(Icons.add),
                         label: const Text('Create Jam'),
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Default_Theme.accentColor2,
+                          backgroundColor: DefaultTheme.accentColor2,
                           foregroundColor: Colors.white,
                           padding: const EdgeInsets.symmetric(vertical: 12),
                         ),
@@ -95,7 +95,7 @@ class _JamHomeScreenState extends State<JamHomeScreen> {
                         icon: const Icon(Icons.group_add),
                         label: const Text('Join Jam'),
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Default_Theme.accentColor1,
+                          backgroundColor: DefaultTheme.accentColor1,
                           foregroundColor: Colors.white,
                           padding: const EdgeInsets.symmetric(vertical: 12),
                         ),
@@ -146,10 +146,10 @@ class _JamHomeScreenState extends State<JamHomeScreen> {
   Widget _buildSessionCard(BuildContext context, JamSession session) {
     return Card(
       margin: const EdgeInsets.only(bottom: 12),
-      color: Default_Theme.cardColor,
+      color: DefaultTheme.cardColor,
       child: ListTile(
         leading: CircleAvatar(
-          backgroundColor: Default_Theme.accentColor2,
+          backgroundColor: DefaultTheme.accentColor2,
           child: Text(
             session.name[0].toUpperCase(),
             style: const TextStyle(
@@ -206,7 +206,7 @@ class _JamHomeScreenState extends State<JamHomeScreen> {
             ? ElevatedButton(
                 onPressed: () => _joinSession(context, session),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Default_Theme.accentColor1,
+                  backgroundColor: DefaultTheme.accentColor1,
                   foregroundColor: Colors.white,
                 ),
                 child: const Text('Join'),

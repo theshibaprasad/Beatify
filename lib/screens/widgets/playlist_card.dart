@@ -1,9 +1,9 @@
-import 'package:Bloomee/model/playlist_onl_model.dart';
-import 'package:Bloomee/model/source_engines.dart';
-import 'package:Bloomee/screens/screen/common_views/playlist_view.dart';
-import 'package:Bloomee/theme_data/default.dart';
-import 'package:Bloomee/utils/imgurl_formator.dart';
-import 'package:Bloomee/utils/load_Image.dart';
+import 'package:bloomee/model/playlist_onl_model.dart';
+import 'package:bloomee/model/source_engines.dart';
+import 'package:bloomee/screens/screen/common_views/playlist_view.dart';
+import 'package:bloomee/theme_data/default.dart';
+import 'package:bloomee/utils/imgurl_formator.dart';
+import 'package:bloomee/utils/load_image.dart';
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:responsive_framework/responsive_framework.dart';
@@ -106,10 +106,10 @@ class PlaylistCard extends StatelessWidget {
                       playlist.name,
                       maxLines: 2,
                       textAlign: TextAlign.center,
-                      style: Default_Theme.secondoryTextStyleMedium
+                      style: DefaultTheme.secondoryTextStyleMedium
                           .merge(const TextStyle(
                         fontSize: 14,
-                        color: Default_Theme.primaryColor1,
+                        color: DefaultTheme.primaryColor1,
                       )),
                     ),
                   ),

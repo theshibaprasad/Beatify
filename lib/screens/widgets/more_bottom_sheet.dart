@@ -1,15 +1,15 @@
-import 'package:Bloomee/blocs/add_to_playlist/cubit/add_to_playlist_cubit.dart';
-import 'package:Bloomee/blocs/downloader/cubit/downloader_cubit.dart';
-import 'package:Bloomee/blocs/mediaPlayer/bloomee_player_cubit.dart';
-import 'package:Bloomee/model/songModel.dart';
-import 'package:Bloomee/routes_and_consts/global_str_consts.dart';
-import 'package:Bloomee/screens/widgets/snackbar.dart';
-import 'package:Bloomee/screens/widgets/song_tile.dart';
-import 'package:Bloomee/services/db/GlobalDB.dart';
-import 'package:Bloomee/services/db/bloomee_db_service.dart';
-import 'package:Bloomee/services/db/cubit/bloomee_db_cubit.dart';
-import 'package:Bloomee/theme_data/default.dart';
-import 'package:Bloomee/services/import_export_service.dart';
+import 'package:bloomee/blocs/add_to_playlist/cubit/add_to_playlist_cubit.dart';
+import 'package:bloomee/blocs/downloader/cubit/downloader_cubit.dart';
+import 'package:bloomee/blocs/mediaPlayer/bloomee_player_cubit.dart';
+import 'package:bloomee/model/songModel.dart';
+import 'package:bloomee/routes_and_consts/global_str_consts.dart';
+import 'package:bloomee/screens/widgets/snackbar.dart';
+import 'package:bloomee/screens/widgets/song_tile.dart';
+import 'package:bloomee/services/db/GlobalDB.dart';
+import 'package:bloomee/services/db/bloomee_db_service.dart';
+import 'package:bloomee/services/db/cubit/bloomee_db_cubit.dart';
+import 'package:bloomee/theme_data/default.dart';
+import 'package:bloomee/services/import_export_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -71,7 +71,7 @@ void showMoreBottomSheet(
                   opacity: 0.5,
                   child: Divider(
                     thickness: 2,
-                    color: Default_Theme.primaryColor1,
+                    color: DefaultTheme.primaryColor1,
                   ),
                 ),
               ),
@@ -79,13 +79,13 @@ void showMoreBottomSheet(
                   ? ListTile(
                       leading: const Icon(
                         MingCute.play_circle_fill,
-                        color: Default_Theme.primaryColor1,
+                        color: DefaultTheme.primaryColor1,
                         size: 28,
                       ),
                       title: const Text(
                         'Play with Mix',
                         style: TextStyle(
-                            color: Default_Theme.primaryColor1,
+                            color: DefaultTheme.primaryColor1,
                             fontFamily: "Unageo",
                             fontSize: 17,
                             fontWeight: FontWeight.w400),
@@ -105,13 +105,13 @@ void showMoreBottomSheet(
                   ? ListTile(
                       leading: const Icon(
                         MingCute.square_arrow_right_line,
-                        color: Default_Theme.primaryColor1,
+                        color: DefaultTheme.primaryColor1,
                         size: 28,
                       ),
                       title: const Text(
                         'Play Next',
                         style: TextStyle(
-                            color: Default_Theme.primaryColor1,
+                            color: DefaultTheme.primaryColor1,
                             fontFamily: "Unageo",
                             fontSize: 17,
                             fontWeight: FontWeight.w400),
@@ -131,13 +131,13 @@ void showMoreBottomSheet(
                   ? ListTile(
                       leading: const Icon(
                         MingCute.playlist_2_line,
-                        color: Default_Theme.primaryColor1,
+                        color: DefaultTheme.primaryColor1,
                         size: 28,
                       ),
                       title: const Text(
                         'Add to Queue',
                         style: TextStyle(
-                            color: Default_Theme.primaryColor1,
+                            color: DefaultTheme.primaryColor1,
                             fontFamily: "Unageo",
                             fontSize: 17,
                             fontWeight: FontWeight.w400),
@@ -156,13 +156,13 @@ void showMoreBottomSheet(
               ListTile(
                 leading: const Icon(
                   MingCute.heart_fill,
-                  color: Default_Theme.primaryColor1,
+                  color: DefaultTheme.primaryColor1,
                   size: 28,
                 ),
                 title: const Text(
                   'Add to Favorites',
                   style: TextStyle(
-                      color: Default_Theme.primaryColor1,
+                      color: DefaultTheme.primaryColor1,
                       fontFamily: "Unageo",
                       fontSize: 17,
                       fontWeight: FontWeight.w400),
@@ -178,13 +178,13 @@ void showMoreBottomSheet(
               ListTile(
                 leading: const Icon(
                   MingCute.add_circle_fill,
-                  color: Default_Theme.primaryColor1,
+                  color: DefaultTheme.primaryColor1,
                   size: 28,
                 ),
                 title: const Text(
                   'Add to Playlist',
                   style: TextStyle(
-                      color: Default_Theme.primaryColor1,
+                      color: DefaultTheme.primaryColor1,
                       fontFamily: "Unageo",
                       fontSize: 17,
                       fontWeight: FontWeight.w400),
@@ -198,13 +198,13 @@ void showMoreBottomSheet(
               ListTile(
                 leading: const Icon(
                   Icons.share,
-                  color: Default_Theme.primaryColor1,
+                  color: DefaultTheme.primaryColor1,
                   size: 28,
                 ),
                 title: const Text(
                   'Share',
                   style: TextStyle(
-                      color: Default_Theme.primaryColor1,
+                      color: DefaultTheme.primaryColor1,
                       fontFamily: "Unageo",
                       fontSize: 17,
                       fontWeight: FontWeight.w400),
@@ -222,13 +222,13 @@ void showMoreBottomSheet(
                   ? ListTile(
                       leading: const Icon(
                         Icons.offline_pin_rounded,
-                        color: Default_Theme.primaryColor1,
+                        color: DefaultTheme.primaryColor1,
                         size: 28,
                       ),
                       title: const Text(
                         'Available Offline',
                         style: TextStyle(
-                            color: Default_Theme.primaryColor1,
+                            color: DefaultTheme.primaryColor1,
                             fontFamily: "Unageo",
                             fontSize: 17,
                             fontWeight: FontWeight.w400),
@@ -241,13 +241,13 @@ void showMoreBottomSheet(
                   : ListTile(
                       leading: const Icon(
                         MingCute.download_2_fill,
-                        color: Default_Theme.primaryColor1,
+                        color: DefaultTheme.primaryColor1,
                         size: 28,
                       ),
                       title: const Text(
                         'Download',
                         style: TextStyle(
-                            color: Default_Theme.primaryColor1,
+                            color: DefaultTheme.primaryColor1,
                             fontFamily: "Unageo",
                             fontSize: 17,
                             fontWeight: FontWeight.w400),
@@ -261,13 +261,13 @@ void showMoreBottomSheet(
               ListTile(
                 leading: const Icon(
                   MingCute.external_link_line,
-                  color: Default_Theme.primaryColor1,
+                  color: DefaultTheme.primaryColor1,
                   size: 28,
                 ),
                 title: const Text(
                   'Open original link',
                   style: TextStyle(
-                      color: Default_Theme.primaryColor1,
+                      color: DefaultTheme.primaryColor1,
                       fontFamily: "Unageo",
                       fontSize: 17,
                       fontWeight: FontWeight.w400),
@@ -282,13 +282,13 @@ void showMoreBottomSheet(
                 child: ListTile(
                   leading: const Icon(
                     MingCute.delete_2_fill,
-                    color: Default_Theme.primaryColor1,
+                    color: DefaultTheme.primaryColor1,
                     size: 28,
                   ),
                   title: const Text(
                     'Delete',
                     style: TextStyle(
-                        color: Default_Theme.primaryColor1,
+                        color: DefaultTheme.primaryColor1,
                         fontFamily: "Unageo",
                         fontSize: 17,
                         fontWeight: FontWeight.w400),

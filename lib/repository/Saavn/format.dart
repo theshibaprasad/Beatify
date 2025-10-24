@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:developer';
 import 'dart:typed_data';
 import 'package:dart_des/dart_des.dart';
-import 'package:Bloomee/utils/extentions.dart';
+import 'package:bloomee/utils/extentions.dart';
 
 String getImageUrl(String? imageUrl, {String quality = 'high'}) {
   if (imageUrl == null) return '';

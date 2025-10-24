@@ -1,15 +1,15 @@
-import 'package:Bloomee/blocs/artist_view/artist_cubit.dart';
-import 'package:Bloomee/blocs/mediaPlayer/bloomee_player_cubit.dart';
-import 'package:Bloomee/model/artist_onl_model.dart';
-import 'package:Bloomee/model/source_engines.dart';
-import 'package:Bloomee/screens/screen/common_views/album_view.dart';
-import 'package:Bloomee/screens/widgets/more_bottom_sheet.dart';
-import 'package:Bloomee/screens/widgets/sign_board_widget.dart';
-import 'package:Bloomee/screens/widgets/snackbar.dart';
-import 'package:Bloomee/screens/widgets/song_tile.dart';
-import 'package:Bloomee/theme_data/default.dart';
-import 'package:Bloomee/utils/imgurl_formator.dart';
-import 'package:Bloomee/utils/load_Image.dart';
+import 'package:bloomee/blocs/artist_view/artist_cubit.dart';
+import 'package:bloomee/blocs/mediaPlayer/bloomee_player_cubit.dart';
+import 'package:bloomee/model/artist_onl_model.dart';
+import 'package:bloomee/model/source_engines.dart';
+import 'package:bloomee/screens/screen/common_views/album_view.dart';
+import 'package:bloomee/screens/widgets/more_bottom_sheet.dart';
+import 'package:bloomee/screens/widgets/sign_board_widget.dart';
+import 'package:bloomee/screens/widgets/snackbar.dart';
+import 'package:bloomee/screens/widgets/song_tile.dart';
+import 'package:bloomee/theme_data/default.dart';
+import 'package:bloomee/utils/imgurl_formator.dart';
+import 'package:bloomee/utils/load_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icons_plus/icons_plus.dart';
@@ -105,13 +105,13 @@ class _ArtistViewState extends State<ArtistView> {
                                         Text(
                                           widget.artist.name,
                                           maxLines: 3,
-                                          style: Default_Theme
+                                          style: DefaultTheme
                                               .secondoryTextStyleMedium
                                               .merge(
                                             TextStyle(
                                               overflow: TextOverflow.ellipsis,
                                               fontSize: 18,
-                                              color: Default_Theme.primaryColor1
+                                              color: DefaultTheme.primaryColor1
                                                   .withOpacity(0.8),
                                             ),
                                           ),
@@ -120,14 +120,14 @@ class _ArtistViewState extends State<ArtistView> {
                                                 state.artist.description != ''
                                             ? Text(
                                                 state.artist.description ?? "",
-                                                style: Default_Theme
+                                                style: DefaultTheme
                                                     .secondoryTextStyle
                                                     .merge(
                                                   TextStyle(
                                                     overflow:
                                                         TextOverflow.ellipsis,
                                                     fontSize: 13,
-                                                    color: Default_Theme
+                                                    color: DefaultTheme
                                                         .primaryColor1
                                                         .withOpacity(0.5),
                                                   ),
@@ -150,7 +150,7 @@ class _ArtistViewState extends State<ArtistView> {
                                                       OutlinedButton.styleFrom(
                                                     side: const BorderSide(
                                                       width: 2,
-                                                      color: Default_Theme
+                                                      color: DefaultTheme
                                                           .accentColor2,
                                                     ),
                                                   ),
@@ -186,7 +186,7 @@ class _ArtistViewState extends State<ArtistView> {
                                                   },
                                                   label: const Text(
                                                     "Play",
-                                                    style: Default_Theme
+                                                    style: DefaultTheme
                                                         .secondoryTextStyleMedium,
                                                   ),
                                                   icon: const Icon(
@@ -210,7 +210,7 @@ class _ArtistViewState extends State<ArtistView> {
                                                             .heart_solid)
                                                         : const Icon(
                                                             FontAwesome.heart),
-                                                    color: Default_Theme
+                                                    color: DefaultTheme
                                                         .accentColor2,
                                                   ),
                                                 ),
@@ -250,7 +250,7 @@ class _ArtistViewState extends State<ArtistView> {
                   ),
                   SliverToBoxAdapter(
                     child: TabBar(
-                      labelColor: Default_Theme.primaryColor1,
+                      labelColor: DefaultTheme.primaryColor1,
                       labelStyle: const TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
@@ -258,8 +258,8 @@ class _ArtistViewState extends State<ArtistView> {
                       ),
                       dividerColor: Colors.transparent,
                       unselectedLabelColor:
-                          Default_Theme.primaryColor1.withOpacity(0.5),
-                      indicatorColor: Default_Theme.primaryColor1,
+                          DefaultTheme.primaryColor1.withOpacity(0.5),
+                      indicatorColor: DefaultTheme.primaryColor1,
                       tabs: const [
                         Tab(
                           text: "Top Songs",
@@ -360,13 +360,13 @@ class _ArtistViewState extends State<ArtistView> {
                                         title: Text(
                                           maxLines: 1,
                                           state.artist.albums[index].name,
-                                          style: Default_Theme
+                                          style: DefaultTheme
                                               .secondoryTextStyleMedium
                                               .merge(
                                             TextStyle(
                                               fontSize: 14,
                                               overflow: TextOverflow.ellipsis,
-                                              color: Default_Theme.primaryColor1
+                                              color: DefaultTheme.primaryColor1
                                                   .withOpacity(0.9),
                                             ),
                                           ),
@@ -376,12 +376,12 @@ class _ArtistViewState extends State<ArtistView> {
                                                   .description ??
                                               "",
                                           maxLines: 1,
-                                          style: Default_Theme
+                                          style: DefaultTheme
                                               .secondoryTextStyleMedium
                                               .merge(
                                             TextStyle(
                                               fontSize: 12,
-                                              color: Default_Theme.primaryColor1
+                                              color: DefaultTheme.primaryColor1
                                                   .withOpacity(0.6),
                                               overflow: TextOverflow.ellipsis,
                                             ),

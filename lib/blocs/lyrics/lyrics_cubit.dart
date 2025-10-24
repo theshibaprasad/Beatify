@@ -1,12 +1,12 @@
 import 'dart:async';
 import 'dart:developer';
-import 'package:Bloomee/blocs/mediaPlayer/bloomee_player_cubit.dart';
-import 'package:Bloomee/model/lyrics_models.dart';
-import 'package:Bloomee/model/songModel.dart';
-import 'package:Bloomee/repository/Lyrics/lyrics.dart';
-import 'package:Bloomee/routes_and_consts/global_conts.dart';
-import 'package:Bloomee/routes_and_consts/global_str_consts.dart';
-import 'package:Bloomee/services/db/bloomee_db_service.dart';
+import 'package:bloomee/blocs/mediaPlayer/bloomee_player_cubit.dart';
+import 'package:bloomee/model/lyrics_models.dart';
+import 'package:bloomee/model/songModel.dart';
+import 'package:bloomee/repository/Lyrics/lyrics.dart';
+import 'package:bloomee/routes_and_consts/global_conts.dart';
+import 'package:bloomee/routes_and_consts/global_str_consts.dart';
+import 'package:bloomee/services/db/bloomee_db_service.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 

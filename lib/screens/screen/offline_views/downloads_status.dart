@@ -1,6 +1,6 @@
-import 'package:Bloomee/screens/widgets/sign_board_widget.dart';
+import 'package:bloomee/screens/widgets/sign_board_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:Bloomee/theme_data/default.dart';
+import 'package:bloomee/theme_data/default.dart';
 import 'package:icons_plus/icons_plus.dart';
 
 class DownloadsView extends StatelessWidget {
@@ -14,10 +14,10 @@ class DownloadsView extends StatelessWidget {
         title: Text(
           'Downloads',
           style: const TextStyle(
-                  color: Default_Theme.primaryColor1,
+                  color: DefaultTheme.primaryColor1,
                   fontSize: 20,
                   fontWeight: FontWeight.bold)
-              .merge(Default_Theme.secondoryTextStyle),
+              .merge(DefaultTheme.secondoryTextStyle),
         ),
       ),
       body: const Center(

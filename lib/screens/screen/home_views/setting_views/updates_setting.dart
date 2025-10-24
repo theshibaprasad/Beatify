@@ -1,8 +1,8 @@
-import 'package:Bloomee/blocs/settings_cubit/cubit/settings_cubit.dart';
-import 'package:Bloomee/screens/screen/home_views/setting_views/check_update_view.dart';
-import 'package:Bloomee/screens/widgets/setting_tile.dart';
+import 'package:bloomee/blocs/settings_cubit/cubit/settings_cubit.dart';
+import 'package:bloomee/screens/screen/home_views/setting_views/check_update_view.dart';
+import 'package:bloomee/screens/widgets/setting_tile.dart';
 import 'package:flutter/material.dart';
-import 'package:Bloomee/theme_data/default.dart';
+import 'package:bloomee/theme_data/default.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class UpdatesSettings extends StatelessWidget {
@@ -16,10 +16,10 @@ class UpdatesSettings extends StatelessWidget {
         title: Text(
           'Updates',
           style: const TextStyle(
-                  color: Default_Theme.primaryColor1,
+                  color: DefaultTheme.primaryColor1,
                   fontSize: 20,
                   fontWeight: FontWeight.bold)
-              .merge(Default_Theme.secondoryTextStyle),
+              .merge(DefaultTheme.secondoryTextStyle),
         ),
       ),
       body: BlocBuilder<SettingsCubit, SettingsState>(
@@ -43,15 +43,15 @@ class UpdatesSettings extends StatelessWidget {
                   subtitle: Text(
                     "Get notified when new updates are available in app start up.",
                     style: TextStyle(
-                            color: Default_Theme.primaryColor1.withOpacity(0.5),
+                            color: DefaultTheme.primaryColor1.withOpacity(0.5),
                             fontSize: 12.5)
-                        .merge(Default_Theme.secondoryTextStyleMedium),
+                        .merge(DefaultTheme.secondoryTextStyleMedium),
                   ),
                   title: Text(
                     "Auto update notify",
                     style: const TextStyle(
-                            color: Default_Theme.primaryColor1, fontSize: 17)
-                        .merge(Default_Theme.secondoryTextStyleMedium),
+                            color: DefaultTheme.primaryColor1, fontSize: 17)
+                        .merge(DefaultTheme.secondoryTextStyleMedium),
                   ),
                   onChanged: (value) {
                     context.read<SettingsCubit>().setAutoUpdateNotify(value);

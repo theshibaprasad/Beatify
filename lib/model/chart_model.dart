@@ -1,4 +1,4 @@
-import 'package:Bloomee/services/db/GlobalDB.dart';
+import 'package:bloomee/services/db/GlobalDB.dart';
 
 class ChartModel {
   final String chartName;

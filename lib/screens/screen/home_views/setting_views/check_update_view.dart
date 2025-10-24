@@ -1,7 +1,7 @@
-import 'package:Bloomee/services/bloomeeUpdaterTools.dart';
+import 'package:bloomee/services/bloomeeUpdaterTools.dart';
 import 'package:flutter/material.dart';
-import 'package:Bloomee/theme_data/default.dart';
-import 'package:Bloomee/utils/url_launcher.dart';
+import 'package:bloomee/theme_data/default.dart';
+import 'package:bloomee/utils/url_launcher.dart';
 import 'package:icons_plus/icons_plus.dart';
 
 class CheckUpdateView extends StatelessWidget {
@@ -15,10 +15,10 @@ class CheckUpdateView extends StatelessWidget {
         title: Text(
           'Check for Updates',
           style: const TextStyle(
-                  color: Default_Theme.primaryColor1,
+                  color: DefaultTheme.primaryColor1,
                   fontSize: 20,
                   fontWeight: FontWeight.bold)
-              .merge(Default_Theme.secondoryTextStyle),
+              .merge(DefaultTheme.secondoryTextStyle),
         ),
       ),
       body: Center(
@@ -34,8 +34,8 @@ class CheckUpdateView extends StatelessWidget {
                     Text(
                       'Bloomee🌸 is up-to-date!!!',
                       style: const TextStyle(
-                              color: Default_Theme.accentColor2, fontSize: 20)
-                          .merge(Default_Theme.secondoryTextStyleMedium),
+                              color: DefaultTheme.accentColor2, fontSize: 20)
+                          .merge(DefaultTheme.secondoryTextStyleMedium),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(5.0),
@@ -59,7 +59,7 @@ class CheckUpdateView extends StatelessWidget {
                                 child: Text(
                                   "View Latest Pre-Release",
                                   style: const TextStyle(fontSize: 17).merge(
-                                      Default_Theme.secondoryTextStyleMedium),
+                                      DefaultTheme.secondoryTextStyleMedium),
                                 ),
                               ),
                             ],
@@ -73,10 +73,10 @@ class CheckUpdateView extends StatelessWidget {
                       child: Text(
                         'Current Version: ${snapshot.data?["currVer"]} + ${snapshot.data?["currBuild"]}',
                         style: TextStyle(
-                                color: Default_Theme.primaryColor2
+                                color: DefaultTheme.primaryColor2
                                     .withOpacity(0.5),
                                 fontSize: 12)
-                            .merge(Default_Theme.tertiaryTextStyle),
+                            .merge(DefaultTheme.tertiaryTextStyle),
                       ),
                     ),
                   ],
@@ -89,8 +89,8 @@ class CheckUpdateView extends StatelessWidget {
                     Text(
                       'New Version of Bloomee🌸 is now available!!',
                       style: const TextStyle(
-                              color: Default_Theme.accentColor2, fontSize: 20)
-                          .merge(Default_Theme.tertiaryTextStyle),
+                              color: DefaultTheme.accentColor2, fontSize: 20)
+                          .merge(DefaultTheme.tertiaryTextStyle),
                       textAlign: TextAlign.center,
                     ),
                     Padding(
@@ -98,10 +98,10 @@ class CheckUpdateView extends StatelessWidget {
                       child: Text(
                         'Version: ${snapshot.data?["newVer"]}+ ${snapshot.data?["newBuild"]}',
                         style: TextStyle(
-                                color: Default_Theme.primaryColor1
+                                color: DefaultTheme.primaryColor1
                                     .withOpacity(0.8),
                                 fontSize: 16)
-                            .merge(Default_Theme.tertiaryTextStyle),
+                            .merge(DefaultTheme.tertiaryTextStyle),
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -121,7 +121,7 @@ class CheckUpdateView extends StatelessWidget {
                               Text(
                                 "Download Now",
                                 style: const TextStyle(fontSize: 17).merge(
-                                    Default_Theme.secondoryTextStyleMedium),
+                                    DefaultTheme.secondoryTextStyleMedium),
                               ),
                             ],
                           ),
@@ -134,10 +134,10 @@ class CheckUpdateView extends StatelessWidget {
                       child: Text(
                         'Current Version: ${snapshot.data?["currVer"]} + ${snapshot.data?["currBuild"]}',
                         style: TextStyle(
-                                color: Default_Theme.primaryColor2
+                                color: DefaultTheme.primaryColor2
                                     .withOpacity(0.5),
                                 fontSize: 12)
-                            .merge(Default_Theme.tertiaryTextStyle),
+                            .merge(DefaultTheme.tertiaryTextStyle),
                       ),
                     ),
                   ],
@@ -153,7 +153,7 @@ class CheckUpdateView extends StatelessWidget {
                         height: 50,
                         width: 50,
                         child: CircularProgressIndicator(
-                          color: Default_Theme.accentColor2,
+                          color: DefaultTheme.accentColor2,
                         )),
                   ),
                   LayoutBuilder(
@@ -163,9 +163,9 @@ class CheckUpdateView extends StatelessWidget {
                         child: Text(
                             'Checking if newer version are availible or not!',
                             style: const TextStyle(
-                                    color: Default_Theme.accentColor2,
+                                    color: DefaultTheme.accentColor2,
                                     fontSize: 20)
-                                .merge(Default_Theme.tertiaryTextStyle),
+                                .merge(DefaultTheme.tertiaryTextStyle),
                             textAlign: TextAlign.center),
                       );
                     },

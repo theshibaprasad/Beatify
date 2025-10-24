@@ -1,6 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
-import 'package:Bloomee/theme_data/default.dart';
+import 'package:bloomee/theme_data/default.dart';
 import 'package:flutter/material.dart';
 
 class SettingTile extends StatelessWidget {
@@ -23,15 +23,15 @@ class SettingTile extends StatelessWidget {
       enabled: onTap != null,
       title: Text(
         title,
-        style: const TextStyle(color: Default_Theme.primaryColor1, fontSize: 16)
-            .merge(Default_Theme.secondoryTextStyleMedium),
+        style: const TextStyle(color: DefaultTheme.primaryColor1, fontSize: 16)
+            .merge(DefaultTheme.secondoryTextStyleMedium),
       ),
       subtitle: Text(
         subtitle,
         style: TextStyle(
-                color: Default_Theme.primaryColor1.withOpacity(0.5),
+                color: DefaultTheme.primaryColor1.withOpacity(0.5),
                 fontSize: 12)
-            .merge(Default_Theme.secondoryTextStyleMedium),
+            .merge(DefaultTheme.secondoryTextStyleMedium),
       ),
       onTap: () {
         onTap?.call();

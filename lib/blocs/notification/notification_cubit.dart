@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'dart:developer';
 
-import 'package:Bloomee/services/bloomeeUpdaterTools.dart';
-import 'package:Bloomee/services/db/GlobalDB.dart';
-import 'package:Bloomee/services/db/bloomee_db_service.dart';
+import 'package:bloomee/services/bloomeeUpdaterTools.dart';
+import 'package:bloomee/services/db/GlobalDB.dart';
+import 'package:bloomee/services/db/bloomee_db_service.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 

@@ -1,7 +1,7 @@
 import 'dart:developer';
 import 'dart:io';
-import 'package:Bloomee/model/songModel.dart';
-import 'package:Bloomee/routes_and_consts/global_conts.dart';
+import 'package:bloomee/model/songModel.dart';
+import 'package:bloomee/routes_and_consts/global_conts.dart';
 import 'package:dart_discord_rpc/dart_discord_rpc.dart';
 
 class DiscordService {

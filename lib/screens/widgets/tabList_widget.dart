@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:Bloomee/screens/widgets/paging_scroll.dart';
+import 'package:bloomee/screens/widgets/paging_scroll.dart';
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:responsive_framework/responsive_framework.dart';
@@ -26,9 +26,9 @@ class CategoryLabel extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Text(
               category,
-              style: Default_Theme.secondoryTextStyle.merge(
+              style: DefaultTheme.secondoryTextStyle.merge(
                 const TextStyle(
-                  color: Default_Theme.accentColor2,
+                  color: DefaultTheme.accentColor2,
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
                 ),

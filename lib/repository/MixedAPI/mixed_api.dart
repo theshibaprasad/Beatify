@@ -1,9 +1,9 @@
 import 'dart:developer';
-import 'package:Bloomee/model/saavnModel.dart';
-import 'package:Bloomee/model/songModel.dart';
-import 'package:Bloomee/model/yt_music_model.dart';
-import 'package:Bloomee/repository/Saavn/saavn_api.dart';
-import 'package:Bloomee/repository/Youtube/ytm/ytmusic.dart';
+import 'package:bloomee/model/saavnModel.dart';
+import 'package:bloomee/model/songModel.dart';
+import 'package:bloomee/model/yt_music_model.dart';
+import 'package:bloomee/repository/Saavn/saavn_api.dart';
+import 'package:bloomee/repository/Youtube/ytm/ytmusic.dart';
 import 'package:fuzzywuzzy/fuzzywuzzy.dart' as fw;
 import 'package:fuzzywuzzy/ratios/partial_ratio.dart';
 import 'package:fuzzywuzzy/ratios/simple_ratio.dart';

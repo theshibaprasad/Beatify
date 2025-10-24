@@ -1,13 +1,13 @@
-import 'package:Bloomee/model/album_onl_model.dart';
-import 'package:Bloomee/model/artist_onl_model.dart';
-import 'package:Bloomee/model/saavnModel.dart';
-import 'package:Bloomee/model/songModel.dart';
-import 'package:Bloomee/model/source_engines.dart';
-import 'package:Bloomee/model/yt_music_model.dart';
-import 'package:Bloomee/repository/Saavn/saavn_api.dart';
-import 'package:Bloomee/repository/Youtube/ytm/ytmusic.dart';
-import 'package:Bloomee/screens/widgets/snackbar.dart';
-import 'package:Bloomee/services/db/bloomee_db_service.dart';
+import 'package:bloomee/model/album_onl_model.dart';
+import 'package:bloomee/model/artist_onl_model.dart';
+import 'package:bloomee/model/saavnModel.dart';
+import 'package:bloomee/model/songModel.dart';
+import 'package:bloomee/model/source_engines.dart';
+import 'package:bloomee/model/yt_music_model.dart';
+import 'package:bloomee/repository/Saavn/saavn_api.dart';
+import 'package:bloomee/repository/Youtube/ytm/ytmusic.dart';
+import 'package:bloomee/screens/widgets/snackbar.dart';
+import 'package:bloomee/services/db/bloomee_db_service.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 

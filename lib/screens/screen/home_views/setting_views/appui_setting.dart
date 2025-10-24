@@ -1,10 +1,10 @@
-import 'package:Bloomee/blocs/settings_cubit/cubit/settings_cubit.dart';
-import 'package:Bloomee/model/source_engines.dart';
-import 'package:Bloomee/repository/LastFM/lastfmapi.dart';
-import 'package:Bloomee/screens/screen/chart/show_charts.dart';
-import 'package:Bloomee/screens/widgets/snackbar.dart';
+import 'package:bloomee/blocs/settings_cubit/cubit/settings_cubit.dart';
+import 'package:bloomee/model/source_engines.dart';
+import 'package:bloomee/repository/LastFM/lastfmapi.dart';
+import 'package:bloomee/screens/screen/chart/show_charts.dart';
+import 'package:bloomee/screens/widgets/snackbar.dart';
 import 'package:flutter/material.dart';
-import 'package:Bloomee/theme_data/default.dart';
+import 'package:bloomee/theme_data/default.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppUISettings extends StatefulWidget {
@@ -30,10 +30,10 @@ class _AppUISettingsState extends State<AppUISettings> {
         title: Text(
           'UI & Services Settings',
           style: const TextStyle(
-                  color: Default_Theme.primaryColor1,
+                  color: DefaultTheme.primaryColor1,
                   fontSize: 20,
                   fontWeight: FontWeight.bold)
-              .merge(Default_Theme.secondoryTextStyle),
+              .merge(DefaultTheme.secondoryTextStyle),
         ),
       ),
       body: BlocBuilder<SettingsCubit, SettingsState>(
@@ -45,15 +45,15 @@ class _AppUISettingsState extends State<AppUISettings> {
                   subtitle: Text(
                     "Slide charts automatically in home screen.",
                     style: TextStyle(
-                            color: Default_Theme.primaryColor1.withOpacity(0.5),
+                            color: DefaultTheme.primaryColor1.withOpacity(0.5),
                             fontSize: 12)
-                        .merge(Default_Theme.secondoryTextStyleMedium),
+                        .merge(DefaultTheme.secondoryTextStyleMedium),
                   ),
                   title: Text(
                     "Auto slide charts",
                     style: const TextStyle(
-                            color: Default_Theme.primaryColor1, fontSize: 16)
-                        .merge(Default_Theme.secondoryTextStyleMedium),
+                            color: DefaultTheme.primaryColor1, fontSize: 16)
+                        .merge(DefaultTheme.secondoryTextStyleMedium),
                   ),
                   onChanged: (value) {
                     context.read<SettingsCubit>().setAutoSlideCharts(value);
@@ -63,15 +63,15 @@ class _AppUISettingsState extends State<AppUISettings> {
                   subtitle: Text(
                     "Suggestions from Last.FM will be shown in the home screen. (Login & Restart required)",
                     style: TextStyle(
-                            color: Default_Theme.primaryColor1.withOpacity(0.5),
+                            color: DefaultTheme.primaryColor1.withOpacity(0.5),
                             fontSize: 12)
-                        .merge(Default_Theme.secondoryTextStyleMedium),
+                        .merge(DefaultTheme.secondoryTextStyleMedium),
                   ),
                   title: Text(
                     "Last.FM Suggested Picks",
                     style: const TextStyle(
-                            color: Default_Theme.primaryColor1, fontSize: 16)
-                        .merge(Default_Theme.secondoryTextStyleMedium),
+                            color: DefaultTheme.primaryColor1, fontSize: 16)
+                        .merge(DefaultTheme.secondoryTextStyleMedium),
                   ),
                   onChanged: (value) {
                     context.read<SettingsCubit>().setLastFMExpore(value);
@@ -87,17 +87,17 @@ class _AppUISettingsState extends State<AppUISettings> {
                 title: Text(
                   "Source Engines",
                   style: const TextStyle(
-                          color: Default_Theme.primaryColor1, fontSize: 16)
-                      .merge(Default_Theme.secondoryTextStyleMedium),
+                          color: DefaultTheme.primaryColor1, fontSize: 16)
+                      .merge(DefaultTheme.secondoryTextStyleMedium),
                 ),
                 subtitle: Text(
                   "Manage the source engines you want to use for Music search. (Restart required)",
                   style: TextStyle(
-                          color: Default_Theme.primaryColor1.withOpacity(0.5),
+                          color: DefaultTheme.primaryColor1.withOpacity(0.5),
                           fontSize: 12)
-                      .merge(Default_Theme.secondoryTextStyleMedium),
+                      .merge(DefaultTheme.secondoryTextStyleMedium),
                 ),
-                collapsedIconColor: Default_Theme.primaryColor1,
+                collapsedIconColor: DefaultTheme.primaryColor1,
                 children: SourceEngine.values.map((e) {
                   if (e == SourceEngine.eng_YTM) return Container();
                   return SwitchListTile(
@@ -106,9 +106,9 @@ class _AppUISettingsState extends State<AppUISettings> {
                       title: Text(
                         e.value,
                         style: const TextStyle(
-                                color: Default_Theme.primaryColor1,
+                                color: DefaultTheme.primaryColor1,
                                 fontSize: 17)
-                            .merge(Default_Theme.secondoryTextStyleMedium),
+                            .merge(DefaultTheme.secondoryTextStyleMedium),
                       ),
                       onChanged: (b) {
                         context.read<SettingsCubit>().setSourceEngineSwitches(
@@ -120,26 +120,26 @@ class _AppUISettingsState extends State<AppUISettings> {
                 title: Text(
                   "Allowed Chart Sources",
                   style: const TextStyle(
-                          color: Default_Theme.primaryColor1, fontSize: 16)
-                      .merge(Default_Theme.secondoryTextStyleMedium),
+                          color: DefaultTheme.primaryColor1, fontSize: 16)
+                      .merge(DefaultTheme.secondoryTextStyleMedium),
                 ),
                 subtitle: Text(
                   "Manage the chart sources you want to see in the home screen.",
                   style: TextStyle(
-                          color: Default_Theme.primaryColor1.withOpacity(0.5),
+                          color: DefaultTheme.primaryColor1.withOpacity(0.5),
                           fontSize: 12)
-                      .merge(Default_Theme.secondoryTextStyleMedium),
+                      .merge(DefaultTheme.secondoryTextStyleMedium),
                 ),
-                collapsedIconColor: Default_Theme.primaryColor1,
+                collapsedIconColor: DefaultTheme.primaryColor1,
                 children: chartInfoList.map((e) {
                   return SwitchListTile(
                       value: state.chartMap[e.title] ?? true,
                       title: Text(
                         e.title,
                         style: const TextStyle(
-                                color: Default_Theme.primaryColor1,
+                                color: DefaultTheme.primaryColor1,
                                 fontSize: 17)
-                            .merge(Default_Theme.secondoryTextStyleMedium),
+                            .merge(DefaultTheme.secondoryTextStyleMedium),
                       ),
                       onChanged: (b) {
                         context.read<SettingsCubit>().setChartShow(e.title, b);

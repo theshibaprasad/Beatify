@@ -1,12 +1,12 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:math';
-import 'package:Bloomee/utils/imgurl_formator.dart';
+import 'package:bloomee/utils/imgurl_formator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icons_plus/icons_plus.dart';
-import 'package:Bloomee/blocs/explore/cubit/explore_cubits.dart';
-import 'package:Bloomee/plugins/ext_charts/chart_defines.dart';
-import 'package:Bloomee/utils/load_Image.dart';
+import 'package:bloomee/blocs/explore/cubit/explore_cubits.dart';
+import 'package:bloomee/plugins/ext_charts/chart_defines.dart';
+import 'package:bloomee/utils/load_image.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class ChartWidget extends StatefulWidget {

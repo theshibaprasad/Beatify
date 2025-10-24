@@ -1,24 +1,24 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:core';
 import 'dart:developer';
-import 'package:Bloomee/blocs/internet_connectivity/cubit/connectivity_cubit.dart';
-import 'package:Bloomee/blocs/mediaPlayer/bloomee_player_cubit.dart';
-import 'package:Bloomee/model/MediaPlaylistModel.dart';
-import 'package:Bloomee/model/yt_music_model.dart';
-import 'package:Bloomee/repository/Youtube/ytm/ytmusic.dart';
-import 'package:Bloomee/screens/widgets/more_bottom_sheet.dart';
-import 'package:Bloomee/screens/widgets/playPause_widget.dart';
-import 'package:Bloomee/screens/widgets/snackbar.dart';
-import 'package:Bloomee/screens/widgets/song_tile.dart';
-import 'package:Bloomee/services/db/bloomee_db_service.dart';
-import 'package:Bloomee/model/songModel.dart';
-import 'package:Bloomee/model/youtube_vid_model.dart';
-import 'package:Bloomee/repository/Youtube/youtube_api.dart';
-import 'package:Bloomee/screens/widgets/sign_board_widget.dart';
-import 'package:Bloomee/utils/imgurl_formator.dart';
+import 'package:bloomee/blocs/internet_connectivity/cubit/connectivity_cubit.dart';
+import 'package:bloomee/blocs/mediaPlayer/bloomee_player_cubit.dart';
+import 'package:bloomee/model/MediaPlaylistModel.dart';
+import 'package:bloomee/model/yt_music_model.dart';
+import 'package:bloomee/repository/Youtube/ytm/ytmusic.dart';
+import 'package:bloomee/screens/widgets/more_bottom_sheet.dart';
+import 'package:bloomee/screens/widgets/playPause_widget.dart';
+import 'package:bloomee/screens/widgets/snackbar.dart';
+import 'package:bloomee/screens/widgets/song_tile.dart';
+import 'package:bloomee/services/db/bloomee_db_service.dart';
+import 'package:bloomee/model/songModel.dart';
+import 'package:bloomee/model/youtube_vid_model.dart';
+import 'package:bloomee/repository/Youtube/youtube_api.dart';
+import 'package:bloomee/screens/widgets/sign_board_widget.dart';
+import 'package:bloomee/utils/imgurl_formator.dart';
 import 'package:flutter/material.dart';
-import 'package:Bloomee/theme_data/default.dart';
-import 'package:Bloomee/utils/load_Image.dart';
+import 'package:bloomee/theme_data/default.dart';
+import 'package:bloomee/utils/load_image.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:just_audio/just_audio.dart';
@@ -116,9 +116,9 @@ class _YoutubePlaylistState extends State<YoutubePlaylist> {
                               ? const CustomScrollView(
                                   slivers: [
                                     SliverAppBar(
-                                      backgroundColor: Default_Theme.themeColor,
+                                      backgroundColor: DefaultTheme.themeColor,
                                       surfaceTintColor:
-                                          Default_Theme.themeColor,
+                                          DefaultTheme.themeColor,
                                     ),
                                     SliverFillRemaining(
                                       child: Center(
@@ -149,15 +149,15 @@ class _YoutubePlaylistState extends State<YoutubePlaylist> {
                                             icon: const Icon(
                                               MingCute.share_forward_line,
                                               color:
-                                                  Default_Theme.primaryColor1,
+                                                  DefaultTheme.primaryColor1,
                                               size: 25,
                                             ),
                                           ),
                                         ),
                                       ],
-                                      backgroundColor: Default_Theme.themeColor,
+                                      backgroundColor: DefaultTheme.themeColor,
                                       surfaceTintColor:
-                                          Default_Theme.themeColor,
+                                          DefaultTheme.themeColor,
                                       // expandedHeight:
                                       //     (ResponsiveBreakpoints.of(
                                       //                 context)
@@ -245,9 +245,9 @@ class _YoutubePlaylistState extends State<YoutubePlaylist> {
                                                             fontSize: 20,
                                                             fontWeight:
                                                                 FontWeight.bold,
-                                                            color: Default_Theme
+                                                            color: DefaultTheme
                                                                 .primaryColor1,
-                                                          ).merge(Default_Theme
+                                                          ).merge(DefaultTheme
                                                                   .secondoryTextStyle),
                                                         ),
                                                       ),
@@ -260,10 +260,10 @@ class _YoutubePlaylistState extends State<YoutubePlaylist> {
                                                           fontSize: 13,
                                                           fontWeight:
                                                               FontWeight.bold,
-                                                          color: Default_Theme
+                                                          color: DefaultTheme
                                                               .primaryColor2
                                                               .withOpacity(0.8),
-                                                        ).merge(Default_Theme
+                                                        ).merge(DefaultTheme
                                                             .secondoryTextStyle),
                                                       ),
                                                       Text(
@@ -275,10 +275,10 @@ class _YoutubePlaylistState extends State<YoutubePlaylist> {
                                                           fontSize: 13,
                                                           fontWeight:
                                                               FontWeight.bold,
-                                                          color: Default_Theme
+                                                          color: DefaultTheme
                                                               .primaryColor2
                                                               .withOpacity(0.8),
-                                                        ).merge(Default_Theme
+                                                        ).merge(DefaultTheme
                                                             .secondoryTextStyle),
                                                       ),
                                                       Padding(
@@ -358,7 +358,7 @@ class _YoutubePlaylistState extends State<YoutubePlaylist> {
                                                                         const Icon(
                                                                       MingCute
                                                                           .shuffle_fill,
-                                                                      color: Default_Theme
+                                                                      color: DefaultTheme
                                                                           .primaryColor1,
                                                                     ),
                                                                   ),
@@ -460,7 +460,7 @@ class _YoutubePlaylistState extends State<YoutubePlaylist> {
                                                                         const Icon(
                                                                       FontAwesome
                                                                           .square_plus,
-                                                                      color: Default_Theme
+                                                                      color: DefaultTheme
                                                                           .primaryColor1,
                                                                     ),
                                                                   ),

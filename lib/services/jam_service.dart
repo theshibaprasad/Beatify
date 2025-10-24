@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:developer';
-import 'package:Bloomee/model/jam_models.dart';
-import 'package:Bloomee/model/songModel.dart';
-import 'package:Bloomee/services/bloomeePlayer.dart';
+import 'package:bloomee/model/jam_models.dart' as jam_models;
+import 'package:bloomee/model/songModel.dart';
+import 'package:bloomee/services/bloomeePlayer.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:uuid/uuid.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
@@ -318,7 +318,7 @@ class JamService {
     });
   }
   
-  Future<void> addTrackToQueue(MediaItemModel track) async {
+  Future<void> addTrackToQueue(jam_models.MediaItemModel track) async {
     if (_currentSession == null || _currentUser == null) return;
     
     _sendMessage({
@@ -355,13 +355,13 @@ class JamService {
   // Player integration methods
   void _setupPlayerListeners() {
     // Listen to player state changes and broadcast to session
-    _player.playbackStateStream.listen((state) {
+    _player.playbackState.listen((state) {
       if (_currentSession != null && _currentUser?.role == JamUserRole.host) {
         _broadcastPlaybackState();
       }
     });
     
-    _player.mediaItemStream.listen((mediaItem) {
+    _player.mediaItem.listen((mediaItem) {
       if (_currentSession != null && _currentUser?.role == JamUserRole.host) {
         _broadcastTrackChange(mediaItem);
       }
@@ -379,7 +379,7 @@ class JamService {
     });
   }
   
-  void _broadcastTrackChange(MediaItemModel? mediaItem) {
+  void _broadcastTrackChange(jam_models.MediaItemModel? mediaItem) {
     if (_currentSession == null || mediaItem == null) return;
     
     _sendMessage({

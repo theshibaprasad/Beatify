@@ -1,6 +1,6 @@
 import 'dart:developer';
-import 'package:Bloomee/repository/Youtube/youtube_api.dart';
-import 'package:Bloomee/services/db/bloomee_db_service.dart';
+import 'package:bloomee/repository/Youtube/youtube_api.dart';
+import 'package:bloomee/services/db/bloomee_db_service.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 part 'search_suggestion_event.dart';

@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:developer';
 import 'package:http/http.dart';
-import 'package:Bloomee/repository/Saavn/format.dart';
+import 'package:bloomee/repository/Saavn/format.dart';
 
 class SaavnAPI {
   Map<String, String> headers = {};

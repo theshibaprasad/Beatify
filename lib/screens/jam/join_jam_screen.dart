@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:Bloomee/blocs/jam/jam_cubit.dart';
-import 'package:Bloomee/theme_data/default.dart';
+import 'package:bloomee/blocs/jam/jam_cubit.dart';
+import 'package:bloomee/theme_data/default.dart';
 
 class JoinJamDialog extends StatefulWidget {
   const JoinJamDialog({super.key});
@@ -39,7 +39,7 @@ class _JoinJamDialogState extends State<JoinJamDialog> {
         }
       },
       child: AlertDialog(
-        backgroundColor: Default_Theme.cardColor,
+        backgroundColor: DefaultTheme.cardColor,
         title: const Text(
           'Join Jam Session',
           style: TextStyle(color: Colors.white),
@@ -61,7 +61,7 @@ class _JoinJamDialogState extends State<JoinJamDialog> {
                   borderSide: BorderSide(color: Colors.white24),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Default_Theme.accentColor1),
+                  borderSide: BorderSide(color: DefaultTheme.accentColor1),
                 ),
               ),
               validator: (value) {
@@ -85,7 +85,7 @@ class _JoinJamDialogState extends State<JoinJamDialog> {
                   _usePassword = value ?? false;
                 });
               },
-              activeColor: Default_Theme.accentColor1,
+              activeColor: DefaultTheme.accentColor1,
             ),
 
             if (_usePassword) ...[
@@ -101,7 +101,7 @@ class _JoinJamDialogState extends State<JoinJamDialog> {
                     borderSide: BorderSide(color: Colors.white24),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Default_Theme.accentColor1),
+                    borderSide: BorderSide(color: DefaultTheme.accentColor1),
                   ),
                 ),
                 obscureText: true,
@@ -129,7 +129,7 @@ class _JoinJamDialogState extends State<JoinJamDialog> {
               return ElevatedButton(
                 onPressed: isLoading ? null : _joinSession,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Default_Theme.accentColor1,
+                  backgroundColor: DefaultTheme.accentColor1,
                   foregroundColor: Colors.white,
                 ),
                 child: isLoading

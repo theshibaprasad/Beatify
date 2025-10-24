@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:Bloomee/services/db/bloomee_db_service.dart';
+import 'package:bloomee/services/db/bloomee_db_service.dart';
 import 'package:http/http.dart';
 import 'helpers.dart';
 

@@ -1,13 +1,13 @@
 import 'dart:io';
 
-import 'package:Bloomee/blocs/library/cubit/library_items_cubit.dart';
-import 'package:Bloomee/blocs/mediaPlayer/bloomee_player_cubit.dart';
-import 'package:Bloomee/model/MediaPlaylistModel.dart';
-import 'package:Bloomee/screens/screen/library_views/playlist_edit_view.dart';
-import 'package:Bloomee/screens/widgets/snackbar.dart';
-import 'package:Bloomee/services/db/GlobalDB.dart';
-import 'package:Bloomee/theme_data/default.dart';
-import 'package:Bloomee/services/import_export_service.dart';
+import 'package:bloomee/blocs/library/cubit/library_items_cubit.dart';
+import 'package:bloomee/blocs/mediaPlayer/bloomee_player_cubit.dart';
+import 'package:bloomee/model/MediaPlaylistModel.dart';
+import 'package:bloomee/screens/screen/library_views/playlist_edit_view.dart';
+import 'package:bloomee/screens/widgets/snackbar.dart';
+import 'package:bloomee/services/db/GlobalDB.dart';
+import 'package:bloomee/theme_data/default.dart';
+import 'package:bloomee/services/import_export_service.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -251,7 +251,7 @@ class PltOptBtn extends StatelessWidget {
         children: [
           Icon(
             icon,
-            color: Default_Theme.primaryColor1,
+            color: DefaultTheme.primaryColor1,
             size: 25,
           ),
           Expanded(
@@ -260,7 +260,7 @@ class PltOptBtn extends StatelessWidget {
               child: Text(
                 title,
                 style: const TextStyle(
-                    color: Default_Theme.primaryColor1,
+                    color: DefaultTheme.primaryColor1,
                     fontFamily: "Unageo",
                     fontSize: 17,
                     fontWeight: FontWeight.w400),
@@ -270,7 +270,7 @@ class PltOptBtn extends StatelessWidget {
         ],
       ),
       onPressed: onPressed,
-      hoverColor: Default_Theme.primaryColor1.withOpacity(0.04),
+      hoverColor: DefaultTheme.primaryColor1.withOpacity(0.04),
     );
   }
 }

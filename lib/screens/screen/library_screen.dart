@@ -1,22 +1,22 @@
-import 'package:Bloomee/model/album_onl_model.dart';
-import 'package:Bloomee/model/artist_onl_model.dart';
-import 'package:Bloomee/model/playlist_onl_model.dart';
-import 'package:Bloomee/model/source_engines.dart';
-import 'package:Bloomee/screens/screen/common_views/album_view.dart';
-import 'package:Bloomee/screens/screen/common_views/artist_view.dart';
-import 'package:Bloomee/screens/screen/common_views/playlist_view.dart';
-import 'package:Bloomee/screens/screen/library_views/cubit/current_playlist_cubit.dart';
-import 'package:Bloomee/screens/screen/library_views/more_opts_sheet.dart';
-import 'package:Bloomee/screens/widgets/sign_board_widget.dart';
-import 'package:Bloomee/services/db/bloomee_db_service.dart';
+import 'package:bloomee/model/album_onl_model.dart';
+import 'package:bloomee/model/artist_onl_model.dart';
+import 'package:bloomee/model/playlist_onl_model.dart';
+import 'package:bloomee/model/source_engines.dart';
+import 'package:bloomee/screens/screen/common_views/album_view.dart';
+import 'package:bloomee/screens/screen/common_views/artist_view.dart';
+import 'package:bloomee/screens/screen/common_views/playlist_view.dart';
+import 'package:bloomee/screens/screen/library_views/cubit/current_playlist_cubit.dart';
+import 'package:bloomee/screens/screen/library_views/more_opts_sheet.dart';
+import 'package:bloomee/screens/widgets/sign_board_widget.dart';
+import 'package:bloomee/services/db/bloomee_db_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:Bloomee/blocs/library/cubit/library_items_cubit.dart';
-import 'package:Bloomee/routes_and_consts/global_str_consts.dart';
-import 'package:Bloomee/screens/widgets/createPlaylist_bottomsheet.dart';
-import 'package:Bloomee/screens/widgets/libitem_tile.dart';
-import 'package:Bloomee/theme_data/default.dart';
+import 'package:bloomee/blocs/library/cubit/library_items_cubit.dart';
+import 'package:bloomee/routes_and_consts/global_str_consts.dart';
+import 'package:bloomee/screens/widgets/createPlaylist_bottomsheet.dart';
+import 'package:bloomee/screens/widgets/libitem_tile.dart';
+import 'package:bloomee/theme_data/default.dart';
 import 'package:icons_plus/icons_plus.dart';
 
 class LibraryScreen extends StatelessWidget {
@@ -25,7 +25,7 @@ class LibraryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Default_Theme.themeColor,
+      backgroundColor: DefaultTheme.themeColor,
       body: SafeArea(
         child: BlocBuilder<LibraryItemsCubit, LibraryItemsState>(
           builder: (context, state) {
@@ -178,16 +178,16 @@ class LibraryScreen extends StatelessWidget {
     return SliverAppBar(
       floating: true,
       pinned: false, // Set to false if you don't want it to stick at the top
-      surfaceTintColor: Default_Theme.themeColor,
-      backgroundColor: Default_Theme.themeColor,
+      surfaceTintColor: DefaultTheme.themeColor,
+      backgroundColor: DefaultTheme.themeColor,
       title: Row(
         children: [
           Text(
             "Library",
-            style: Default_Theme.primaryTextStyle.merge(
+            style: DefaultTheme.primaryTextStyle.merge(
               const TextStyle(
                 fontSize: 34,
-                color: Default_Theme.primaryColor1,
+                color: DefaultTheme.primaryColor1,
                 fontWeight: FontWeight.w700,
               ),
             ),
@@ -197,14 +197,14 @@ class LibraryScreen extends StatelessWidget {
             padding: const EdgeInsets.all(8),
             onPressed: () => createPlaylistBottomSheet(context),
             icon: const Icon(MingCute.add_fill,
-                size: 25, color: Default_Theme.primaryColor1),
+                size: 25, color: DefaultTheme.primaryColor1),
           ),
           IconButton(
             padding: const EdgeInsets.all(8),
             onPressed: () =>
                 context.pushNamed(GlobalStrConsts.ImportMediaFromPlatforms),
             icon: const Icon(FontAwesome.file_import_solid,
-                size: 22, color: Default_Theme.primaryColor1),
+                size: 22, color: DefaultTheme.primaryColor1),
           ),
         ],
       ),

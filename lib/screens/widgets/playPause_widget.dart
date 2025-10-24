@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
-import 'package:Bloomee/theme_data/default.dart';
+import 'package:bloomee/theme_data/default.dart';
 import 'package:icons_plus/icons_plus.dart';
 
 class PlayPauseButton extends StatefulWidget {
@@ -28,7 +28,7 @@ class _PlayPauseButtonState extends State<PlayPauseButton> {
       _isPlaying ? widget.onPause!() : widget.onPlay!();
       _isPlaying = !_isPlaying;
       _currentColor =
-          _isPlaying ? Default_Theme.accentColor1 : Default_Theme.accentColor2;
+          _isPlaying ? DefaultTheme.accentColor1 : DefaultTheme.accentColor2;
     });
   }
 
@@ -37,7 +37,7 @@ class _PlayPauseButtonState extends State<PlayPauseButton> {
     double _size = widget.size;
     _isPlaying = widget.isPlaying;
     _currentColor =
-        _isPlaying ? Default_Theme.accentColor1 : Default_Theme.accentColor2;
+        _isPlaying ? DefaultTheme.accentColor1 : DefaultTheme.accentColor2;
     return GestureDetector(
       onTap: _togglePlayPause,
       child: AnimatedContainer(
@@ -56,12 +56,12 @@ class _PlayPauseButtonState extends State<PlayPauseButton> {
               ? Icon(
                   FontAwesome.pause_solid,
                   size: widget.size * 0.5,
-                  color: Default_Theme.primaryColor1,
+                  color: DefaultTheme.primaryColor1,
                 )
               : Icon(
                   MingCute.play_fill,
                   size: widget.size * 0.5,
-                  color: Default_Theme.primaryColor1,
+                  color: DefaultTheme.primaryColor1,
                 ),
         ),
       ),

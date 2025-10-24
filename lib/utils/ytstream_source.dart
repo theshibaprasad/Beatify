@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:developer' as dev;
 import 'dart:isolate';
-import 'package:Bloomee/services/db/bloomee_db_service.dart';
+import 'package:bloomee/services/db/bloomee_db_service.dart';
 import 'package:flutter/services.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:youtube_explode_dart/youtube_explode_dart.dart';

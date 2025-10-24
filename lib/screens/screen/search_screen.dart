@@ -1,20 +1,20 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:developer';
-import 'package:Bloomee/blocs/mediaPlayer/bloomee_player_cubit.dart';
-import 'package:Bloomee/model/source_engines.dart';
-import 'package:Bloomee/screens/widgets/album_card.dart';
-import 'package:Bloomee/screens/widgets/artist_card.dart';
-import 'package:Bloomee/screens/widgets/more_bottom_sheet.dart';
-import 'package:Bloomee/screens/widgets/playlist_card.dart';
-import 'package:Bloomee/screens/widgets/sign_board_widget.dart';
-import 'package:Bloomee/screens/widgets/song_tile.dart';
+import 'package:bloomee/blocs/mediaPlayer/bloomee_player_cubit.dart';
+import 'package:bloomee/model/source_engines.dart';
+import 'package:bloomee/screens/widgets/album_card.dart';
+import 'package:bloomee/screens/widgets/artist_card.dart';
+import 'package:bloomee/screens/widgets/more_bottom_sheet.dart';
+import 'package:bloomee/screens/widgets/playlist_card.dart';
+import 'package:bloomee/screens/widgets/sign_board_widget.dart';
+import 'package:bloomee/screens/widgets/song_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icons_plus/icons_plus.dart';
-import 'package:Bloomee/blocs/internet_connectivity/cubit/connectivity_cubit.dart';
-import 'package:Bloomee/blocs/search/fetch_search_results.dart';
-import 'package:Bloomee/screens/screen/search_views/search_page.dart';
-import 'package:Bloomee/theme_data/default.dart';
+import 'package:bloomee/blocs/internet_connectivity/cubit/connectivity_cubit.dart';
+import 'package:bloomee/blocs/search/fetch_search_results.dart';
+import 'package:bloomee/screens/screen/search_views/search_page.dart';
+import 'package:bloomee/theme_data/default.dart';
 
 class SearchScreen extends StatefulWidget {
   final String searchQuery;
@@ -100,22 +100,22 @@ class _SearchScreenState extends State<SearchScreen> {
             style: OutlinedButton.styleFrom(
                 padding: const EdgeInsets.only(left: 10, right: 10),
                 backgroundColor: _sourceEngine == sourceEngine
-                    ? Default_Theme.accentColor2
+                    ? DefaultTheme.accentColor2
                     : Colors.transparent,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
                 side: const BorderSide(
-                    color: Default_Theme.accentColor2,
+                    color: DefaultTheme.accentColor2,
                     style: BorderStyle.solid,
                     width: 2)),
             child: Text(
               sourceEngine.value,
               style: TextStyle(
                       color: _sourceEngine == sourceEngine
-                          ? Default_Theme.primaryColor2
-                          : Default_Theme.accentColor2,
+                          ? DefaultTheme.primaryColor2
+                          : DefaultTheme.accentColor2,
                       fontSize: 13)
-                  .merge(Default_Theme.secondoryTextStyleMedium),
+                  .merge(DefaultTheme.secondoryTextStyleMedium),
             ),
           ),
         ),
@@ -133,7 +133,7 @@ class _SearchScreenState extends State<SearchScreen> {
         child: Scaffold(
           appBar: AppBar(
             shadowColor: Colors.black,
-            surfaceTintColor: Default_Theme.themeColor,
+            surfaceTintColor: DefaultTheme.themeColor,
             title: SizedBox(
               height: 50.0,
               child: Padding(
@@ -159,21 +159,21 @@ class _SearchScreenState extends State<SearchScreen> {
                     enabled: false,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                        color: Default_Theme.primaryColor1.withOpacity(0.55)),
+                        color: DefaultTheme.primaryColor1.withOpacity(0.55)),
                     textInputAction: TextInputAction.search,
                     decoration: InputDecoration(
                         filled: true,
                         suffixIcon: Icon(
                           MingCute.search_2_fill,
-                          color: Default_Theme.primaryColor1.withOpacity(0.4),
+                          color: DefaultTheme.primaryColor1.withOpacity(0.4),
                         ),
                         fillColor:
-                            Default_Theme.primaryColor2.withOpacity(0.07),
+                            DefaultTheme.primaryColor2.withOpacity(0.07),
                         contentPadding:
                             const EdgeInsets.only(top: 20, left: 15, right: 5),
                         hintText: "Find your next song obsession...",
                         hintStyle: TextStyle(
-                          color: Default_Theme.primaryColor1.withOpacity(0.3),
+                          color: DefaultTheme.primaryColor1.withOpacity(0.3),
                           fontFamily: "Unageo",
                           fontWeight: FontWeight.normal,
                         ),
@@ -183,16 +183,16 @@ class _SearchScreenState extends State<SearchScreen> {
                             borderRadius: BorderRadius.circular(50)),
                         focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                                color: Default_Theme.primaryColor1
+                                color: DefaultTheme.primaryColor1
                                     .withOpacity(0.7)),
                             borderRadius: BorderRadius.circular(50))),
                   ),
                 ),
               ),
             ),
-            backgroundColor: Default_Theme.themeColor,
+            backgroundColor: DefaultTheme.themeColor,
           ),
-          backgroundColor: Default_Theme.themeColor,
+          backgroundColor: DefaultTheme.themeColor,
           body: NestedScrollView(
             headerSliverBuilder: (context, innerBoxIsScrolled) => [
               SliverToBoxAdapter(
@@ -233,12 +233,12 @@ class _SearchScreenState extends State<SearchScreen> {
                                                         255, 15, 15, 15),
                                                 decoration: InputDecoration(
                                                   filled: false,
-                                                  fillColor: Default_Theme
+                                                  fillColor: DefaultTheme
                                                       .primaryColor2
                                                       .withOpacity(0.07),
                                                   contentPadding:
                                                       const EdgeInsets.all(0),
-                                                  focusColor: Default_Theme
+                                                  focusColor: DefaultTheme
                                                       .accentColor2,
                                                   border: OutlineInputBorder(
                                                       borderSide:
@@ -300,11 +300,11 @@ class _SearchScreenState extends State<SearchScreen> {
                                                                   ),
                                                                   child: Text(
                                                                     e.val,
-                                                                    style: Default_Theme
+                                                                    style: DefaultTheme
                                                                         .secondoryTextStyleMedium
                                                                         .merge(
                                                                             const TextStyle(
-                                                                      color: Default_Theme
+                                                                      color: DefaultTheme
                                                                           .primaryColor1,
                                                                       fontSize:
                                                                           13.5,
@@ -356,7 +356,7 @@ class _SearchScreenState extends State<SearchScreen> {
                               if (state is FetchSearchResultsLoading) {
                                 return const Center(
                                   child: CircularProgressIndicator(
-                                    color: Default_Theme.accentColor2,
+                                    color: DefaultTheme.accentColor2,
                                   ),
                                 );
                               } else if (state.loadingState ==
@@ -377,7 +377,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                             height: 30,
                                             width: 30,
                                             child: CircularProgressIndicator(
-                                              color: Default_Theme.accentColor2,
+                                              color: DefaultTheme.accentColor2,
                                             ),
                                           ),
                                         );

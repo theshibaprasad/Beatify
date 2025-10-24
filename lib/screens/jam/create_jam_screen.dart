@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:Bloomee/blocs/jam/jam_cubit.dart';
-import 'package:Bloomee/theme_data/default.dart';
+import 'package:bloomee/blocs/jam/jam_cubit.dart';
+import 'package:bloomee/theme_data/default.dart';
 
 class CreateJamDialog extends StatefulWidget {
   const CreateJamDialog({super.key});
@@ -44,7 +44,7 @@ class _CreateJamDialogState extends State<CreateJamDialog> {
         }
       },
       child: AlertDialog(
-        backgroundColor: Default_Theme.cardColor,
+        backgroundColor: DefaultTheme.cardColor,
         title: const Text(
           'Create Jam Session',
           style: TextStyle(color: Colors.white),
@@ -67,7 +67,7 @@ class _CreateJamDialogState extends State<CreateJamDialog> {
                       borderSide: BorderSide(color: Colors.white24),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Default_Theme.accentColor1),
+                      borderSide: BorderSide(color: DefaultTheme.accentColor1),
                     ),
                   ),
                   validator: (value) {
@@ -91,7 +91,7 @@ class _CreateJamDialogState extends State<CreateJamDialog> {
                       borderSide: BorderSide(color: Colors.white24),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Default_Theme.accentColor1),
+                      borderSide: BorderSide(color: DefaultTheme.accentColor1),
                     ),
                   ),
                   maxLines: 2,
@@ -100,7 +100,7 @@ class _CreateJamDialogState extends State<CreateJamDialog> {
 
                 // Privacy Settings
                 Card(
-                  color: Default_Theme.primaryColor,
+                  color: DefaultTheme.primaryColor,
                   child: Padding(
                     padding: const EdgeInsets.all(16),
                     child: Column(
@@ -129,7 +129,7 @@ class _CreateJamDialogState extends State<CreateJamDialog> {
                               _isPrivate = value;
                             });
                           },
-                          activeColor: Default_Theme.accentColor1,
+                          activeColor: DefaultTheme.accentColor1,
                         ),
                         if (_isPrivate) ...[
                           const SizedBox(height: 8),
@@ -144,7 +144,7 @@ class _CreateJamDialogState extends State<CreateJamDialog> {
                                 borderSide: BorderSide(color: Colors.white24),
                               ),
                               focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Default_Theme.accentColor1),
+                                borderSide: BorderSide(color: DefaultTheme.accentColor1),
                               ),
                             ),
                             obscureText: true,
@@ -158,7 +158,7 @@ class _CreateJamDialogState extends State<CreateJamDialog> {
 
                 // Max Participants
                 Card(
-                  color: Default_Theme.primaryColor,
+                  color: DefaultTheme.primaryColor,
                   child: Padding(
                     padding: const EdgeInsets.all(16),
                     child: Column(
@@ -177,7 +177,7 @@ class _CreateJamDialogState extends State<CreateJamDialog> {
                           min: 2,
                           max: 20,
                           divisions: 18,
-                          activeColor: Default_Theme.accentColor1,
+                          activeColor: DefaultTheme.accentColor1,
                           onChanged: (value) {
                             setState(() {
                               _maxParticipants = value.round();
@@ -210,7 +210,7 @@ class _CreateJamDialogState extends State<CreateJamDialog> {
               return ElevatedButton(
                 onPressed: isLoading ? null : _createSession,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Default_Theme.accentColor1,
+                  backgroundColor: DefaultTheme.accentColor1,
                   foregroundColor: Colors.white,
                 ),
                 child: isLoading

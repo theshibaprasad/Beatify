@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:Bloomee/blocs/jam/jam_cubit.dart';
-import 'package:Bloomee/model/jam_models.dart';
-import 'package:Bloomee/theme_data/default.dart';
+import 'package:bloomee/blocs/jam/jam_cubit.dart';
+import 'package:bloomee/model/jam_models.dart';
+import 'package:bloomee/theme_data/default.dart';
 
 class JamSessionScreen extends StatefulWidget {
   const JamSessionScreen({super.key});
@@ -49,13 +49,13 @@ class _JamSessionScreenState extends State<JamSessionScreen>
           final session = state is JamSessionJoined ? state.session : (state as JamSessionActive).session;
           
           return Scaffold(
-            backgroundColor: Default_Theme.primaryColor,
+            backgroundColor: DefaultTheme.primaryColor,
             appBar: AppBar(
               title: Text(
                 session.name,
                 style: const TextStyle(color: Colors.white),
               ),
-              backgroundColor: Default_Theme.accentColor2,
+              backgroundColor: DefaultTheme.accentColor2,
               elevation: 0,
               actions: [
                 PopupMenuButton<String>(
@@ -126,7 +126,7 @@ class _JamSessionScreenState extends State<JamSessionScreen>
             final track = queue[index];
             return Card(
               margin: const EdgeInsets.only(bottom: 8),
-              color: Default_Theme.cardColor,
+              color: DefaultTheme.cardColor,
               child: ListTile(
                 leading: CircleAvatar(
                   backgroundImage: track.image != null 
@@ -177,10 +177,10 @@ class _JamSessionScreenState extends State<JamSessionScreen>
         final participant = session.participants[index];
         return Card(
           margin: const EdgeInsets.only(bottom: 8),
-          color: Default_Theme.cardColor,
+          color: DefaultTheme.cardColor,
           child: ListTile(
             leading: CircleAvatar(
-              backgroundColor: Default_Theme.accentColor2,
+              backgroundColor: DefaultTheme.accentColor2,
               child: Text(
                 participant.name[0].toUpperCase(),
                 style: const TextStyle(color: Colors.white),
@@ -237,7 +237,7 @@ class _JamSessionScreenState extends State<JamSessionScreen>
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: Default_Theme.cardColor,
+                color: DefaultTheme.cardColor,
                 border: Border(
                   top: BorderSide(color: Colors.white24),
                 ),
@@ -258,7 +258,7 @@ class _JamSessionScreenState extends State<JamSessionScreen>
                           borderSide: BorderSide(color: Colors.white24),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Default_Theme.accentColor1),
+                          borderSide: BorderSide(color: DefaultTheme.accentColor1),
                         ),
                       ),
                       onSubmitted: (text) {
@@ -301,7 +301,7 @@ class _JamSessionScreenState extends State<JamSessionScreen>
             radius: 16,
             backgroundColor: isSystemMessage 
                 ? Colors.grey 
-                : Default_Theme.accentColor2,
+                : DefaultTheme.accentColor2,
             child: Icon(
               isSystemMessage ? Icons.info : Icons.person,
               size: 16,

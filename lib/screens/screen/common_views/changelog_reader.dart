@@ -1,9 +1,9 @@
-import 'package:Bloomee/screens/screen/home_views/setting_views/about.dart';
+import 'package:bloomee/screens/screen/home_views/setting_views/about.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import 'package:Bloomee/services/db/bloomee_db_service.dart';
-import 'package:Bloomee/routes_and_consts/global_str_consts.dart';
+import 'package:bloomee/services/db/bloomee_db_service.dart';
+import 'package:bloomee/routes_and_consts/global_str_consts.dart';
 
 // The final changelog string for testing all features
 const String changelogText = """

@@ -1,8 +1,8 @@
 import 'dart:developer';
 
-import 'package:Bloomee/model/chart_model.dart';
-import 'package:Bloomee/plugins/ext_charts/chart_defines.dart';
-// import 'package:Bloomee/services/db/bloomee_db_service.dart';
+import 'package:bloomee/model/chart_model.dart';
+import 'package:bloomee/plugins/ext_charts/chart_defines.dart';
+// import 'package:bloomee/services/db/bloomee_db_service.dart';
 import 'package:http/http.dart' as http;
 import 'package:html/parser.dart' show parse;
 import 'package:html/dom.dart';

@@ -1,17 +1,17 @@
-import 'package:Bloomee/screens/widgets/global_footer.dart';
+import 'package:bloomee/screens/widgets/global_footer.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:Bloomee/routes_and_consts/global_str_consts.dart';
-import 'package:Bloomee/screens/screen/common_views/add_to_playlist_screen.dart';
-import 'package:Bloomee/screens/screen/player_screen.dart';
-import 'package:Bloomee/screens/screen/explore_screen.dart';
-import 'package:Bloomee/screens/screen/library_screen.dart';
-import 'package:Bloomee/screens/screen/library_views/import_media_view.dart';
-import 'package:Bloomee/screens/screen/library_views/playlist_screen.dart';
-import 'package:Bloomee/screens/screen/offline_screen.dart';
-import 'package:Bloomee/screens/screen/search_screen.dart';
-import 'package:Bloomee/screens/screen/chart/chart_view.dart';
-import 'package:Bloomee/screens/jam/jam_home_screen.dart';
+import 'package:bloomee/routes_and_consts/global_str_consts.dart';
+import 'package:bloomee/screens/screen/common_views/add_to_playlist_screen.dart';
+import 'package:bloomee/screens/screen/player_screen.dart';
+import 'package:bloomee/screens/screen/explore_screen.dart';
+import 'package:bloomee/screens/screen/library_screen.dart';
+import 'package:bloomee/screens/screen/library_views/import_media_view.dart';
+import 'package:bloomee/screens/screen/library_views/playlist_screen.dart';
+import 'package:bloomee/screens/screen/offline_screen.dart';
+import 'package:bloomee/screens/screen/search_screen.dart';
+import 'package:bloomee/screens/screen/chart/chart_view.dart';
+import 'package:bloomee/screens/jam/jam_home_screen.dart';
 
 class GlobalRoutes {
   static final globalRouterKey = GlobalKey<NavigatorState>();

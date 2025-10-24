@@ -1,17 +1,17 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:developer';
-import 'package:Bloomee/model/songModel.dart';
-import 'package:Bloomee/screens/widgets/snackbar.dart';
-import 'package:Bloomee/services/db/bloomee_db_service.dart';
-import 'package:Bloomee/utils/external_list_importer.dart';
-import 'package:Bloomee/services/import_export_service.dart';
+import 'package:bloomee/model/songModel.dart';
+import 'package:bloomee/screens/widgets/snackbar.dart';
+import 'package:bloomee/services/db/bloomee_db_service.dart';
+import 'package:bloomee/utils/external_list_importer.dart';
+import 'package:bloomee/services/import_export_service.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
-import 'package:Bloomee/screens/widgets/import_playlist.dart';
-import 'package:Bloomee/theme_data/default.dart';
+import 'package:bloomee/screens/widgets/import_playlist.dart';
+import 'package:bloomee/theme_data/default.dart';
 
 enum ImportType {
   spotifyPlaylist,
@@ -37,10 +37,10 @@ class ImportMediaFromPlatformsView extends StatelessWidget {
           'Import Songs',
           textAlign: TextAlign.start,
           style: const TextStyle(
-                  color: Default_Theme.primaryColor1,
+                  color: DefaultTheme.primaryColor1,
                   fontSize: 20,
                   fontWeight: FontWeight.bold)
-              .merge(Default_Theme.secondoryTextStyle),
+              .merge(DefaultTheme.secondoryTextStyle),
         ),
       ),
       body: Column(
@@ -122,13 +122,13 @@ class ImportMediaFromPlatformsView extends StatelessWidget {
                     title: const Text(
                       "Note",
                       style: TextStyle(
-                        color: Default_Theme.primaryColor2,
+                        color: DefaultTheme.primaryColor2,
                       ),
                     ),
                     content: const Text(
                       "You can only import files created by Bloomee. \nIf your file is from another source, it will not work. Continue anyway?",
                       style: TextStyle(
-                        color: Default_Theme.primaryColor2,
+                        color: DefaultTheme.primaryColor2,
                       ),
                     ),
                     actions: [
@@ -196,14 +196,14 @@ class ImportFromBtn extends StatelessWidget {
       title: Text(
         btnName,
         style: const TextStyle(
-                color: Default_Theme.primaryColor1,
+                color: DefaultTheme.primaryColor1,
                 fontSize: 18,
                 fontWeight: FontWeight.w500)
-            .merge(Default_Theme.secondoryTextStyle),
+            .merge(DefaultTheme.secondoryTextStyle),
       ),
       leading: Icon(
         btnIcon,
-        color: Default_Theme.primaryColor1,
+        color: DefaultTheme.primaryColor1,
         size: 25,
       ),
     );
@@ -220,14 +220,14 @@ Future getIdAndShowBottomSheet(BuildContext context,
         borderRadius: BorderRadius.circular(20),
         child: Container(
           height: 190,
-          color: Default_Theme.accentColor2,
+          color: DefaultTheme.accentColor2,
           child: Column(
             children: [
               const Spacer(),
               ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: Container(
-                  color: Default_Theme.themeColor,
+                  color: DefaultTheme.themeColor,
                   height: 180,
                   child: Center(
                     child: Wrap(
@@ -245,18 +245,18 @@ Future getIdAndShowBottomSheet(BuildContext context,
                               showCursor: true,
                               cursorWidth: 5,
                               cursorRadius: const Radius.circular(5),
-                              cursorColor: Default_Theme.accentColor2,
+                              cursorColor: DefaultTheme.accentColor2,
                               autofocus: true,
 
                               style: const TextStyle(
                                       fontSize: 30,
-                                      color: Default_Theme.accentColor2)
+                                      color: DefaultTheme.accentColor2)
                                   .merge(
-                                      Default_Theme.secondoryTextStyleMedium),
+                                      DefaultTheme.secondoryTextStyleMedium),
                               decoration: InputDecoration(
                                   hintText: hintText,
                                   hintStyle: TextStyle(
-                                      color: Default_Theme.primaryColor2
+                                      color: DefaultTheme.primaryColor2
                                           .withOpacity(0.3)),
                                   enabledBorder: const OutlineInputBorder(
                                     borderSide:

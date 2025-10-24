@@ -1,10 +1,10 @@
 import 'dart:developer';
-import 'package:Bloomee/model/saavnModel.dart';
-import 'package:Bloomee/model/yt_music_model.dart';
-import 'package:Bloomee/repository/Saavn/saavn_api.dart';
-import 'package:Bloomee/repository/Youtube/ytm/ytmusic.dart';
-import 'package:Bloomee/routes_and_consts/global_str_consts.dart';
-import 'package:Bloomee/services/db/bloomee_db_service.dart';
+import 'package:bloomee/model/saavnModel.dart';
+import 'package:bloomee/model/yt_music_model.dart';
+import 'package:bloomee/repository/Saavn/saavn_api.dart';
+import 'package:bloomee/repository/Youtube/ytm/ytmusic.dart';
+import 'package:bloomee/routes_and_consts/global_str_consts.dart';
+import 'package:bloomee/services/db/bloomee_db_service.dart';
 import 'package:audio_service/audio_service.dart';
 import 'package:flutter/foundation.dart';
 import 'package:just_audio/just_audio.dart';

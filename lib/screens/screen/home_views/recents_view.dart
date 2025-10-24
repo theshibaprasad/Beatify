@@ -1,12 +1,12 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:Bloomee/blocs/history/cubit/history_cubit.dart';
-import 'package:Bloomee/blocs/mediaPlayer/bloomee_player_cubit.dart';
-import 'package:Bloomee/model/MediaPlaylistModel.dart';
-import 'package:Bloomee/screens/screen/home_views/setting_views/storage_setting.dart';
-import 'package:Bloomee/screens/widgets/more_bottom_sheet.dart';
-import 'package:Bloomee/screens/widgets/song_tile.dart';
+import 'package:bloomee/blocs/history/cubit/history_cubit.dart';
+import 'package:bloomee/blocs/mediaPlayer/bloomee_player_cubit.dart';
+import 'package:bloomee/model/MediaPlaylistModel.dart';
+import 'package:bloomee/screens/screen/home_views/setting_views/storage_setting.dart';
+import 'package:bloomee/screens/widgets/more_bottom_sheet.dart';
+import 'package:bloomee/screens/widgets/song_tile.dart';
 import 'package:flutter/material.dart';
-import 'package:Bloomee/theme_data/default.dart';
+import 'package:bloomee/theme_data/default.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icons_plus/icons_plus.dart';
 
@@ -23,7 +23,7 @@ class HistoryView extends StatelessWidget {
             IconButton(
               icon: const Icon(
                 MingCute.settings_1_line,
-                color: Default_Theme.primaryColor1,
+                color: DefaultTheme.primaryColor1,
               ),
               onPressed: () {
                 Navigator.push(
@@ -38,10 +38,10 @@ class HistoryView extends StatelessWidget {
           title: Text(
             'History',
             style: const TextStyle(
-                    color: Default_Theme.primaryColor1,
+                    color: DefaultTheme.primaryColor1,
                     fontSize: 20,
                     fontWeight: FontWeight.bold)
-                .merge(Default_Theme.secondoryTextStyle),
+                .merge(DefaultTheme.secondoryTextStyle),
           ),
         ),
         body: BlocProvider(
@@ -93,19 +93,19 @@ class HistoryView extends StatelessWidget {
       leading: Icon(
         icon,
         size: 30,
-        color: Default_Theme.primaryColor1,
+        color: DefaultTheme.primaryColor1,
       ),
       title: Text(
         title,
-        style: const TextStyle(color: Default_Theme.primaryColor1, fontSize: 17)
-            .merge(Default_Theme.secondoryTextStyleMedium),
+        style: const TextStyle(color: DefaultTheme.primaryColor1, fontSize: 17)
+            .merge(DefaultTheme.secondoryTextStyleMedium),
       ),
       subtitle: Text(
         subtitle,
         style: TextStyle(
-                color: Default_Theme.primaryColor1.withOpacity(0.5),
+                color: DefaultTheme.primaryColor1.withOpacity(0.5),
                 fontSize: 12.5)
-            .merge(Default_Theme.secondoryTextStyleMedium),
+            .merge(DefaultTheme.secondoryTextStyleMedium),
       ),
       onTap: () {
         if (onTap != null) {

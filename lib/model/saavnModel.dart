@@ -1,6 +1,6 @@
-import 'package:Bloomee/model/songModel.dart';
-import 'package:Bloomee/routes_and_consts/global_str_consts.dart';
-import 'package:Bloomee/services/db/bloomee_db_service.dart';
+import 'package:bloomee/model/songModel.dart';
+import 'package:bloomee/routes_and_consts/global_str_consts.dart';
+import 'package:bloomee/services/db/bloomee_db_service.dart';
 
 MediaItemModel fromSaavnSongMap2MediaItem(Map<dynamic, dynamic> songItem) {
   return MediaItemModel(

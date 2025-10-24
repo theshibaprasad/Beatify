@@ -1,8 +1,8 @@
 import 'dart:async';
-import 'package:Bloomee/blocs/timer/timer_bloc.dart';
-import 'package:Bloomee/screens/widgets/snackbar.dart';
+import 'package:bloomee/blocs/timer/timer_bloc.dart';
+import 'package:bloomee/screens/widgets/snackbar.dart';
 import 'package:flutter/material.dart';
-import 'package:Bloomee/theme_data/default.dart';
+import 'package:bloomee/theme_data/default.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:numberpicker/numberpicker.dart';
@@ -59,19 +59,19 @@ class _TimerViewState extends State<TimerView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Default_Theme.themeColor,
+      backgroundColor: DefaultTheme.themeColor,
       appBar: AppBar(
-        backgroundColor: Default_Theme.themeColor,
-        surfaceTintColor: Default_Theme.themeColor,
-        foregroundColor: Default_Theme.primaryColor1,
+        backgroundColor: DefaultTheme.themeColor,
+        surfaceTintColor: DefaultTheme.themeColor,
+        foregroundColor: DefaultTheme.primaryColor1,
         centerTitle: true,
         title: Text(
           'Sleep Timer',
           style: const TextStyle(
-                  color: Default_Theme.primaryColor1,
+                  color: DefaultTheme.primaryColor1,
                   fontSize: 20,
                   fontWeight: FontWeight.bold)
-              .merge(Default_Theme.secondoryTextStyle),
+              .merge(DefaultTheme.secondoryTextStyle),
         ),
       ),
       body: Center(
@@ -93,10 +93,10 @@ class _TimerViewState extends State<TimerView> {
                             maxLines: 2,
                             textAlign: TextAlign.center,
                             style: const TextStyle(
-                                    color: Default_Theme.primaryColor2,
+                                    color: DefaultTheme.primaryColor2,
                                     fontSize: 25,
                                     fontWeight: FontWeight.bold)
-                                .merge(Default_Theme.secondoryTextStyle),
+                                .merge(DefaultTheme.secondoryTextStyle),
                           ),
                         ),
                         Row(
@@ -117,7 +117,7 @@ class _TimerViewState extends State<TimerView> {
                                   .add(const TimerStopped());
                             },
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Default_Theme.accentColor2,
+                              backgroundColor: DefaultTheme.accentColor2,
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 20, vertical: 8),
                               shape: RoundedRectangleBorder(
@@ -132,17 +132,17 @@ class _TimerViewState extends State<TimerView> {
                                   padding: EdgeInsets.only(right: 10),
                                   child: Icon(
                                     MingCute.stop_circle_fill,
-                                    color: Default_Theme.primaryColor2,
+                                    color: DefaultTheme.primaryColor2,
                                     size: 40,
                                   ),
                                 ),
                                 Text(
                                   "Stop Timer",
                                   style: const TextStyle(
-                                          color: Default_Theme.primaryColor2,
+                                          color: DefaultTheme.primaryColor2,
                                           fontSize: 20,
                                           fontWeight: FontWeight.bold)
-                                      .merge(Default_Theme.secondoryTextStyle),
+                                      .merge(DefaultTheme.secondoryTextStyle),
                                 ),
                               ],
                             ),
@@ -164,7 +164,7 @@ class _TimerViewState extends State<TimerView> {
                           "The tunes have rested. Sweet Dreams 🥰.",
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              color: Default_Theme.accentColor2,
+                              color: DefaultTheme.accentColor2,
                               fontSize: 40,
                               fontFamily: "Unageo",
                               fontWeight: FontWeight.bold),
@@ -175,7 +175,7 @@ class _TimerViewState extends State<TimerView> {
                           context.read<TimerBloc>().add(const TimerReset());
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Default_Theme.accentColor2,
+                          backgroundColor: DefaultTheme.accentColor2,
                           padding: const EdgeInsets.symmetric(
                               horizontal: 20, vertical: 8),
                           shape: RoundedRectangleBorder(
@@ -185,10 +185,10 @@ class _TimerViewState extends State<TimerView> {
                         child: Text(
                           "Got it!",
                           style: const TextStyle(
-                                  color: Default_Theme.primaryColor2,
+                                  color: DefaultTheme.primaryColor2,
                                   fontSize: 15,
                                   fontWeight: FontWeight.bold)
-                              .merge(Default_Theme.secondoryTextStyle),
+                              .merge(DefaultTheme.secondoryTextStyle),
                         ),
                       ),
                     ],
@@ -219,8 +219,8 @@ class _TimerViewState extends State<TimerView> {
                   Text("Hours",
                       textAlign: TextAlign.center,
                       style: const TextStyle(
-                              color: Default_Theme.primaryColor2, fontSize: 25)
-                          .merge(Default_Theme.secondoryTextStyleMedium)),
+                              color: DefaultTheme.primaryColor2, fontSize: 25)
+                          .merge(DefaultTheme.secondoryTextStyleMedium)),
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.only(left: 5, right: 5),
@@ -232,20 +232,20 @@ class _TimerViewState extends State<TimerView> {
                         infiniteLoop: true,
                         value: _currentHour,
                         textStyle: TextStyle(
-                                color: Default_Theme.primaryColor2
+                                color: DefaultTheme.primaryColor2
                                     .withOpacity(0.7),
                                 fontSize: 20)
-                            .merge(Default_Theme.secondoryTextStyle),
+                            .merge(DefaultTheme.secondoryTextStyle),
                         selectedTextStyle: const TextStyle(
-                                color: Default_Theme.primaryColor2,
+                                color: DefaultTheme.primaryColor2,
                                 fontSize: 40)
-                            .merge(Default_Theme.secondoryTextStyleMedium),
+                            .merge(DefaultTheme.secondoryTextStyleMedium),
                         // zeroPad: true,
                         decoration: BoxDecoration(
                           shape: BoxShape.rectangle,
-                          color: Default_Theme.primaryColor2.withOpacity(0.07),
+                          color: DefaultTheme.primaryColor2.withOpacity(0.07),
                           borderRadius: BorderRadius.circular(16),
-                          // border: Border.all(color: Default_Theme.primaryColor2),
+                          // border: Border.all(color: DefaultTheme.primaryColor2),
                         ),
                         onChanged: (int value) {
                           setState(() => _currentHour = value);
@@ -261,8 +261,8 @@ class _TimerViewState extends State<TimerView> {
                   Text("Minutes",
                       textAlign: TextAlign.center,
                       style: const TextStyle(
-                              color: Default_Theme.primaryColor2, fontSize: 25)
-                          .merge(Default_Theme.secondoryTextStyleMedium)),
+                              color: DefaultTheme.primaryColor2, fontSize: 25)
+                          .merge(DefaultTheme.secondoryTextStyleMedium)),
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.only(left: 5, right: 5),
@@ -274,20 +274,20 @@ class _TimerViewState extends State<TimerView> {
                         infiniteLoop: true,
                         value: _currentMinute,
                         textStyle: TextStyle(
-                                color: Default_Theme.primaryColor2
+                                color: DefaultTheme.primaryColor2
                                     .withOpacity(0.7),
                                 fontSize: 20)
-                            .merge(Default_Theme.secondoryTextStyle),
+                            .merge(DefaultTheme.secondoryTextStyle),
                         selectedTextStyle: const TextStyle(
-                                color: Default_Theme.primaryColor2,
+                                color: DefaultTheme.primaryColor2,
                                 fontSize: 40)
-                            .merge(Default_Theme.secondoryTextStyleMedium),
+                            .merge(DefaultTheme.secondoryTextStyleMedium),
                         // zeroPad: true,
                         decoration: BoxDecoration(
                           shape: BoxShape.rectangle,
-                          color: Default_Theme.primaryColor2.withOpacity(0.07),
+                          color: DefaultTheme.primaryColor2.withOpacity(0.07),
                           borderRadius: BorderRadius.circular(16),
-                          // border: Border.all(color: Default_Theme.primaryColor2),
+                          // border: Border.all(color: DefaultTheme.primaryColor2),
                         ),
                         onChanged: (int value) {
                           setState(() => _currentMinute = value);
@@ -303,8 +303,8 @@ class _TimerViewState extends State<TimerView> {
                   Text("Seconds",
                       textAlign: TextAlign.center,
                       style: const TextStyle(
-                              color: Default_Theme.primaryColor2, fontSize: 25)
-                          .merge(Default_Theme.secondoryTextStyleMedium)),
+                              color: DefaultTheme.primaryColor2, fontSize: 25)
+                          .merge(DefaultTheme.secondoryTextStyleMedium)),
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.only(left: 5, right: 5),
@@ -316,20 +316,20 @@ class _TimerViewState extends State<TimerView> {
                         infiniteLoop: true,
                         value: _currentSecond,
                         textStyle: TextStyle(
-                                color: Default_Theme.primaryColor2
+                                color: DefaultTheme.primaryColor2
                                     .withOpacity(0.7),
                                 fontSize: 20)
-                            .merge(Default_Theme.secondoryTextStyle),
+                            .merge(DefaultTheme.secondoryTextStyle),
                         selectedTextStyle: const TextStyle(
-                                color: Default_Theme.primaryColor2,
+                                color: DefaultTheme.primaryColor2,
                                 fontSize: 40)
-                            .merge(Default_Theme.secondoryTextStyleMedium),
+                            .merge(DefaultTheme.secondoryTextStyleMedium),
                         // zeroPad: true,
                         decoration: BoxDecoration(
                           shape: BoxShape.rectangle,
-                          color: Default_Theme.primaryColor2.withOpacity(0.07),
+                          color: DefaultTheme.primaryColor2.withOpacity(0.07),
                           borderRadius: BorderRadius.circular(16),
-                          // border: Border.all(color: Default_Theme.primaryColor2),
+                          // border: Border.all(color: DefaultTheme.primaryColor2),
                         ),
                         onChanged: (int value) {
                           setState(() => _currentSecond = value);
@@ -346,7 +346,7 @@ class _TimerViewState extends State<TimerView> {
           padding: const EdgeInsets.all(8.0),
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor: Default_Theme.accentColor2,
+              backgroundColor: DefaultTheme.accentColor2,
               padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 8),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
@@ -371,7 +371,7 @@ class _TimerViewState extends State<TimerView> {
                       color: Colors.white,
                       fontSize: 20,
                       fontWeight: FontWeight.bold)
-                  .merge(Default_Theme.secondoryTextStyle),
+                  .merge(DefaultTheme.secondoryTextStyle),
             ),
           ),
         ),
@@ -389,23 +389,23 @@ class _TimerViewState extends State<TimerView> {
           Text(label,
               textAlign: TextAlign.center,
               style: const TextStyle(
-                      color: Default_Theme.primaryColor2, fontSize: 25)
-                  .merge(Default_Theme.secondoryTextStyleMedium)),
+                      color: DefaultTheme.primaryColor2, fontSize: 25)
+                  .merge(DefaultTheme.secondoryTextStyleMedium)),
           Container(
             width: 90,
             decoration: BoxDecoration(
               shape: BoxShape.rectangle,
-              color: Default_Theme.primaryColor2.withOpacity(0.07),
+              color: DefaultTheme.primaryColor2.withOpacity(0.07),
               borderRadius: BorderRadius.circular(16),
-              // border: Border.all(color: Default_Theme.primaryColor2),
+              // border: Border.all(color: DefaultTheme.primaryColor2),
             ),
             child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Text(time.toString().padLeft(2, '0'),
                   textAlign: TextAlign.center,
                   style: const TextStyle(
-                          color: Default_Theme.primaryColor2, fontSize: 35)
-                      .merge(Default_Theme.secondoryTextStyleMedium)),
+                          color: DefaultTheme.primaryColor2, fontSize: 35)
+                      .merge(DefaultTheme.secondoryTextStyleMedium)),
             ),
           ),
         ],

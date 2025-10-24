@@ -1,14 +1,14 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:Bloomee/services/db/bloomee_db_service.dart';
+import 'package:bloomee/services/db/bloomee_db_service.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:palette_generator/palette_generator.dart';
-import 'package:Bloomee/model/MediaPlaylistModel.dart';
-import 'package:Bloomee/model/songModel.dart';
-import 'package:Bloomee/services/db/GlobalDB.dart';
-import 'package:Bloomee/services/db/cubit/bloomee_db_cubit.dart';
-import 'package:Bloomee/utils/pallete_generator.dart';
+import 'package:bloomee/model/MediaPlaylistModel.dart';
+import 'package:bloomee/model/songModel.dart';
+import 'package:bloomee/services/db/GlobalDB.dart';
+import 'package:bloomee/services/db/cubit/bloomee_db_cubit.dart';
+import 'package:bloomee/utils/pallete_generator.dart';
 part 'current_playlist_state.dart';
 
 class CurrentPlaylistCubit extends Cubit<CurrentPlaylistState> {

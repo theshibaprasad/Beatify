@@ -1,20 +1,20 @@
 import 'dart:ui';
-import 'package:Bloomee/blocs/mediaPlayer/bloomee_player_cubit.dart';
-import 'package:Bloomee/model/MediaPlaylistModel.dart';
-import 'package:Bloomee/model/songModel.dart';
-import 'package:Bloomee/screens/screen/library_views/cubit/current_playlist_cubit.dart';
-import 'package:Bloomee/screens/screen/library_views/more_opts_sheet.dart';
-import 'package:Bloomee/blocs/downloader/cubit/downloader_cubit.dart';
-import 'package:Bloomee/screens/widgets/more_bottom_sheet.dart';
-import 'package:Bloomee/screens/widgets/playPause_widget.dart';
-import 'package:Bloomee/screens/widgets/sign_board_widget.dart';
-import 'package:Bloomee/screens/widgets/snackbar.dart';
-import 'package:Bloomee/screens/widgets/song_tile.dart';
-import 'package:Bloomee/services/db/GlobalDB.dart';
-import 'package:Bloomee/services/db/cubit/bloomee_db_cubit.dart';
-import 'package:Bloomee/theme_data/default.dart';
-import 'package:Bloomee/utils/imgurl_formator.dart';
-import 'package:Bloomee/utils/load_Image.dart';
+import 'package:bloomee/blocs/mediaPlayer/bloomee_player_cubit.dart';
+import 'package:bloomee/model/MediaPlaylistModel.dart';
+import 'package:bloomee/model/songModel.dart';
+import 'package:bloomee/screens/screen/library_views/cubit/current_playlist_cubit.dart';
+import 'package:bloomee/screens/screen/library_views/more_opts_sheet.dart';
+import 'package:bloomee/blocs/downloader/cubit/downloader_cubit.dart';
+import 'package:bloomee/screens/widgets/more_bottom_sheet.dart';
+import 'package:bloomee/screens/widgets/playPause_widget.dart';
+import 'package:bloomee/screens/widgets/sign_board_widget.dart';
+import 'package:bloomee/screens/widgets/snackbar.dart';
+import 'package:bloomee/screens/widgets/song_tile.dart';
+import 'package:bloomee/services/db/GlobalDB.dart';
+import 'package:bloomee/services/db/cubit/bloomee_db_cubit.dart';
+import 'package:bloomee/theme_data/default.dart';
+import 'package:bloomee/utils/imgurl_formator.dart';
+import 'package:bloomee/utils/load_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -101,8 +101,8 @@ class PlaylistView extends StatelessWidget {
                               context.pop();
                             },
                           ),
-                          backgroundColor: Default_Theme.themeColor,
-                          surfaceTintColor: Default_Theme.themeColor,
+                          backgroundColor: DefaultTheme.themeColor,
+                          surfaceTintColor: DefaultTheme.themeColor,
                           expandedHeight: maxExtent,
                           floating: false,
                           pinned: true,
@@ -122,7 +122,7 @@ class PlaylistView extends StatelessWidget {
                             final span = TextSpan(
                               text: state.mediaPlaylist.playlistName,
                               style:
-                                  Default_Theme.secondoryTextStyleMedium.merge(
+                                  DefaultTheme.secondoryTextStyleMedium.merge(
                                 TextStyle(
                                   fontSize: titleFontSize,
                                   color: getFBColor(context)[0],
@@ -149,7 +149,7 @@ class PlaylistView extends StatelessWidget {
                               title: Text(
                                 state.mediaPlaylist.playlistName,
                                 maxLines: isCollapsed ? 1 : 3,
-                                style: Default_Theme.secondoryTextStyleMedium
+                                style: DefaultTheme.secondoryTextStyleMedium
                                     .merge(
                                   TextStyle(
                                     fontSize: titleFontSize,
@@ -298,10 +298,10 @@ class PlaylistView extends StatelessWidget {
                                               "${state.mediaPlaylist.isAlbum ? 'Album' : 'Playlist'} • ${state.mediaPlaylist.mediaItems.length} Songs",
                                               maxLines: 1,
                                               overflow: TextOverflow.ellipsis,
-                                              style: Default_Theme
+                                              style: DefaultTheme
                                                   .secondoryTextStyle
                                                   .merge(TextStyle(
-                                                color: Default_Theme
+                                                color: DefaultTheme
                                                     .primaryColor1
                                                     .withOpacity(0.9),
                                                 fontSize: 12,
@@ -313,9 +313,9 @@ class PlaylistView extends StatelessWidget {
                                       const SizedBox(height: 2),
                                       Text(
                                         'by ${state.mediaPlaylist.artists ?? 'You'}',
-                                        style: Default_Theme.secondoryTextStyle
+                                        style: DefaultTheme.secondoryTextStyle
                                             .merge(TextStyle(
-                                          color: Default_Theme.primaryColor1
+                                          color: DefaultTheme.primaryColor1
                                               .withOpacity(0.8),
                                           fontSize: 12,
                                         )),
@@ -390,7 +390,7 @@ class PlaylistView extends StatelessWidget {
                                             context: context,
                                             builder: (context) => AlertDialog(
                                               backgroundColor:
-                                                  Default_Theme.themeColor,
+                                                  DefaultTheme.themeColor,
                                               title: const Text(
                                                   'Download playlist'),
                                               content: Text(
@@ -406,10 +406,10 @@ class PlaylistView extends StatelessWidget {
                                                   style:
                                                       ElevatedButton.styleFrom(
                                                     backgroundColor:
-                                                        Default_Theme
+                                                        DefaultTheme
                                                             .accentColor2,
                                                     foregroundColor:
-                                                        Default_Theme
+                                                        DefaultTheme
                                                             .primaryColor2,
                                                     padding: const EdgeInsets
                                                         .symmetric(
@@ -464,7 +464,7 @@ class PlaylistView extends StatelessWidget {
                                           },
                                           padding: EdgeInsets.zero,
                                           icon: Icon(MingCute.shuffle_line,
-                                              color: Default_Theme.primaryColor1
+                                              color: DefaultTheme.primaryColor1
                                                   .withOpacity(0.8))),
                                     ),
                                     Padding(
@@ -567,7 +567,7 @@ class PlaylistView extends StatelessWidget {
                                                 context, state.mediaPlaylist);
                                           },
                                           icon: Icon(MingCute.more_2_line,
-                                              color: Default_Theme.primaryColor1
+                                              color: DefaultTheme.primaryColor1
                                                   .withOpacity(0.8))),
                                     ),
                                   ],
@@ -712,7 +712,7 @@ class PlaylistView extends StatelessWidget {
               items.isEmpty ? 0 : (completed / items.length).clamp(0.0, 1.0);
 
           return AlertDialog(
-            backgroundColor: Default_Theme.themeColor,
+            backgroundColor: DefaultTheme.themeColor,
             contentPadding: const EdgeInsets.fromLTRB(18, 16, 18, 12),
             content: SizedBox(
               width: 320,
@@ -722,20 +722,20 @@ class PlaylistView extends StatelessWidget {
                 children: [
                   const Text(
                     'Adding to download queue',
-                    style: Default_Theme.secondoryTextStyleMedium,
+                    style: DefaultTheme.secondoryTextStyleMedium,
                   ),
                   const SizedBox(height: 8),
                   Text(
                     '${completed}/${items.length} ${completed == 1 ? 'item' : 'items'}',
-                    style: Default_Theme.secondoryTextStyle,
+                    style: DefaultTheme.secondoryTextStyle,
                   ),
                   const SizedBox(height: 12),
                   LinearProgressIndicator(
                     value: progress,
                     backgroundColor:
-                        Default_Theme.primaryColor1.withOpacity(0.12),
+                        DefaultTheme.primaryColor1.withOpacity(0.12),
                     valueColor: AlwaysStoppedAnimation<Color>(
-                        Default_Theme.primaryColor1.withOpacity(0.95)),
+                        DefaultTheme.primaryColor1.withOpacity(0.95)),
                     minHeight: 6,
                   ),
                   const SizedBox(height: 12),
@@ -743,7 +743,7 @@ class PlaylistView extends StatelessWidget {
                     currentTitle,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: Default_Theme.secondoryTextStyle
+                    style: DefaultTheme.secondoryTextStyle
                         .merge(const TextStyle(fontSize: 12)),
                   ),
                 ],

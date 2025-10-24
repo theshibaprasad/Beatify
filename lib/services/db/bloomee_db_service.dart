@@ -1,19 +1,19 @@
 import 'dart:convert';
 import 'dart:developer';
 import 'dart:io';
-import 'package:Bloomee/model/MediaPlaylistModel.dart';
-import 'package:Bloomee/model/album_onl_model.dart';
-import 'package:Bloomee/model/artist_onl_model.dart';
-import 'package:Bloomee/model/chart_model.dart';
-import 'package:Bloomee/model/lyrics_models.dart';
-import 'package:Bloomee/model/playlist_onl_model.dart';
-import 'package:Bloomee/model/songModel.dart';
-import 'package:Bloomee/routes_and_consts/global_str_consts.dart';
-import 'package:Bloomee/services/db/backup_validator.dart';
+import 'package:bloomee/model/MediaPlaylistModel.dart';
+import 'package:bloomee/model/album_onl_model.dart';
+import 'package:bloomee/model/artist_onl_model.dart';
+import 'package:bloomee/model/chart_model.dart';
+import 'package:bloomee/model/lyrics_models.dart';
+import 'package:bloomee/model/playlist_onl_model.dart';
+import 'package:bloomee/model/songModel.dart';
+import 'package:bloomee/routes_and_consts/global_str_consts.dart';
+import 'package:bloomee/services/db/backup_validator.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:path/path.dart' as p;
 import 'package:isar_community/isar.dart';
-import 'package:Bloomee/services/db/GlobalDB.dart';
+import 'package:bloomee/services/db/GlobalDB.dart';
 import 'package:path_provider/path_provider.dart';
 
 class BloomeeDBService {

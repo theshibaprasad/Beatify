@@ -1,45 +1,45 @@
 import 'dart:async';
 import 'dart:io' as io;
-import 'package:Bloomee/blocs/downloader/cubit/downloader_cubit.dart';
-import 'package:Bloomee/blocs/global_events/global_events_cubit.dart';
-import 'package:Bloomee/blocs/internet_connectivity/cubit/connectivity_cubit.dart';
-import 'package:Bloomee/blocs/lastdotfm/lastdotfm_cubit.dart';
-import 'package:Bloomee/blocs/lyrics/lyrics_cubit.dart';
-import 'package:Bloomee/blocs/mini_player/mini_player_bloc.dart';
-import 'package:Bloomee/blocs/notification/notification_cubit.dart';
-import 'package:Bloomee/blocs/search_suggestions/search_suggestion_bloc.dart';
-import 'package:Bloomee/blocs/settings_cubit/cubit/settings_cubit.dart';
-import 'package:Bloomee/blocs/timer/timer_bloc.dart';
-import 'package:Bloomee/repository/Youtube/youtube_api.dart';
-import 'package:Bloomee/screens/widgets/global_event_listener.dart';
-import 'package:Bloomee/screens/widgets/snackbar.dart';
-import 'package:Bloomee/services/db/bloomee_db_service.dart';
-import 'package:Bloomee/services/shortcuts_intents.dart';
-import 'package:Bloomee/theme_data/default.dart';
-import 'package:Bloomee/services/import_export_service.dart';
-import 'package:Bloomee/utils/external_list_importer.dart';
-import 'package:Bloomee/utils/ticker.dart';
-import 'package:Bloomee/utils/url_checker.dart';
+import 'package:bloomee/blocs/downloader/cubit/downloader_cubit.dart';
+import 'package:bloomee/blocs/global_events/global_events_cubit.dart';
+import 'package:bloomee/blocs/internet_connectivity/cubit/connectivity_cubit.dart';
+import 'package:bloomee/blocs/lastdotfm/lastdotfm_cubit.dart';
+import 'package:bloomee/blocs/lyrics/lyrics_cubit.dart';
+import 'package:bloomee/blocs/mini_player/mini_player_bloc.dart';
+import 'package:bloomee/blocs/notification/notification_cubit.dart';
+import 'package:bloomee/blocs/search_suggestions/search_suggestion_bloc.dart';
+import 'package:bloomee/blocs/settings_cubit/cubit/settings_cubit.dart';
+import 'package:bloomee/blocs/timer/timer_bloc.dart';
+import 'package:bloomee/repository/Youtube/youtube_api.dart';
+import 'package:bloomee/screens/widgets/global_event_listener.dart';
+import 'package:bloomee/screens/widgets/snackbar.dart';
+import 'package:bloomee/services/db/bloomee_db_service.dart';
+import 'package:bloomee/services/shortcuts_intents.dart';
+import 'package:bloomee/theme_data/default.dart';
+import 'package:bloomee/services/import_export_service.dart';
+import 'package:bloomee/utils/external_list_importer.dart';
+import 'package:bloomee/utils/ticker.dart';
+import 'package:bloomee/utils/url_checker.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:Bloomee/blocs/add_to_playlist/cubit/add_to_playlist_cubit.dart';
-import 'package:Bloomee/blocs/library/cubit/library_items_cubit.dart';
-import 'package:Bloomee/blocs/search/fetch_search_results.dart';
-import 'package:Bloomee/routes_and_consts/routes.dart';
-import 'package:Bloomee/screens/screen/library_views/cubit/current_playlist_cubit.dart';
-import 'package:Bloomee/screens/screen/library_views/cubit/import_playlist_cubit.dart';
-import 'package:Bloomee/services/db/cubit/bloomee_db_cubit.dart';
+import 'package:bloomee/blocs/add_to_playlist/cubit/add_to_playlist_cubit.dart';
+import 'package:bloomee/blocs/library/cubit/library_items_cubit.dart';
+import 'package:bloomee/blocs/search/fetch_search_results.dart';
+import 'package:bloomee/routes_and_consts/routes.dart';
+import 'package:bloomee/screens/screen/library_views/cubit/current_playlist_cubit.dart';
+import 'package:bloomee/screens/screen/library_views/cubit/import_playlist_cubit.dart';
+import 'package:bloomee/services/db/cubit/bloomee_db_cubit.dart';
 import 'package:just_audio_media_kit/just_audio_media_kit.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:share_handler/share_handler.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'blocs/mediaPlayer/bloomee_player_cubit.dart';
 import 'package:flutter_displaymode/flutter_displaymode.dart';
-import 'package:Bloomee/services/discord_service.dart';
-import 'package:Bloomee/blocs/jam/jam_cubit.dart';
-import 'package:Bloomee/services/jam_service.dart';
+import 'package:bloomee/services/discord_service.dart';
+import 'package:bloomee/blocs/jam/jam_cubit.dart';
+import 'package:bloomee/services/jam_service.dart';
 
 void processIncomingIntent(SharedMedia sharedMedia) {
   // Check if there's text content that might be a URL
@@ -391,7 +391,7 @@ class _MyAppState extends State<MyApp> {
               ),
               scaffoldMessengerKey: SnackbarService.messengerKey,
               routerConfig: GlobalRoutes.globalRouter,
-              theme: Default_Theme().defaultThemeData,
+              theme: DefaultTheme().defaultThemeData,
               scrollBehavior: CustomScrollBehavior(),
               debugShowCheckedModeBanner: false,
             );

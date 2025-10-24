@@ -1,8 +1,8 @@
 import 'dart:developer';
 import 'dart:isolate';
-import 'package:Bloomee/repository/Youtube/youtube_api.dart';
-import 'package:Bloomee/routes_and_consts/global_str_consts.dart';
-import 'package:Bloomee/services/db/bloomee_db_service.dart';
+import 'package:bloomee/repository/Youtube/youtube_api.dart';
+import 'package:bloomee/routes_and_consts/global_str_consts.dart';
+import 'package:bloomee/services/db/bloomee_db_service.dart';
 import 'package:async/async.dart';
 
 Future<void> cacheYtStreams({

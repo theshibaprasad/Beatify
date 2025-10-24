@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:audio_service/audio_service.dart';
 import 'package:just_audio/just_audio.dart';
-import 'package:Bloomee/services/db/bloomee_db_service.dart';
-import 'package:Bloomee/model/songModel.dart';
+import 'package:bloomee/services/db/bloomee_db_service.dart';
+import 'package:bloomee/model/songModel.dart';
 
 /// Tracks continuous playback of the current media item and pushes it to
 /// the Recently Played DB only when the item has been played continuously

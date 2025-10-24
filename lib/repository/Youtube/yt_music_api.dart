@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'dart:developer' as dev;
-import 'package:Bloomee/utils/country_info.dart';
+import 'package:bloomee/utils/country_info.dart';
 import 'package:http/http.dart';
 import 'package:logging/logging.dart';
-import 'package:Bloomee/utils/extentions.dart';
+import 'package:bloomee/utils/extentions.dart';
 import 'ytmusic/nav.dart';
 import 'ytmusic_format.dart';
 

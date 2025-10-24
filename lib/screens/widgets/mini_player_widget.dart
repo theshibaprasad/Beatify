@@ -1,13 +1,13 @@
 import 'dart:ui';
 
-import 'package:Bloomee/blocs/add_to_playlist/cubit/add_to_playlist_cubit.dart';
-import 'package:Bloomee/blocs/mediaPlayer/bloomee_player_cubit.dart';
-import 'package:Bloomee/blocs/mini_player/mini_player_bloc.dart';
-import 'package:Bloomee/model/songModel.dart';
-import 'package:Bloomee/routes_and_consts/global_str_consts.dart';
-import 'package:Bloomee/theme_data/default.dart';
-import 'package:Bloomee/utils/imgurl_formator.dart';
-import 'package:Bloomee/utils/load_Image.dart';
+import 'package:bloomee/blocs/add_to_playlist/cubit/add_to_playlist_cubit.dart';
+import 'package:bloomee/blocs/mediaPlayer/bloomee_player_cubit.dart';
+import 'package:bloomee/blocs/mini_player/mini_player_bloc.dart';
+import 'package:bloomee/model/songModel.dart';
+import 'package:bloomee/routes_and_consts/global_str_consts.dart';
+import 'package:bloomee/theme_data/default.dart';
+import 'package:bloomee/utils/imgurl_formator.dart';
+import 'package:bloomee/utils/load_image.dart';
 import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -101,7 +101,7 @@ class MiniPlayerCard extends StatelessWidget {
           child: Stack(
             children: [
               Container(
-                color: Default_Theme.themeColor,
+                color: DefaultTheme.themeColor,
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.width,
                 child: LoadImageCached(
@@ -147,21 +147,21 @@ class MiniPlayerCard extends StatelessWidget {
                       children: [
                         Text(
                           state.song.title,
-                          style: Default_Theme.secondoryTextStyle.merge(
+                          style: DefaultTheme.secondoryTextStyle.merge(
                               const TextStyle(
                                   fontSize: 15,
                                   fontWeight: FontWeight.bold,
-                                  color: Default_Theme.primaryColor1)),
+                                  color: DefaultTheme.primaryColor1)),
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                         ),
                         Text(
                           state.song.artist ?? 'Unknown Artist',
-                          style: Default_Theme.secondoryTextStyle.merge(
+                          style: DefaultTheme.secondoryTextStyle.merge(
                               TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 12.5,
-                                  color: Default_Theme.primaryColor1
+                                  color: DefaultTheme.primaryColor1
                                       .withOpacity(0.7))),
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
@@ -189,7 +189,7 @@ class MiniPlayerCard extends StatelessWidget {
                           child: SizedBox.square(
                               dimension: 20,
                               child: CircularProgressIndicator(
-                                color: Default_Theme.primaryColor1,
+                                color: DefaultTheme.primaryColor1,
                               )),
                         )
                       : (isCompleted

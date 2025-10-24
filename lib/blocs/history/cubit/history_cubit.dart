@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:developer';
-import 'package:Bloomee/services/db/bloomee_db_service.dart';
+import 'package:bloomee/services/db/bloomee_db_service.dart';
 import 'package:bloc/bloc.dart';
-import 'package:Bloomee/model/MediaPlaylistModel.dart';
+import 'package:bloomee/model/MediaPlaylistModel.dart';
 part 'history_state.dart';
 
 class HistoryCubit extends Cubit<HistoryState> {

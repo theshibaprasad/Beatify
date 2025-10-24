@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:Bloomee/screens/widgets/playPause_widget.dart';
-import 'package:Bloomee/utils/load_Image.dart';
+import 'package:bloomee/screens/widgets/playPause_widget.dart';
+import 'package:bloomee/utils/load_image.dart';
 
 class CarouselCardView extends StatelessWidget {
   final String coverImageUrl;

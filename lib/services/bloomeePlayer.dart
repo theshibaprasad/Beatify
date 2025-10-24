@@ -1,22 +1,22 @@
 import 'dart:developer';
 import 'dart:io';
 import 'dart:async';
-import 'package:Bloomee/routes_and_consts/global_conts.dart';
-import 'package:Bloomee/services/player/audio_source_manager.dart';
-import 'package:Bloomee/services/player/player_error_handler.dart';
-import 'package:Bloomee/services/player/connectivity_manager.dart';
-import 'package:Bloomee/services/player/queue_manager.dart';
-import 'package:Bloomee/services/player/related_songs_manager.dart';
-import 'package:Bloomee/utils/imgurl_formator.dart';
+import 'package:bloomee/routes_and_consts/global_conts.dart';
+import 'package:bloomee/services/player/audio_source_manager.dart';
+import 'package:bloomee/services/player/player_error_handler.dart';
+import 'package:bloomee/services/player/connectivity_manager.dart';
+import 'package:bloomee/services/player/queue_manager.dart';
+import 'package:bloomee/services/player/related_songs_manager.dart';
+import 'package:bloomee/utils/imgurl_formator.dart';
 import 'package:audio_service/audio_service.dart';
 import 'package:easy_debounce/easy_throttle.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:rxdart/rxdart.dart';
-import 'package:Bloomee/model/songModel.dart';
+import 'package:bloomee/model/songModel.dart';
 import '../model/MediaPlaylistModel.dart';
-import 'package:Bloomee/services/discord_service.dart';
-import 'package:Bloomee/services/player/recently_played_tracker.dart';
-import 'package:Bloomee/services/jam_service.dart';
+import 'package:bloomee/services/discord_service.dart';
+import 'package:bloomee/services/player/recently_played_tracker.dart';
+import 'package:bloomee/services/jam_service.dart';
 
 class BloomeeMusicPlayer extends BaseAudioHandler
     with SeekHandler, QueueHandler {

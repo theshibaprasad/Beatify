@@ -1,9 +1,9 @@
 import 'dart:async';
-import 'package:Bloomee/blocs/lyrics/lyrics_cubit.dart';
-import 'package:Bloomee/blocs/mediaPlayer/bloomee_player_cubit.dart';
-import 'package:Bloomee/screens/screen/player_views/lyrics_menu.dart';
-import 'package:Bloomee/screens/widgets/sign_board_widget.dart';
-import 'package:Bloomee/theme_data/default.dart';
+import 'package:bloomee/blocs/lyrics/lyrics_cubit.dart';
+import 'package:bloomee/blocs/mediaPlayer/bloomee_player_cubit.dart';
+import 'package:bloomee/screens/screen/player_views/lyrics_menu.dart';
+import 'package:bloomee/screens/widgets/sign_board_widget.dart';
+import 'package:bloomee/theme_data/default.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icons_plus/icons_plus.dart';
@@ -116,11 +116,11 @@ class PlainLyricsWidget extends StatelessWidget {
         child: SelectableText(
           "\n${state.lyrics.lyricsPlain}\n",
           textAlign: TextAlign.center,
-          style: Default_Theme.secondoryTextStyle.merge(const TextStyle(
+          style: DefaultTheme.secondoryTextStyle.merge(const TextStyle(
               fontSize: 18,
               fontFamily: 'NotoSans',
               fontWeight: FontWeight.w600,
-              color: Default_Theme.primaryColor1)),
+              color: DefaultTheme.primaryColor1)),
         ),
       ),
     );
@@ -261,13 +261,13 @@ class _SyncedLyricsWidgetState extends State<SyncedLyricsWidget> {
           return Text(
             widget.state.lyrics.parsedLyrics!.lyrics[index].text,
             textAlign: TextAlign.center,
-            style: Default_Theme.secondoryTextStyle.merge(TextStyle(
+            style: DefaultTheme.secondoryTextStyle.merge(TextStyle(
               fontSize: 18,
               fontFamily: 'NotoSans',
               fontWeight: FontWeight.bold,
               color: isCurrentLyric(index)
-                  ? Default_Theme.accentColor2
-                  : Default_Theme.primaryColor2,
+                  ? DefaultTheme.accentColor2
+                  : DefaultTheme.primaryColor2,
             )),
           );
         },

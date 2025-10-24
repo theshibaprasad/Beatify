@@ -1,16 +1,16 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:async';
 import 'dart:developer';
-import 'package:Bloomee/model/MediaPlaylistModel.dart';
-import 'package:Bloomee/model/album_onl_model.dart';
-import 'package:Bloomee/model/artist_onl_model.dart';
-import 'package:Bloomee/model/playlist_onl_model.dart';
+import 'package:bloomee/model/MediaPlaylistModel.dart';
+import 'package:bloomee/model/album_onl_model.dart';
+import 'package:bloomee/model/artist_onl_model.dart';
+import 'package:bloomee/model/playlist_onl_model.dart';
 import 'package:equatable/equatable.dart';
-import 'package:Bloomee/model/songModel.dart';
-import 'package:Bloomee/screens/widgets/snackbar.dart';
-import 'package:Bloomee/services/db/GlobalDB.dart';
-import 'package:Bloomee/services/db/bloomee_db_service.dart';
-import 'package:Bloomee/services/db/cubit/bloomee_db_cubit.dart';
+import 'package:bloomee/model/songModel.dart';
+import 'package:bloomee/screens/widgets/snackbar.dart';
+import 'package:bloomee/services/db/GlobalDB.dart';
+import 'package:bloomee/services/db/bloomee_db_service.dart';
+import 'package:bloomee/services/db/cubit/bloomee_db_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 part 'library_items_state.dart';
 

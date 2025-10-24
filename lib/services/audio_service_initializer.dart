@@ -1,5 +1,5 @@
-import 'package:Bloomee/services/bloomeePlayer.dart';
-import 'package:Bloomee/theme_data/default.dart';
+import 'package:bloomee/services/bloomeePlayer.dart';
+import 'package:bloomee/theme_data/default.dart';
 import 'package:audio_service/audio_service.dart';
 
 class PlayerInitializer {
@@ -23,7 +23,7 @@ class PlayerInitializer {
         androidResumeOnClick: true,
         // androidNotificationIcon: 'assets/icons/Bloomee_logo_fore.png',
         androidShowNotificationBadge: true,
-        notificationColor: Default_Theme.accentColor2,
+        notificationColor: DefaultTheme.accentColor2,
       ),
     );
   }

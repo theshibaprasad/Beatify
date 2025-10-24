@@ -1,15 +1,15 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:developer';
-import 'package:Bloomee/blocs/mediaPlayer/bloomee_player_cubit.dart';
-import 'package:Bloomee/model/songModel.dart';
-import 'package:Bloomee/repository/MixedAPI/mixed_api.dart';
-import 'package:Bloomee/screens/widgets/snackbar.dart';
-import 'package:Bloomee/utils/imgurl_formator.dart';
+import 'package:bloomee/blocs/mediaPlayer/bloomee_player_cubit.dart';
+import 'package:bloomee/model/songModel.dart';
+import 'package:bloomee/repository/MixedAPI/mixed_api.dart';
+import 'package:bloomee/screens/widgets/snackbar.dart';
+import 'package:bloomee/utils/imgurl_formator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:Bloomee/routes_and_consts/global_str_consts.dart';
-import 'package:Bloomee/utils/load_Image.dart';
+import 'package:bloomee/routes_and_consts/global_str_consts.dart';
+import 'package:bloomee/utils/load_image.dart';
 
 import '../../theme_data/default.dart';
 
@@ -92,17 +92,17 @@ class ChartListTile extends StatelessWidget {
             textAlign: TextAlign.start,
             overflow: TextOverflow.ellipsis,
             maxLines: 1,
-            style: Default_Theme.tertiaryTextStyle.merge(const TextStyle(
+            style: DefaultTheme.tertiaryTextStyle.merge(const TextStyle(
                 fontWeight: FontWeight.w600,
-                color: Default_Theme.primaryColor1,
+                color: DefaultTheme.primaryColor1,
                 fontSize: 14)),
           ),
           subtitle: Text(subtitle,
               textAlign: TextAlign.start,
               overflow: TextOverflow.ellipsis,
               maxLines: 1,
-              style: Default_Theme.tertiaryTextStyle.merge(TextStyle(
-                  color: Default_Theme.primaryColor1.withOpacity(0.8),
+              style: DefaultTheme.tertiaryTextStyle.merge(TextStyle(
+                  color: DefaultTheme.primaryColor1.withOpacity(0.8),
                   fontSize: 13))),
         ),
       ),

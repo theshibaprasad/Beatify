@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
-import 'package:Bloomee/services/db/GlobalDB.dart';
-import 'package:Bloomee/services/db/cubit/bloomee_db_cubit.dart';
-import 'package:Bloomee/theme_data/default.dart';
+import 'package:bloomee/services/db/GlobalDB.dart';
+import 'package:bloomee/services/db/cubit/bloomee_db_cubit.dart';
+import 'package:bloomee/theme_data/default.dart';
 
 void createPlaylistBottomSheet(BuildContext context) {
   final _focusNode = FocusNode();
@@ -25,7 +25,7 @@ void createPlaylistBottomSheet(BuildContext context) {
               topLeft: Radius.circular(40), topRight: Radius.circular(40)),
           child: Container(
             height: (MediaQuery.of(context).size.height * 0.45) + 10,
-            color: Default_Theme.accentColor2,
+            color: DefaultTheme.accentColor2,
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -39,7 +39,7 @@ void createPlaylistBottomSheet(BuildContext context) {
                           topLeft: Radius.circular(40),
                           topRight: Radius.circular(40)),
                       child: Container(
-                        color: Default_Theme.themeColor,
+                        color: DefaultTheme.themeColor,
                         child: SingleChildScrollView(
                           child: Center(
                             child: Column(
@@ -53,10 +53,10 @@ void createPlaylistBottomSheet(BuildContext context) {
                                     fit: BoxFit.scaleDown,
                                     child: Text(
                                       "Create new Playlist 😍",
-                                      style: Default_Theme
+                                      style: DefaultTheme
                                           .secondoryTextStyleMedium
                                           .merge(const TextStyle(
-                                              color: Default_Theme.accentColor2,
+                                              color: DefaultTheme.accentColor2,
                                               fontSize: 35)),
                                     ),
                                   ),
@@ -78,11 +78,11 @@ void createPlaylistBottomSheet(BuildContext context) {
                                     showCursor: true,
                                     cursorWidth: 5,
                                     cursorRadius: const Radius.circular(5),
-                                    cursorColor: Default_Theme.accentColor2,
+                                    cursorColor: DefaultTheme.accentColor2,
                                     style: const TextStyle(
                                             fontSize: 45,
-                                            color: Default_Theme.accentColor2)
-                                        .merge(Default_Theme
+                                            color: DefaultTheme.accentColor2)
+                                        .merge(DefaultTheme
                                             .secondoryTextStyleMedium),
                                     decoration: const InputDecoration(
                                         enabledBorder: OutlineInputBorder(

@@ -1,14 +1,14 @@
 import 'dart:async';
 import 'dart:ui';
-import 'package:Bloomee/model/songModel.dart';
-import 'package:Bloomee/screens/screen/home_views/timer_view.dart';
-import 'package:Bloomee/screens/widgets/more_bottom_sheet.dart';
-import 'package:Bloomee/screens/widgets/up_next_panel.dart';
-import 'package:Bloomee/screens/widgets/volume_slider.dart';
-import 'package:Bloomee/services/bloomeePlayer.dart';
-import 'package:Bloomee/services/db/bloomee_db_service.dart';
-import 'package:Bloomee/services/shortcuts_intents.dart';
-import 'package:Bloomee/utils/imgurl_formator.dart';
+import 'package:bloomee/model/songModel.dart';
+import 'package:bloomee/screens/screen/home_views/timer_view.dart';
+import 'package:bloomee/screens/widgets/more_bottom_sheet.dart';
+import 'package:bloomee/screens/widgets/up_next_panel.dart';
+import 'package:bloomee/screens/widgets/volume_slider.dart';
+import 'package:bloomee/services/bloomeePlayer.dart';
+import 'package:bloomee/services/db/bloomee_db_service.dart';
+import 'package:bloomee/services/shortcuts_intents.dart';
+import 'package:bloomee/utils/imgurl_formator.dart';
 import 'package:audio_service/audio_service.dart';
 import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
 import 'package:flutter/material.dart';
@@ -16,12 +16,12 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:just_audio/just_audio.dart';
-import 'package:Bloomee/screens/widgets/like_widget.dart';
-import 'package:Bloomee/screens/widgets/playPause_widget.dart';
-import 'package:Bloomee/services/db/cubit/bloomee_db_cubit.dart';
-import 'package:Bloomee/theme_data/default.dart';
-import 'package:Bloomee/utils/load_Image.dart';
-import 'package:Bloomee/utils/pallete_generator.dart';
+import 'package:bloomee/screens/widgets/like_widget.dart';
+import 'package:bloomee/screens/widgets/playPause_widget.dart';
+import 'package:bloomee/services/db/cubit/bloomee_db_cubit.dart';
+import 'package:bloomee/theme_data/default.dart';
+import 'package:bloomee/utils/load_image.dart';
+import 'package:bloomee/utils/pallete_generator.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:url_launcher/url_launcher_string.dart';
@@ -134,7 +134,7 @@ class _AudioPlayerViewState extends State<AudioPlayerView>
               backgroundColor: Colors.transparent,
               surfaceTintColor: Colors.transparent,
               elevation: 0,
-              foregroundColor: Default_Theme.primaryColor1,
+              foregroundColor: DefaultTheme.primaryColor1,
               centerTitle: true,
               actions: [
                 IconButton(
@@ -142,7 +142,7 @@ class _AudioPlayerViewState extends State<AudioPlayerView>
                       showMoreBottomSheet(context, musicPlayer.currentMedia);
                     },
                     icon: const Icon(MingCute.more_2_fill,
-                        size: 25, color: Default_Theme.primaryColor1))
+                        size: 25, color: DefaultTheme.primaryColor1))
               ],
               title: Column(
                 children: [
@@ -150,10 +150,10 @@ class _AudioPlayerViewState extends State<AudioPlayerView>
                     'Enjoying From',
                     textAlign: TextAlign.center,
                     style: const TextStyle(
-                            color: Default_Theme.primaryColor1,
+                            color: DefaultTheme.primaryColor1,
                             fontSize: 12,
                             fontWeight: FontWeight.bold)
-                        .merge(Default_Theme.secondoryTextStyle),
+                        .merge(DefaultTheme.secondoryTextStyle),
                   ),
                   StreamBuilder<String>(
                       stream: bloomeePlayerCubit.bloomeePlayer.queueTitle,
@@ -162,9 +162,9 @@ class _AudioPlayerViewState extends State<AudioPlayerView>
                           snapshot.data ?? "Unknown",
                           textAlign: TextAlign.center,
                           style: const TextStyle(
-                            color: Default_Theme.primaryColor2,
+                            color: DefaultTheme.primaryColor2,
                             fontSize: 12,
-                          ).merge(Default_Theme.secondoryTextStyle),
+                          ).merge(DefaultTheme.secondoryTextStyle),
                         );
                       }),
                 ],
@@ -384,13 +384,13 @@ class PlayerCtrlWidgets extends StatelessWidget {
                               snapshot.data?.title ?? "Unknown",
                               textAlign: TextAlign.start,
                               // overflow: TextOverflow.ellipsis,
-                              style: Default_Theme.secondoryTextStyle.merge(
+                              style: DefaultTheme.secondoryTextStyle.merge(
                                   const TextStyle(
                                       fontSize: 22,
                                       fontFamily: "NotoSans",
                                       fontWeight: FontWeight.w700,
                                       overflow: TextOverflow.ellipsis,
-                                      color: Default_Theme.primaryColor1)),
+                                      color: DefaultTheme.primaryColor1)),
                             ),
                           ),
                           SingleChildScrollView(
@@ -399,13 +399,13 @@ class PlayerCtrlWidgets extends StatelessWidget {
                               snapshot.data?.artist ?? "Unknown",
                               textAlign: TextAlign.start,
                               // overflow: TextOverflow.ellipsis,
-                              style: Default_Theme.secondoryTextStyle.merge(
+                              style: DefaultTheme.secondoryTextStyle.merge(
                                   TextStyle(
                                       fontSize: 15,
                                       fontFamily: "NotoSans",
                                       fontWeight: FontWeight.w500,
                                       overflow: TextOverflow.ellipsis,
-                                      color: Default_Theme.primaryColor1
+                                      color: DefaultTheme.primaryColor1
                                           .withOpacity(0.7))),
                             ),
                           )
@@ -433,7 +433,7 @@ class PlayerCtrlWidgets extends StatelessWidget {
                               iconSize: 25,
                               icon: Icon(
                                 Icons.offline_pin_rounded,
-                                color: Default_Theme.primaryColor1
+                                color: DefaultTheme.primaryColor1
                                     .withOpacity(0.5),
                               ),
                               onPressed: () {
@@ -513,26 +513,26 @@ class PlayerCtrlWidgets extends StatelessWidget {
                       musicPlayer.seek(value);
                     },
                     timeLabelPadding: 5,
-                    timeLabelTextStyle: Default_Theme.secondoryTextStyle.merge(
+                    timeLabelTextStyle: DefaultTheme.secondoryTextStyle.merge(
                         TextStyle(
                             fontSize: 15,
                             color:
-                                Default_Theme.primaryColor1.withOpacity(0.7))),
+                                DefaultTheme.primaryColor1.withOpacity(0.7))),
                     timeLabelLocation: TimeLabelLocation.above,
-                    baseBarColor: Default_Theme.primaryColor2.withOpacity(0.1),
+                    baseBarColor: DefaultTheme.primaryColor2.withOpacity(0.1),
                     progressBarColor:
                         snapshot.data?.currentPlayerState.playing ?? false
-                            ? Default_Theme.accentColor1
-                            : Default_Theme.accentColor2,
+                            ? DefaultTheme.accentColor1
+                            : DefaultTheme.accentColor2,
                     thumbRadius: 5,
                     thumbColor:
                         snapshot.data?.currentPlayerState.playing ?? false
-                            ? Default_Theme.accentColor1
-                            : Default_Theme.accentColor2,
+                            ? DefaultTheme.accentColor1
+                            : DefaultTheme.accentColor2,
                     bufferedBarColor:
                         snapshot.data?.currentPlayerState.playing ?? false
-                            ? Default_Theme.accentColor1.withOpacity(0.2)
-                            : Default_Theme.accentColor2.withOpacity(0.2),
+                            ? DefaultTheme.accentColor1.withOpacity(0.2)
+                            : DefaultTheme.accentColor2.withOpacity(0.2),
                     barHeight: 4,
                   );
                 }),
@@ -561,7 +561,7 @@ class PlayerCtrlWidgets extends StatelessWidget {
                       },
                       icon: const Icon(
                         MingCute.alarm_1_line,
-                        color: Default_Theme.primaryColor1,
+                        color: DefaultTheme.primaryColor1,
                         size: 30,
                       ),
                     ),
@@ -576,7 +576,7 @@ class PlayerCtrlWidgets extends StatelessWidget {
                     onPressed: () => musicPlayer.skipToPrevious(),
                     icon: const Icon(
                       MingCute.skip_previous_fill,
-                      color: Default_Theme.primaryColor1,
+                      color: DefaultTheme.primaryColor1,
                       size: 30,
                     ),
                   ),
@@ -589,12 +589,12 @@ class PlayerCtrlWidgets extends StatelessWidget {
                               decoration: const BoxDecoration(
                                 boxShadow: [
                                   BoxShadow(
-                                      color: Default_Theme.accentColor2,
+                                      color: DefaultTheme.accentColor2,
                                       spreadRadius: 1,
                                       blurRadius: 20)
                                 ],
                                 shape: BoxShape.circle,
-                                color: Default_Theme.accentColor2,
+                                color: DefaultTheme.accentColor2,
                               ),
                               width: 75,
                               height: 75,
@@ -603,7 +603,7 @@ class PlayerCtrlWidgets extends StatelessWidget {
                                   width: 35,
                                   height: 35,
                                   child: CircularProgressIndicator(
-                                    color: Default_Theme.primaryColor1,
+                                    color: DefaultTheme.primaryColor1,
                                   ),
                                 ),
                               ));
@@ -612,12 +612,12 @@ class PlayerCtrlWidgets extends StatelessWidget {
                               decoration: const BoxDecoration(
                                 boxShadow: [
                                   BoxShadow(
-                                      color: Default_Theme.accentColor2,
+                                      color: DefaultTheme.accentColor2,
                                       spreadRadius: 1,
                                       blurRadius: 20)
                                 ],
                                 shape: BoxShape.circle,
-                                color: Default_Theme.accentColor2,
+                                color: DefaultTheme.accentColor2,
                               ),
                               width: 75,
                               height: 75,
@@ -627,7 +627,7 @@ class PlayerCtrlWidgets extends StatelessWidget {
                                     height: 35,
                                     child: Icon(
                                       FontAwesome.rotate_right_solid,
-                                      color: Default_Theme.primaryColor1,
+                                      color: DefaultTheme.primaryColor1,
                                       size: 35,
                                     )),
                               ));
@@ -637,12 +637,12 @@ class PlayerCtrlWidgets extends StatelessWidget {
                                 decoration: const BoxDecoration(
                                   boxShadow: [
                                     BoxShadow(
-                                        color: Default_Theme.accentColor2,
+                                        color: DefaultTheme.accentColor2,
                                         spreadRadius: 1,
                                         blurRadius: 20)
                                   ],
                                   shape: BoxShape.circle,
-                                  color: Default_Theme.accentColor2,
+                                  color: DefaultTheme.accentColor2,
                                 ),
                                 width: 75,
                                 height: 75,
@@ -651,7 +651,7 @@ class PlayerCtrlWidgets extends StatelessWidget {
                                     width: 35,
                                     height: 35,
                                     child: CircularProgressIndicator(
-                                      color: Default_Theme.primaryColor1,
+                                      color: DefaultTheme.primaryColor1,
                                     ),
                                   ),
                                 ));
@@ -668,12 +668,12 @@ class PlayerCtrlWidgets extends StatelessWidget {
                               decoration: const BoxDecoration(
                                 boxShadow: [
                                   BoxShadow(
-                                      color: Default_Theme.accentColor2,
+                                      color: DefaultTheme.accentColor2,
                                       spreadRadius: 1,
                                       blurRadius: 20)
                                 ],
                                 shape: BoxShape.circle,
-                                color: Default_Theme.accentColor2,
+                                color: DefaultTheme.accentColor2,
                               ),
                               width: 75,
                               height: 75,
@@ -683,7 +683,7 @@ class PlayerCtrlWidgets extends StatelessWidget {
                                   height: 35,
                                   child: Icon(
                                     MingCute.warning_line,
-                                    color: Default_Theme.primaryColor1,
+                                    color: DefaultTheme.primaryColor1,
                                   ),
                                 ),
                               ));
@@ -692,12 +692,12 @@ class PlayerCtrlWidgets extends StatelessWidget {
                               decoration: const BoxDecoration(
                                 boxShadow: [
                                   BoxShadow(
-                                      color: Default_Theme.accentColor2,
+                                      color: DefaultTheme.accentColor2,
                                       spreadRadius: 1,
                                       blurRadius: 20)
                                 ],
                                 shape: BoxShape.circle,
-                                color: Default_Theme.accentColor2,
+                                color: DefaultTheme.accentColor2,
                               ),
                               width: 75,
                               height: 75,
@@ -706,7 +706,7 @@ class PlayerCtrlWidgets extends StatelessWidget {
                                   width: 35,
                                   height: 35,
                                   child: CircularProgressIndicator(
-                                    color: Default_Theme.primaryColor1,
+                                    color: DefaultTheme.primaryColor1,
                                   ),
                                 ),
                               ));
@@ -723,7 +723,7 @@ class PlayerCtrlWidgets extends StatelessWidget {
                     onPressed: () => musicPlayer.skipToNext(),
                     icon: const Icon(
                       MingCute.skip_forward_fill,
-                      color: Default_Theme.primaryColor1,
+                      color: DefaultTheme.primaryColor1,
                       size: 30,
                     ),
                   ),
@@ -742,8 +742,8 @@ class PlayerCtrlWidgets extends StatelessWidget {
                             icon: Icon(
                               MingCute.shuffle_2_fill,
                               color: (snapshot.data ?? false)
-                                  ? Default_Theme.accentColor1
-                                  : Default_Theme.primaryColor1,
+                                  ? DefaultTheme.accentColor1
+                                  : DefaultTheme.primaryColor1,
                               size: 30,
                             ),
                             onPressed: () {
@@ -790,8 +790,8 @@ class PlayerCtrlWidgets extends StatelessWidget {
                                       ? MingCute.repeat_one_line
                                       : MingCute.repeat_fill,
                               color: loopMode == LoopMode.off
-                                  ? Default_Theme.primaryColor1
-                                  : Default_Theme.accentColor1,
+                                  ? DefaultTheme.primaryColor1
+                                  : DefaultTheme.accentColor1,
                             ),
                             onSelected: (value) {
                               switch (value) {
@@ -836,11 +836,11 @@ class PlayerCtrlWidgets extends StatelessWidget {
                                       .shrinkWrap, // the '2023' part
                                 ),
                                 icon: Text('Lyrics',
-                                    style: Default_Theme.secondoryTextStyle
+                                    style: DefaultTheme.secondoryTextStyle
                                         .merge(TextStyle(
                                             color: state.showLyrics
-                                                ? Default_Theme.accentColor2
-                                                : Default_Theme.primaryColor1,
+                                                ? DefaultTheme.accentColor2
+                                                : DefaultTheme.primaryColor1,
                                             fontSize: 14,
                                             fontWeight: FontWeight.bold))),
                                 onPressed: () {
@@ -872,21 +872,21 @@ class PlayerCtrlWidgets extends StatelessWidget {
                             return snapshot.data?.extras?['source'] == 'youtube'
                                 ? const Icon(
                                     MingCute.youtube_fill,
-                                    color: Default_Theme.primaryColor1,
+                                    color: DefaultTheme.primaryColor1,
                                     size: 30,
                                   )
                                 : Text("JioSaavn",
                                     style: const TextStyle(
-                                            color: Default_Theme.primaryColor1,
+                                            color: DefaultTheme.primaryColor1,
                                             fontSize: 18,
                                             fontWeight: FontWeight.bold)
                                         .merge(
-                                            Default_Theme.secondoryTextStyle));
+                                            DefaultTheme.secondoryTextStyle));
                           }
 
                           return const Icon(
                             MingCute.external_link_line,
-                            color: Default_Theme.primaryColor1,
+                            color: DefaultTheme.primaryColor1,
                             size: 30,
                           );
                         }),

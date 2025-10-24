@@ -1,7 +1,7 @@
 import 'dart:developer';
-import 'package:Bloomee/blocs/global_events/global_events_cubit.dart';
-import 'package:Bloomee/screens/screen/common_views/changelog_reader.dart';
-import 'package:Bloomee/screens/widgets/gradient_alert_widget.dart';
+import 'package:bloomee/blocs/global_events/global_events_cubit.dart';
+import 'package:bloomee/screens/screen/common_views/changelog_reader.dart';
+import 'package:bloomee/screens/widgets/gradient_alert_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';

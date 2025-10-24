@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Default_Theme {
+class DefaultTheme {
   // Text Styles
   static const primaryTextStyle = TextStyle(fontFamily: "Fjalla");
   static const secondoryTextStyle = TextStyle(fontFamily: "Gilroy");
@@ -39,7 +39,6 @@ class Default_Theme {
     return ThemeData(
       useMaterial3: true,
       scaffoldBackgroundColor: themeColor,
-      dialogBackgroundColor: themeColor,
       primaryColorDark: accentColor2,
       primarySwatch: MaterialColor(
         accentColor2.value,
@@ -117,6 +116,9 @@ class Default_Theme {
       cardTheme: const CardThemeData(
         color: themeColor,
         surfaceTintColor: Colors.transparent,
+      ),
+      dialogTheme: const DialogThemeData(
+        backgroundColor: themeColor,
       ),
     );
   }
