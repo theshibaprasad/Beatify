@@ -218,6 +218,29 @@ enum JamEventType {
   error
 }
 
+class MediaItemModel extends Equatable {
+  final String id;
+  final String title;
+  final String artist;
+  final String album;
+  final String? image;
+  final Duration? duration;
+  final String? source;
+
+  const MediaItemModel({
+    required this.id,
+    required this.title,
+    required this.artist,
+    required this.album,
+    this.image,
+    this.duration,
+    this.source,
+  });
+
+  @override
+  List<Object?> get props => [id, title, artist, album, image, duration, source];
+}
+
 class JamSyncData extends Equatable {
   final String sessionId;
   final String? currentTrackId;
@@ -238,4 +261,5 @@ class JamSyncData extends Equatable {
   @override
   List<Object?> get props => [sessionId, currentTrackId, position, isPlaying, queue, timestamp];
 }
+
 

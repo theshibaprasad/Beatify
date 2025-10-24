@@ -20,6 +20,10 @@ class Default_Theme {
   static const accentColor1light = Color(0xFF18C9ED);
   static const accentColor2 = Color(0xFFFE385E);
   static const successColor = Color(0xFF5EFF43);
+  
+  // Additional theme colors
+  static const cardColor = Color(0xFF1A111B);
+  static const primaryColor = Color(0xFF0A040C);
 
   ThemeData get defaultThemeData {
     const darkScheme = ColorScheme.dark(
