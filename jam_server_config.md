@@ -379,3 +379,4 @@ const serverUrl = 'wss://your-domain.com/ws';
 3. **Input Validation**: Validate all incoming messages
 4. **CORS**: Configure Cross-Origin Resource Sharing
 5. **SSL/TLS**: Use secure WebSocket connections (WSS) in production
+

@@ -238,3 +238,4 @@ class JamSyncData extends Equatable {
   @override
   List<Object?> get props => [sessionId, currentTrackId, position, isPlaying, queue, timestamp];
 }
+

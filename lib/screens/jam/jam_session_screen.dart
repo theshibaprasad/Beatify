@@ -391,3 +391,4 @@ class _JamSessionScreenState extends State<JamSessionScreen>
     }
   }
 }
+
