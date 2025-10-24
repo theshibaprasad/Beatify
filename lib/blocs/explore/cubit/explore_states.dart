@@ -36,8 +36,8 @@ class RecentlyCubitState {
 }
 
 class RecentlyCubitInitial extends RecentlyCubitState {
-  RecentlyCubitInitial()
-      : super(mediaPlaylist: MediaPlaylist(playlistName: "", mediaItems: []));
+  const RecentlyCubitInitial()
+      : super(mediaPlaylist: const MediaPlaylist(playlistName: "", mediaItems: []));
 }
 
 class ChartState {

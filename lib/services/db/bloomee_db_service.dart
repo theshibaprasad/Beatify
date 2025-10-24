@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:developer';
 import 'dart:io';
-import 'package:bloomee/model/MediaPlaylistModel.dart';
+import 'package:bloomee/model/media_playlist_model.dart';
 import 'package:bloomee/model/album_onl_model.dart';
 import 'package:bloomee/model/artist_onl_model.dart';
 import 'package:bloomee/model/chart_model.dart';

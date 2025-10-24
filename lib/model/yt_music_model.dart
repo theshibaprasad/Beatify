@@ -1,16 +1,16 @@
-import 'songModel.dart';
+import 'song_model.dart';
 
 MediaItemModel fromYtSongMap2MediaItem(Map<dynamic, dynamic> songItem) {
   String artists = '';
-  List<String> _artists = List.empty(growable: true);
+  List<String> artistsList = List.empty(growable: true);
   List<String> artistsID = List.empty(growable: true);
 
   try {
     (songItem['artists'] as List).forEach((element) {
-      _artists.add(element["name"]);
+      artistsList.add(element["name"]);
       artistsID.add(element["id"]);
     });
-    artists = _artists.join(',');
+    artists = artistsList.join(',');
   } catch (e) {
     artists = songItem["artist"] ?? 'Unknown';
   }

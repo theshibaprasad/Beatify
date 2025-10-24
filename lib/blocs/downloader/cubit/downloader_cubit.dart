@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
 import 'package:bloomee/blocs/library/cubit/library_items_cubit.dart';
-import 'package:bloomee/model/saavnModel.dart';
+import 'package:bloomee/model/saavn_model.dart';
 import 'package:bloomee/utils/audio_tagger.dart';
 import 'package:bloomee/utils/dload.dart';
 import 'package:bloomee/utils/imgurl_formator.dart';
@@ -176,14 +176,16 @@ class DownloaderCubit extends Cubit<DownloaderState> {
     // --- NEW: Perform pre-download checks ---
     if (_activeDownloads
         .any((item) => item.task.originalUrl == song.extras!['perma_url'])) {
-      if (showSnackbar)
+      if (showSnackbar) {
         SnackbarService.showMessage("${song.title} is already in the queue.");
+      }
       return;
     }
 
     if (await _isAlreadyDownloaded(song)) {
-      if (showSnackbar)
+      if (showSnackbar) {
         SnackbarService.showMessage("${song.title} is already downloaded.");
+      }
       return;
     }
 
@@ -216,8 +218,9 @@ class DownloaderCubit extends Cubit<DownloaderState> {
     _activeDownloads.insert(0, placeholderProgress);
     _emitUpdatedState();
 
-    if (showSnackbar)
+    if (showSnackbar) {
       SnackbarService.showMessage("Preparing download for ${song.title}...");
+    }
 
     try {
       // Update status to fetching metadata
@@ -315,8 +318,9 @@ class DownloaderCubit extends Cubit<DownloaderState> {
         song: song,
       );
 
-      if (showSnackbar)
+      if (showSnackbar) {
         SnackbarService.showMessage("Added ${song.title} to download queue");
+      }
     } catch (e) {
       log("Failed to prepare download for ${song.title}",
           error: e, name: "DownloaderCubit");
@@ -326,8 +330,9 @@ class DownloaderCubit extends Cubit<DownloaderState> {
           (item) => item.task.originalUrl == song.extras!['perma_url']);
       _emitUpdatedState();
 
-      if (showSnackbar)
+      if (showSnackbar) {
         SnackbarService.showMessage("Error: Could not process URL.");
+      }
     }
   }
 

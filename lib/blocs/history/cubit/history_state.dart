@@ -16,6 +16,6 @@ class HistoryState {
 }
 
 class HistoryInitial extends HistoryState {
-  HistoryInitial()
-      : super(mediaPlaylist: MediaPlaylist(playlistName: "", mediaItems: []));
+  const HistoryInitial()
+      : super(mediaPlaylist: const MediaPlaylist(playlistName: "", mediaItems: []));
 }

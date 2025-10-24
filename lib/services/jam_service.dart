@@ -2,8 +2,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:developer';
 import 'package:bloomee/model/jam_models.dart' as jam_models;
-import 'package:bloomee/model/songModel.dart';
-import 'package:bloomee/services/bloomeePlayer.dart';
+import 'package:bloomee/model/song_model.dart';
+import 'package:bloomee/services/bloomee_player.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:uuid/uuid.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
@@ -69,7 +69,7 @@ class JamService {
       _currentUser = jam_models.JamUser(
         id: userId,
         name: userName,
-        role: jam_models.jam_models.JamUserRole.participant,
+        role: jam_models.JamUserRole.participant,
         joinedAt: DateTime.now(),
       );
     }
@@ -366,8 +366,8 @@ class JamService {
         final mediaItemModel = jam_models.MediaItemModel(
           id: mediaItem.id,
           title: mediaItem.title,
-          artist: mediaItem.artist,
-          album: mediaItem.album,
+          artist: mediaItem.artist ?? 'Unknown',
+          album: mediaItem.album ?? 'Unknown',
           image: mediaItem.artUri?.toString(),
           duration: mediaItem.duration,
         );
