@@ -19,31 +19,31 @@ class JamService {
   StreamSubscription? _connectionSubscription;
   
   // Current session and user
-  JamSession? _currentSession;
-  JamUser? _currentUser;
+  jam_models.JamSession? _currentSession;
+  jam_models.JamUser? _currentUser;
   
   // Streams for real-time updates
-  final BehaviorSubject<JamSession?> _sessionSubject = BehaviorSubject<JamSession?>();
-  final BehaviorSubject<List<JamMessage>> _messagesSubject = BehaviorSubject<List<JamMessage>>.seeded([]);
-  final BehaviorSubject<List<JamSession>> _availableSessionsSubject = BehaviorSubject<List<JamSession>>.seeded([]);
+  final BehaviorSubject<jam_models.JamSession?> _sessionSubject = BehaviorSubject<jam_models.JamSession?>();
+  final BehaviorSubject<List<jam_models.JamMessage>> _messagesSubject = BehaviorSubject<List<jam_models.JamMessage>>.seeded([]);
+  final BehaviorSubject<List<jam_models.JamSession>> _availableSessionsSubject = BehaviorSubject<List<jam_models.JamSession>>.seeded([]);
   final BehaviorSubject<bool> _isConnectedSubject = BehaviorSubject<bool>.seeded(false);
   
   // Event handlers
-  final StreamController<JamEvent> _eventController = StreamController<JamEvent>.broadcast();
+  final StreamController<jam_models.JamEvent> _eventController = StreamController<jam_models.JamEvent>.broadcast();
   
   // Dependencies
   late BloomeeMusicPlayer _player;
   late SharedPreferences _prefs;
   
   // Getters
-  Stream<JamSession?> get sessionStream => _sessionSubject.stream;
-  Stream<List<JamMessage>> get messagesStream => _messagesSubject.stream;
-  Stream<List<JamSession>> get availableSessionsStream => _availableSessionsSubject.stream;
+  Stream<jam_models.JamSession?> get sessionStream => _sessionSubject.stream;
+  Stream<List<jam_models.JamMessage>> get messagesStream => _messagesSubject.stream;
+  Stream<List<jam_models.JamSession>> get availableSessionsStream => _availableSessionsSubject.stream;
   Stream<bool> get isConnectedStream => _isConnectedSubject.stream;
-  Stream<JamEvent> get eventStream => _eventController.stream;
+  Stream<jam_models.JamEvent> get eventStream => _eventController.stream;
   
-  JamSession? get currentSession => _currentSession;
-  JamUser? get currentUser => _currentUser;
+  jam_models.JamSession? get currentSession => _currentSession;
+  jam_models.JamUser? get currentUser => _currentUser;
   bool get isConnected => _isConnectedSubject.value;
   
   // Initialize the service
@@ -66,10 +66,10 @@ class JamService {
     final userName = _prefs.getString('jam_user_name');
     
     if (userId != null && userName != null) {
-      _currentUser = JamUser(
+      _currentUser = jam_models.JamUser(
         id: userId,
         name: userName,
-        role: JamUserRole.participant,
+        role: jam_models.jam_models.JamUserRole.participant,
         joinedAt: DateTime.now(),
       );
     }
@@ -142,23 +142,23 @@ class JamService {
       _sessionSubject.add(_currentSession);
       
       // Sync playback if not the host
-      if (_currentUser?.role != JamUserRole.host && _currentSession != null) {
+      if (_currentUser?.role != jam_models.JamUserRole.host && _currentSession != null) {
         _syncPlayback();
       }
     }
   }
   
   void _handleNewMessage(Map<String, dynamic> data) {
-    final message = JamMessage(
+    final message = jam_models.JamMessage(
       id: data['id'],
       sessionId: data['sessionId'],
       userId: data['userId'],
       userName: data['userName'],
       message: data['message'],
       timestamp: DateTime.parse(data['timestamp']),
-      type: JamMessageType.values.firstWhere(
+      type: jam_models.JamMessageType.values.firstWhere(
         (e) => e.toString().split('.').last == data['messageType'],
-        orElse: () => JamMessageType.text,
+        orElse: () => jam_models.JamMessageType.text,
       ),
     );
     
@@ -179,7 +179,7 @@ class JamService {
   
   void _handleSyncResponse(Map<String, dynamic> data) {
     // Apply received sync data
-    final syncData = JamSyncData(
+    final syncData = jam_models.JamSyncData(
       sessionId: data['sessionId'],
       currentTrackId: data['currentTrackId'],
       position: data['position'] != null ? Duration(milliseconds: data['position']) : null,
@@ -193,10 +193,10 @@ class JamService {
   
   void _handleError(dynamic error) {
     log('Jam service error: $error', name: 'JamService');
-    _eventController.add(JamEvent(
+    _eventController.add(jam_models.JamEvent(
       id: const Uuid().v4(),
       sessionId: _currentSession?.id ?? '',
-      type: JamEventType.error,
+      type: jam_models.JamEventType.error,
       data: {'error': error.toString()},
       timestamp: DateTime.now(),
     ));
@@ -217,11 +217,11 @@ class JamService {
   // Public methods
   Future<void> setUser(String name, {String? avatar}) async {
     final userId = const Uuid().v4();
-    _currentUser = JamUser(
+    _currentUser = jam_models.JamUser(
       id: userId,
       name: name,
       avatar: avatar,
-      role: JamUserRole.participant,
+      role: jam_models.JamUserRole.participant,
       joinedAt: DateTime.now(),
     );
     
@@ -243,7 +243,7 @@ class JamService {
     }
   }
   
-  Future<JamSession> createSession({
+  Future<jam_models.JamSession> createSession({
     required String name,
     String? description,
     bool isPrivate = false,
@@ -255,13 +255,13 @@ class JamService {
     }
     
     final sessionId = const Uuid().v4();
-    final session = JamSession(
+    final session = jam_models.JamSession(
       id: sessionId,
       name: name,
       description: description,
       hostId: _currentUser!.id,
       participants: [_currentUser!],
-      status: JamSessionStatus.active,
+      status: jam_models.JamSessionStatus.active,
       createdAt: DateTime.now(),
       isPrivate: isPrivate,
       password: password,
@@ -332,7 +332,6 @@ class JamService {
         'album': track.album,
         'duration': track.duration?.inSeconds,
         'image': track.image,
-        'url': track.url,
       },
     });
   }
@@ -356,14 +355,23 @@ class JamService {
   void _setupPlayerListeners() {
     // Listen to player state changes and broadcast to session
     _player.playbackState.listen((state) {
-      if (_currentSession != null && _currentUser?.role == JamUserRole.host) {
+      if (_currentSession != null && _currentUser?.role == jam_models.JamUserRole.host) {
         _broadcastPlaybackState();
       }
     });
     
     _player.mediaItem.listen((mediaItem) {
-      if (_currentSession != null && _currentUser?.role == JamUserRole.host) {
-        _broadcastTrackChange(mediaItem);
+      if (_currentSession != null && _currentUser?.role == jam_models.JamUserRole.host) {
+        // Convert MediaItem to MediaItemModel
+        final mediaItemModel = jam_models.MediaItemModel(
+          id: mediaItem.id,
+          title: mediaItem.title,
+          artist: mediaItem.artist,
+          album: mediaItem.album,
+          image: mediaItem.artUri?.toString(),
+          duration: mediaItem.duration,
+        );
+        _broadcastTrackChange(mediaItemModel);
       }
     });
   }
@@ -417,7 +425,7 @@ class JamService {
     });
   }
   
-  void _applySyncData(JamSyncData syncData) {
+  void _applySyncData(jam_models.JamSyncData syncData) {
     // Apply sync data to player
     if (syncData.currentTrackId != null) {
       // Find and play the track
@@ -447,28 +455,28 @@ class JamService {
     }
   }
   
-  JamSession _parseSession(Map<String, dynamic> data) {
-    return JamSession(
+  jam_models.JamSession _parseSession(Map<String, dynamic> data) {
+    return jam_models.JamSession(
       id: data['id'],
       name: data['name'],
       description: data['description'],
       hostId: data['hostId'],
       participants: (data['participants'] as List)
-          .map((p) => JamUser(
+          .map((p) => jam_models.JamUser(
                 id: p['id'],
                 name: p['name'],
                 avatar: p['avatar'],
-                role: JamUserRole.values.firstWhere(
+                role: jam_models.JamUserRole.values.firstWhere(
                   (e) => e.toString().split('.').last == p['role'],
-                  orElse: () => JamUserRole.participant,
+                  orElse: () => jam_models.JamUserRole.participant,
                 ),
                 joinedAt: DateTime.parse(p['joinedAt']),
                 isOnline: p['isOnline'] ?? true,
               ))
           .toList(),
-      status: JamSessionStatus.values.firstWhere(
+      status: jam_models.JamSessionStatus.values.firstWhere(
         (e) => e.toString().split('.').last == data['status'],
-        orElse: () => JamSessionStatus.active,
+        orElse: () => jam_models.JamSessionStatus.active,
       ),
       createdAt: DateTime.parse(data['createdAt']),
       lastActivity: data['lastActivity'] != null ? DateTime.parse(data['lastActivity']) : null,
@@ -480,7 +488,7 @@ class JamService {
     );
   }
   
-  Map<String, dynamic> _sessionToMap(JamSession session) {
+  Map<String, dynamic> _sessionToMap(jam_models.JamSession session) {
     return {
       'id': session.id,
       'name': session.name,
